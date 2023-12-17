@@ -1,9 +1,12 @@
-import { ThemeChanger } from "@/components/theme-changer";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main>
-      <ThemeChanger />
-    </main>
+    <div>
+      <Header />
+      <main></main>
+      <Footer />
+    </div>
   );
 }
