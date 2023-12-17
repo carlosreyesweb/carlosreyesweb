@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4% /* #0a0a0a */;
+    --foreground: 207 18% 88% /* #dbe1e6 */;
+    --card: 0 0% 17% /* #2b2b2b */;
+    --card-foreground: 207 18% 88% /* #dbe1e6 */;
+    --popover: 0 0% 17% /* #2b2b2b */;
+    --popover-foreground: 207 18% 88% /* #dbe1e6 */;
+    --primary: 168 73% 54% /* #33dfbd */;
+    --primary-foreground: 0 0% 4% /* #0a0a0a */;
+    --secondary: 0 0% 17% /* #2b2b2b */;
+    --secondary-foreground: 207 18% 88% /* #dbe1e6 */;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 251 81% 67% /* #7f65ef */;
+    --accent-foreground: 207 18% 88% /* #dbe1e6 */;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 0 0% 17% /* #2b2b2b */;
+    --input: 0 0% 17% /* #2b2b2b */;
+    --ring: 168 73% 54% /* #33dfbd */;
+    --radius: 0.5rem;
+    --sb-track-color: #0a0a0a;
+    --sb-thumb-color: #33dfbd;
+    --sb-size: 8px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  :root {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+  }
+}
