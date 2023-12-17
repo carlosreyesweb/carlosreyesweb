@@ -22,7 +22,7 @@ export function Header() {
       <Navbar />
       <div className="bg-[radial-gradient(circle,_#2B2B2B_1px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
         <div className="bg-gradient-to-br from-transparent to-background">
-          <div className="container flex flex-col items-center space-y-8 py-24 sm:py-36">
+          <div className="container flex flex-col items-center space-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 sm:py-36">
             <ChangelogCTA redirectTo="https://www.esquinadelcodigo.com">
               My blog is now live!
             </ChangelogCTA>
@@ -30,6 +30,9 @@ export function Header() {
               <H1 className="xl:text-6xl 2xl:text-7xl">
                 An Expert Frontend Developer for Your Next{" "}
                 <span className="text-primary">&lt;Project /&gt;</span>
+                <span className="animate-ping duration-300 direction-alternate">
+                  _
+                </span>
               </H1>
               <Paragraph className="lg:text-xl">
                 Hi! I&apos;m <strong>Carlos Reyes</strong>, a Frontend Developer
@@ -63,7 +66,7 @@ export function Header() {
 function LogoLink() {
   return (
     <Link href="/">
-      <Image src={logo} alt="Carlos Reyes" className="w-28" />
+      <Image src={logo} alt="Carlos Reyes" className="w-28" priority />
     </Link>
   );
 }
