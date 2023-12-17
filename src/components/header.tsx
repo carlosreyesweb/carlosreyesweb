@@ -1,5 +1,15 @@
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
+import {
+  AngularjsOriginal,
+  Css3Original,
+  Html5Original,
+  JavascriptOriginal,
+  NextjsLine,
+  ReactOriginal,
+  TailwindcssPlain,
+  TypescriptOriginal,
+} from "devicons-react";
 import { ArrowUpRight, Download, Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +24,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 import { H1, H3, Paragraph, Small } from "./ui/typography";
 
 export function Header() {
@@ -22,11 +38,11 @@ export function Header() {
       <Navbar />
       <div className="bg-[radial-gradient(circle,_#2B2B2B_1px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
         <div className="bg-gradient-to-br from-transparent to-background">
-          <div className="container flex flex-col items-center space-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 sm:py-36">
+          <div className="container flex flex-col items-center gap-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 sm:py-36">
             <ChangelogCTA redirectTo="https://www.esquinadelcodigo.com">
               My blog is now live!
             </ChangelogCTA>
-            <div className="space-y-8 text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
+            <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
               <H1 className="xl:text-6xl 2xl:text-7xl">
                 An Expert Frontend Developer for Your Next{" "}
                 <span className="text-primary">&lt;Project /&gt;</span>
@@ -55,7 +71,7 @@ export function Header() {
                 </Link>
               </Button>
             </div>
-            <ClientsShowcase />
+            <SkillsShowcase />
           </div>
         </div>
       </div>
@@ -191,10 +207,61 @@ function ChangelogCTA({
   );
 }
 
-function ClientsShowcase() {
+const skills = [
+  {
+    name: "Next.js",
+    icon: NextjsLine,
+  },
+  {
+    name: "React",
+    icon: ReactOriginal,
+  },
+  {
+    name: "Angular",
+    icon: AngularjsOriginal,
+  },
+  {
+    name: "TailwindCSS",
+    icon: TailwindcssPlain,
+  },
+  {
+    name: "TypeScript",
+    icon: TypescriptOriginal,
+  },
+  {
+    name: "JavaScript",
+    icon: JavascriptOriginal,
+  },
+  {
+    name: "HTML5",
+    icon: Html5Original,
+  },
+  {
+    name: "CSS3",
+    icon: Css3Original,
+  },
+];
+
+function SkillsShowcase() {
   return (
-    <div className="flex flex-col items-center space-y-4">
-      <Small>Trusted by these companies:</Small>
+    <div className="mt-4 flex max-w-md flex-col items-center space-y-6">
+      <Small>
+        Currently working with <strong>these technologies:</strong>
+      </Small>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        {skills.map(({ name, icon: Icon }) => (
+          <TooltipProvider key={name} delayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger>
+                <Icon size="35" color="white" />
+              </TooltipTrigger>
+              <TooltipContent side="bottom" sideOffset={10}>
+                {name}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ))}
+      </div>
     </div>
   );
 }
