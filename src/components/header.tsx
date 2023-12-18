@@ -1,11 +1,13 @@
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { cn } from "@/lib/utils"
 import {
-  AngularjsOriginal,
   Css3Original,
   Html5Original,
   JavascriptOriginal,
+  MysqlPlain,
+  NestjsPlain,
   NextjsLine,
+  NodejsOriginal,
   ReactOriginal,
   TailwindcssPlain,
   TypescriptOriginal,
@@ -48,14 +50,14 @@ export function Header() {
             </ChangelogCTA>
             <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
               <H1 className="xl:text-6xl 2xl:text-7xl">
-                An Expert Frontend Developer for Your Next{" "}
+                An Expert Software Developer for Your Next{" "}
                 <span className="text-primary">&lt;Project /&gt;</span>
                 <span className="animate-ping duration-300 direction-alternate">
                   _
                 </span>
               </H1>
               <Paragraph className="lg:text-xl">
-                Hi! I&apos;m <strong>Carlos Reyes</strong>, a Frontend Developer
+                Hi! I&apos;m <strong>Carlos Reyes</strong>, a Software Developer
                 with 3+ years of experience building websites and web
                 applications. I specialize in JavaScript and TypeScript, and I
                 have professional experience working with React.
@@ -283,12 +285,20 @@ const skills = [
     icon: ReactOriginal,
   },
   {
-    name: "Angular",
-    icon: AngularjsOriginal,
-  },
-  {
     name: "Tailwind",
     icon: TailwindcssPlain,
+  },
+  {
+    name: "Nest.js",
+    icon: NestjsPlain,
+  },
+  {
+    name: "MySQL",
+    icon: MysqlPlain,
+  },
+  {
+    name: "Node.js",
+    icon: NodejsOriginal,
   },
   {
     name: "TypeScript",
@@ -317,7 +327,7 @@ function SkillsShowcase() {
       <div className="relative w-full overflow-hidden">
         <div
           role="presentation"
-          className="absolute left-0 top-0 z-10 h-full w-1/2 bg-gradient-to-r from-background to-transparent"
+          className="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/2 bg-gradient-to-r from-background to-transparent"
         />
         <ul className="flex animate-slide space-x-10">
           {skills
@@ -328,16 +338,16 @@ function SkillsShowcase() {
               <li
                 key={key}
                 title={name}
-                className="flex items-center justify-center"
+                className="flex flex-col items-center gap-y-2"
               >
                 <Icon size="45" color="white" />
-                <span className="sr-only">{name}</span>
+                <span className="text-sm font-medium">{name}</span>
               </li>
             ))}
         </ul>
         <div
           role="presentation"
-          className="absolute right-0 top-0 z-10 h-full w-1/2 bg-gradient-to-l from-background to-transparent"
+          className="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/2 bg-gradient-to-l from-background to-transparent"
         />
       </div>
     </div>

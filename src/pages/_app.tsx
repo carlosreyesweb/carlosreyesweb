@@ -1,3 +1,4 @@
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { SEO } from "@/config/seo"
 import { roboto, robotoMono } from "@/styles/fonts"
 import "@/styles/globals.css"
@@ -14,7 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
+      <TooltipProvider>
+        <Component {...pageProps} />
+      </TooltipProvider>
     </>
   )
 }
