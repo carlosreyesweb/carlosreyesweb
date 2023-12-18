@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { SEO } from "@/config/seo"
 import { roboto, robotoMono } from "@/styles/fonts"
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
       <TooltipProvider delayDuration={0}>
         <Component {...pageProps} />
+        <Toaster />
       </TooltipProvider>
     </>
   )
