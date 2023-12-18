@@ -1,5 +1,5 @@
-import { useMediaQuery } from "@/hooks/use-media-query";
-import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/use-media-query"
+import { cn } from "@/lib/utils"
 import {
   AngularjsOriginal,
   Css3Original,
@@ -9,28 +9,28 @@ import {
   ReactOriginal,
   TailwindcssPlain,
   TypescriptOriginal,
-} from "devicons-react";
-import { ArrowUpRight, Download, Mail, Menu } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { ComponentPropsWithoutRef, useState } from "react";
-import logo from "../../public/logo.svg";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+} from "devicons-react"
+import { ArrowUpRight, Download, Mail, Menu } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { ComponentPropsWithoutRef, useState } from "react"
+import logo from "../../public/logo.svg"
+import { Badge } from "./ui/badge"
+import { Button } from "./ui/button"
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet";
+} from "./ui/sheet"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
-import { H1, H3, Paragraph, Small } from "./ui/typography";
+} from "./ui/tooltip"
+import { H1, H3, Paragraph, Small } from "./ui/typography"
 
 export function Header() {
   return (
@@ -76,7 +76,7 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }
 
 function LogoLink() {
@@ -84,11 +84,11 @@ function LogoLink() {
     <Link href="/">
       <Image src={logo} alt="Carlos Reyes" className="w-28" priority />
     </Link>
-  );
+  )
 }
 
 function Navbar() {
-  const isDesktop = useMediaQuery("lg");
+  const isDesktop = useMediaQuery("lg")
 
   return (
     <div className="sticky top-0 border-b bg-background py-4">
@@ -98,7 +98,7 @@ function Navbar() {
         {isDesktop || <MobileNavigation />}
       </div>
     </div>
-  );
+  )
 }
 
 const navigation = [
@@ -126,7 +126,7 @@ const navigation = [
     name: "Contact",
     path: "/#contact",
   },
-];
+]
 
 function DesktopNavigation() {
   return (
@@ -141,11 +141,11 @@ function DesktopNavigation() {
         ))}
       </ul>
     </nav>
-  );
+  )
 }
 
 function MobileNavigation() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -179,12 +179,12 @@ function MobileNavigation() {
         </nav>
       </SheetContent>
     </Sheet>
-  );
+  )
 }
 
 interface ChangelogCTAProps
   extends Omit<ComponentPropsWithoutRef<"a">, "href" | "target"> {
-  redirectTo: string;
+  redirectTo: string
 }
 function ChangelogCTA({
   redirectTo,
@@ -204,7 +204,7 @@ function ChangelogCTA({
         <ArrowUpRight className="w-5" />
       </a>
     </Button>
-  );
+  )
 }
 
 const skills = [
@@ -240,7 +240,7 @@ const skills = [
     name: "CSS3",
     icon: Css3Original,
   },
-];
+]
 
 function SkillsShowcase() {
   return (
@@ -263,5 +263,5 @@ function SkillsShowcase() {
         ))}
       </div>
     </div>
-  );
+  )
 }

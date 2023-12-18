@@ -1,8 +1,8 @@
-import { DefaultSeoProps } from "next-seo";
+import { DefaultSeoProps } from "next-seo"
 
-const disableRobots = process.env.VERCEL_ENV !== "production";
-const title = "Carlos Reyes: Frontend Developer";
-const host = process.env.NEXT_PUBLIC_HOST;
+const disableRobots = process.env.VERCEL_ENV !== "production"
+const title = "Carlos Reyes: Frontend Developer"
+const host = process.env.NEXT_PUBLIC_HOST
 
 export const SEO: DefaultSeoProps = {
   dangerouslySetAllPagesToNoIndex: disableRobots,
@@ -34,4 +34,4 @@ export const SEO: DefaultSeoProps = {
       href: "/favicon.svg",
     },
   ],
-};
+}

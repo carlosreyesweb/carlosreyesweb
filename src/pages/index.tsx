@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
 
 export default function LandingPage() {
   return (
@@ -8,5 +8,5 @@ export default function LandingPage() {
       <main></main>
       <Footer />
     </>
-  );
+  )
 }

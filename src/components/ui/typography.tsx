@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { ComponentPropsWithoutRef, forwardRef } from "react";
+import { cn } from "@/lib/utils"
+import { ComponentPropsWithoutRef, forwardRef } from "react"
 
 interface H1Props extends ComponentPropsWithoutRef<"h1"> {}
 const H1 = forwardRef<HTMLHeadingElement, H1Props>(
@@ -15,8 +15,8 @@ const H1 = forwardRef<HTMLHeadingElement, H1Props>(
       {children}
     </h1>
   ),
-);
-H1.displayName = "H1";
+)
+H1.displayName = "H1"
 
 interface H2Props extends ComponentPropsWithoutRef<"h2"> {}
 const H2 = forwardRef<HTMLHeadingElement, H2Props>(
@@ -32,25 +32,22 @@ const H2 = forwardRef<HTMLHeadingElement, H2Props>(
       {children}
     </h2>
   ),
-);
-H2.displayName = "H2";
+)
+H2.displayName = "H2"
 
 interface H3Props extends ComponentPropsWithoutRef<"h3"> {}
 const H3 = forwardRef<HTMLHeadingElement, H3Props>(
   ({ children, className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn(
-        "scroll-m-20 text-2xl font-bold tracking-tight",
-        className,
-      )}
+      className={cn("scroll-m-20 text-2xl font-bold tracking-tight", className)}
       {...props}
     >
       {children}
     </h3>
   ),
-);
-H3.displayName = "H3";
+)
+H3.displayName = "H3"
 
 interface H4Props extends ComponentPropsWithoutRef<"h4"> {}
 const H4 = forwardRef<HTMLHeadingElement, H4Props>(
@@ -63,8 +60,8 @@ const H4 = forwardRef<HTMLHeadingElement, H4Props>(
       {children}
     </h4>
   ),
-);
-H4.displayName = "H4";
+)
+H4.displayName = "H4"
 
 interface ParagraphProps extends ComponentPropsWithoutRef<"p"> {}
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
@@ -77,8 +74,8 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
       {children}
     </p>
   ),
-);
-Paragraph.displayName = "Paragraph";
+)
+Paragraph.displayName = "Paragraph"
 
 interface BlockquoteProps extends ComponentPropsWithoutRef<"blockquote"> {}
 const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
@@ -91,8 +88,8 @@ const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
       {children}
     </blockquote>
   ),
-);
-Blockquote.displayName = "Blockquote";
+)
+Blockquote.displayName = "Blockquote"
 
 interface UlProps extends ComponentPropsWithoutRef<"ul"> {}
 const Ul = forwardRef<HTMLUListElement, UlProps>(
@@ -105,8 +102,8 @@ const Ul = forwardRef<HTMLUListElement, UlProps>(
       {children}
     </ul>
   ),
-);
-Ul.displayName = "Ul";
+)
+Ul.displayName = "Ul"
 
 interface OlProps extends ComponentPropsWithoutRef<"ol"> {}
 const Ol = forwardRef<HTMLOListElement, OlProps>(
@@ -119,8 +116,8 @@ const Ol = forwardRef<HTMLOListElement, OlProps>(
       {children}
     </ol>
   ),
-);
-Ol.displayName = "Ol";
+)
+Ol.displayName = "Ol"
 
 interface CodeProps extends ComponentPropsWithoutRef<"code"> {}
 const Code = forwardRef<HTMLElement, CodeProps>(
@@ -136,8 +133,8 @@ const Code = forwardRef<HTMLElement, CodeProps>(
       {children}
     </code>
   ),
-);
-Code.displayName = "Code";
+)
+Code.displayName = "Code"
 
 interface SmallProps extends ComponentPropsWithoutRef<"small"> {}
 const Small = forwardRef<HTMLSpanElement, SmallProps>(
@@ -150,7 +147,7 @@ const Small = forwardRef<HTMLSpanElement, SmallProps>(
       {children}
     </span>
   ),
-);
-Small.displayName = "Small";
+)
+Small.displayName = "Small"
 
-export { Blockquote, Code, H1, H2, H3, H4, Ol, Paragraph, Small, Ul };
+export { Blockquote, Code, H1, H2, H3, H4, Ol, Paragraph, Small, Ul }
