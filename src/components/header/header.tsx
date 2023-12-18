@@ -1,4 +1,4 @@
-import { Download, Mail } from "lucide-react"
+import { FileText, Mail } from "lucide-react"
 import Link from "next/link"
 import { Button } from "../ui/button"
 import { H1, Paragraph } from "../ui/typography"
@@ -38,10 +38,13 @@ export function Header() {
                 </Link>
               </Button>
               <Button asChild variant="secondary" className="space-x-2">
-                <Link href="/">
-                  <Download className="w-5" />
-                  <span>Download CV</span>
-                </Link>
+                <a
+                  href="https://drive.google.com/file/d/14RmIdmUncGdnTZA2iwQPNquZJSS1kb8g/view?usp=sharing"
+                  target="_blank"
+                >
+                  <FileText className="w-5" />
+                  <span>View resume</span>
+                </a>
               </Button>
             </div>
           </div>
