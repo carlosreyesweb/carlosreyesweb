@@ -10,7 +10,7 @@ import {
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
-import { Small } from "../ui/typography"
+import { Small } from "./ui/typography"
 
 const skills = [
   {

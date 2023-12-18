@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import { ComponentPropsWithoutRef } from "react"
-import { Badge } from "../ui/badge"
-import { Button } from "../ui/button"
-import { Small } from "../ui/typography"
+import { Badge } from "./ui/badge"
+import { Button } from "./ui/button"
+import { Small } from "./ui/typography"
 
 interface ChangelogCTAProps
   extends Omit<ComponentPropsWithoutRef<"a">, "href" | "target"> {

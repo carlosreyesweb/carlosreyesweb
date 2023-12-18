@@ -1,10 +1,10 @@
 import { FileText, Mail } from "lucide-react"
 import Link from "next/link"
-import { Button } from "../ui/button"
-import { H1, Paragraph } from "../ui/typography"
 import { ChangelogCTA } from "./changelog-cta"
 import { Navbar } from "./navbar"
 import { SkillsShowcase } from "./skills-showcase"
+import { Button } from "./ui/button"
+import { H1, Paragraph } from "./ui/typography"
 
 export function Header() {
   return (
