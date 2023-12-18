@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <DefaultSeo {...SEO} />
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Component {...pageProps} />
       </TooltipProvider>
     </>

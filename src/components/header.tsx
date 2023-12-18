@@ -36,6 +36,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet"
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 import { H1, H3, Paragraph, Small } from "./ui/typography"
 
 export function Header() {
@@ -51,9 +52,8 @@ export function Header() {
             <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
               <H1 className="xl:text-6xl 2xl:text-7xl">
                 An Expert Software Developer for Your Next{" "}
-                <span className="text-primary">&lt;Project /&gt;</span>
-                <span className="animate-ping duration-300 direction-alternate">
-                  _
+                <span className="text-primary before:content-['<'] after:content-['_/>']">
+                  Project
                 </span>
               </H1>
               <Paragraph className="lg:text-xl">
@@ -168,11 +168,17 @@ function SocialLinks() {
     <ul className="sr-only flex items-center lg:not-sr-only">
       {socialLinks.map(({ name, link, icon: Icon }) => (
         <li key={name}>
-          <Button asChild variant="ghost" size="icon">
-            <a href={link} target="_blank" title={name}>
-              <Icon className="w-5" />
-            </a>
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button asChild variant="ghost" size="icon">
+                <a href={link} target="_blank">
+                  <Icon className="w-5" />
+                  <span className="sr-only">{name}</span>
+                </a>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>{name}</TooltipContent>
+          </Tooltip>
         </li>
       ))}
     </ul>
