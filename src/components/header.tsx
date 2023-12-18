@@ -10,7 +10,16 @@ import {
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
-import { ArrowUpRight, Download, Mail, Menu } from "lucide-react"
+import {
+  ArrowUpRight,
+  Download,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  Menu,
+  Twitter,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { ComponentPropsWithoutRef, useState } from "react"
@@ -24,21 +33,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip"
 import { H1, H3, Paragraph, Small } from "./ui/typography"
 
 export function Header() {
   return (
-    <header>
+    <header className="pb-20">
       <Navbar />
-      <div className="bg-[radial-gradient(circle,_#2B2B2B_1px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
+      <div className="bg-[radial-gradient(circle,_#2B2B2B_3px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
         <div className="bg-gradient-to-br from-transparent to-background">
-          <div className="container flex flex-col items-center gap-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 sm:py-36">
+          <div className="container flex flex-col items-center gap-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 md:py-28">
             <ChangelogCTA redirectTo="https://www.esquinadelcodigo.com">
               My blog is now live!
             </ChangelogCTA>
@@ -71,8 +74,8 @@ export function Header() {
                 </Link>
               </Button>
             </div>
-            <SkillsShowcase />
           </div>
+          <SkillsShowcase />
         </div>
       </div>
     </header>
@@ -82,7 +85,7 @@ export function Header() {
 function LogoLink() {
   return (
     <Link href="/">
-      <Image src={logo} alt="Carlos Reyes" className="w-28" priority />
+      <Image src={logo} alt="Carlos Reyes" className="w-24" priority />
     </Link>
   )
 }
@@ -93,8 +96,8 @@ function Navbar() {
   return (
     <div className="sticky top-0 border-b bg-background py-4">
       <div className="container flex items-center justify-between">
-        <LogoLink />
         <DesktopNavigation />
+        <SocialLinks />
         {isDesktop || <MobileNavigation />}
       </div>
     </div>
@@ -128,12 +131,52 @@ const navigation = [
   },
 ]
 
+const socialLinks = [
+  {
+    name: "GitHub",
+    link: "https://github.com/carlosreyesweb",
+    icon: Github,
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/carlosreyesweb",
+    icon: Linkedin,
+  },
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/carlosreyesweb",
+    icon: Instagram,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/carlosreyesweb",
+    icon: Twitter,
+  },
+]
+
+function SocialLinks() {
+  return (
+    <ul className="sr-only flex items-center lg:not-sr-only">
+      {socialLinks.map(({ name, link, icon: Icon }) => (
+        <li key={name}>
+          <Button asChild variant="ghost" size="icon">
+            <a href={link} target="_blank" title={name}>
+              <Icon className="w-5" />
+            </a>
+          </Button>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 function DesktopNavigation() {
   return (
-    <nav className="max-lg:sr-only">
-      <ul className="flex items-center">
+    <nav className="flex items-end gap-x-6">
+      <LogoLink />
+      <ul className="sr-only flex items-center lg:not-sr-only">
         {navigation.map((item) => (
-          <li key={item.path}>
+          <li key={item.name}>
             <Button asChild variant="link">
               <Link href={item.path}>{item.name}</Link>
             </Button>
@@ -159,24 +202,40 @@ function MobileNavigation() {
           <LogoLink />
           <SheetTitle className="sr-only">Menu</SheetTitle>
         </SheetHeader>
-        <nav className="grid gap-y-5 py-5">
-          <H3 className="border-b pb-1">Navigation</H3>
-          <ul>
-            {navigation.map((item) => (
-              <li key={item.path}>
-                <Button
-                  asChild
-                  variant="link"
-                  className="w-full justify-start p-0"
-                >
-                  <Link href={item.path} onClick={() => setOpen(false)}>
-                    {item.name}
-                  </Link>
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="space-y-6 py-5">
+          <div className="space-y-2">
+            <H3 className="border-b pb-1">Navigation</H3>
+            <ul>
+              {navigation.map((item) => (
+                <li key={item.path}>
+                  <Button asChild variant="link" className="p-0">
+                    <Link href={item.path} onClick={() => setOpen(false)}>
+                      {item.name}
+                    </Link>
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <H3 className="border-b pb-1">Social</H3>
+            <ul>
+              {socialLinks.map((item) => (
+                <li key={item.name}>
+                  <Button asChild variant="link" className="p-0">
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </SheetContent>
     </Sheet>
   )
@@ -221,7 +280,7 @@ const skills = [
     icon: AngularjsOriginal,
   },
   {
-    name: "TailwindCSS",
+    name: "Tailwind",
     icon: TailwindcssPlain,
   },
   {
@@ -244,23 +303,35 @@ const skills = [
 
 function SkillsShowcase() {
   return (
-    <div className="mt-4 flex max-w-md flex-col items-center space-y-6">
-      <Small>
+    <div className="container flex w-full flex-col items-center space-y-6">
+      <Small className="text-center">
         Currently working with <strong>these technologies:</strong>
       </Small>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {skills.map(({ name, icon: Icon }) => (
-          <TooltipProvider key={name} delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger>
-                <Icon size="35" color="white" />
-              </TooltipTrigger>
-              <TooltipContent side="bottom" sideOffset={10}>
-                {name}
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
+      <div className="relative w-full overflow-hidden">
+        <div
+          role="presentation"
+          className="absolute left-0 top-0 z-10 h-full w-1/2 bg-gradient-to-r from-background to-transparent"
+        />
+        <ul className="flex animate-slide space-x-10">
+          {skills
+            .concat(skills)
+            .concat(skills)
+            .concat(skills)
+            .map(({ name, icon: Icon }, key) => (
+              <li
+                key={key}
+                title={name}
+                className="flex items-center justify-center"
+              >
+                <Icon size="45" color="white" />
+                <span className="sr-only">{name}</span>
+              </li>
+            ))}
+        </ul>
+        <div
+          role="presentation"
+          className="absolute right-0 top-0 z-10 h-full w-1/2 bg-gradient-to-l from-background to-transparent"
+        />
       </div>
     </div>
   )

@@ -77,6 +77,23 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
 )
 Paragraph.displayName = "Paragraph"
 
+interface AnchorProps extends ComponentPropsWithoutRef<"a"> {}
+const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
+  ({ children, className, ...props }, ref) => (
+    <a
+      ref={ref}
+      className={cn(
+        "font-medium text-primary underline underline-offset-4",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+)
+Anchor.displayName = "Anchor"
+
 interface BlockquoteProps extends ComponentPropsWithoutRef<"blockquote"> {}
 const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   ({ children, className, ...props }, ref) => (
@@ -150,4 +167,4 @@ const Small = forwardRef<HTMLSpanElement, SmallProps>(
 )
 Small.displayName = "Small"
 
-export { Blockquote, Code, H1, H2, H3, H4, Ol, Paragraph, Small, Ul }
+export { Anchor, Blockquote, Code, H1, H2, H3, H4, Ol, Paragraph, Small, Ul }
