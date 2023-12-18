@@ -18,6 +18,7 @@ import {
   Linkedin,
   Mail,
   Menu,
+  Rss,
   Twitter,
 } from "lucide-react"
 import Image from "next/image"
@@ -133,10 +134,16 @@ const navigation = [
 
 const socialLinks = [
   {
+    name: "Blog",
+    link: "https://www.esquinadelcodigo.com",
+    icon: Rss,
+  },
+  {
     name: "GitHub",
     link: "https://github.com/carlosreyesweb",
     icon: Github,
   },
+
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/carlosreyesweb",
