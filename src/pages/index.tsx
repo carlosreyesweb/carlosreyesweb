@@ -1,12 +1,10 @@
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
+import { Header } from "@/sections/landing/header"
 
 export default function LandingPage() {
   return (
     <>
       <Header />
       <main></main>
-      <Footer />
     </>
   )
 }

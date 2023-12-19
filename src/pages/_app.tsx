@@ -1,6 +1,5 @@
-import { Toaster } from "@/components/ui/toaster"
-import { TooltipProvider } from "@/components/ui/tooltip"
 import { SEO } from "@/config/seo"
+import { GlobalLayout } from "@/layouts/global"
 import { roboto, robotoMono } from "@/styles/fonts"
 import "@/styles/globals.css"
 import { DefaultSeo } from "next-seo"
@@ -16,10 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <DefaultSeo {...SEO} />
-      <TooltipProvider delayDuration={0}>
+      <GlobalLayout>
         <Component {...pageProps} />
-        <Toaster />
-      </TooltipProvider>
+      </GlobalLayout>
     </>
   )
 }
