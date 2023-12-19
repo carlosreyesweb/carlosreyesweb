@@ -1,12 +1,14 @@
 import { ContactMeButton } from "@/components/contact-me-button"
-import { H2, Paragraph } from "@/components/ui/typography"
+import { SectionSubHeading } from "@/components/section-subheading"
+import { SectionTitle } from "@/components/section-title"
+import { Paragraph } from "@/components/ui/typography"
 import Image from "next/image"
 import me from "../../../public/me.png"
 
 export function About() {
   return (
     <section className="py-20">
-      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center">
+      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 rounded-lg border-l border-r lg:flex-row lg:items-center">
         <Content />
         <Picture />
       </div>
@@ -18,12 +20,10 @@ function Content() {
   return (
     <div className="relative mx-auto max-w-lg text-center lg:mx-0 lg:text-left xl:rounded-xl xl:border xl:bg-gradient-to-b xl:from-secondary/50 xl:to-background xl:p-8">
       <header>
-        <H2 id="about" className="border-none text-lg uppercase">
-          About me
-        </H2>
-        <p className="text-3xl font-bold">
+        <SectionTitle id="about">About me</SectionTitle>
+        <SectionSubHeading>
           The Full-Fledged Professional You Need
-        </p>
+        </SectionSubHeading>
       </header>
       <Paragraph>
         23 years old, born and raised in Venezuela, I have delivered more than

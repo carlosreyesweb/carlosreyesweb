@@ -1,5 +1,6 @@
 import { About } from "@/sections/landing/about"
 import { Header } from "@/sections/landing/header"
+import { Services } from "@/sections/landing/services"
 
 export default function LandingPage() {
   return (
@@ -7,6 +8,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <About />
+        <Services />
       </main>
     </>
   )
