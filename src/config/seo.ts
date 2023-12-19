@@ -1,6 +1,6 @@
 import { DefaultSeoProps } from "next-seo"
 
-const title = "Carlos Reyes: Software Developer"
+const title = "Carlos Reyes: Frontend Developer"
 const host = process.env.NEXT_PUBLIC_HOST
 const disableRobots = process.env.VERCEL_ENV !== "production"
 
@@ -9,7 +9,7 @@ export const SEO: DefaultSeoProps = {
   dangerouslySetAllPagesToNoFollow: disableRobots,
   title,
   description:
-    "Hi! I'm Carlos Reyes, a Software Developer with 3+ years of experience building websites and web applications. I specialize in JavaScript and TypeScript, and I have professional experience working with React.",
+    "Hi! I'm Carlos Reyes, a Frontend Developer with 3+ years of experience building websites and web applications. I specialize in JavaScript and TypeScript, and I have professional experience working with React.",
   themeColor: "#0A0A0A",
   canonical: host,
   openGraph: {

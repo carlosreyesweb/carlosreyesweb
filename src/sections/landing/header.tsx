@@ -84,13 +84,13 @@ function HeadlineAndSupportingText() {
   return (
     <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
       <H1 className="xl:text-6xl 2xl:text-7xl">
-        An Expert Software Developer for Your Next{" "}
+        An Expert Frontend Developer for Your Next{" "}
         <span className="text-primary before:content-['<'] after:content-['_/>']">
           Project
         </span>
       </H1>
       <Paragraph className="lg:text-xl">
-        Hi! I&apos;m <strong>Carlos Reyes</strong>, a Software Developer with 3+
+        Hi! I&apos;m <strong>Carlos Reyes</strong>, a Frontend Developer with 3+
         years of experience building websites and web applications. I specialize
         in JavaScript and TypeScript, and I have professional experience working
         with React.
