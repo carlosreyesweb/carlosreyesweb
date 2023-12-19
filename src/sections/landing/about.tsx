@@ -8,7 +8,7 @@ import me from "../../../public/me.png"
 export function About() {
   return (
     <section className="py-20">
-      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 rounded-lg border-l border-r lg:flex-row lg:items-center">
+      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center xl:border-x xl:border-x-primary">
         <Content />
         <Picture />
       </div>
@@ -18,11 +18,11 @@ export function About() {
 
 function Content() {
   return (
-    <div className="relative mx-auto max-w-lg text-center lg:mx-0 lg:text-left xl:rounded-xl xl:border xl:bg-gradient-to-b xl:from-secondary/50 xl:to-background xl:p-8">
+    <div className="relative mx-auto max-w-lg text-center lg:mx-0 lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-background lg:p-8 lg:text-left">
       <header>
         <SectionTitle id="about">About me</SectionTitle>
         <SectionSubHeading>
-          The Full-Fledged Professional You Need
+          The Full-Fledged Developer You Need
         </SectionSubHeading>
       </header>
       <Paragraph>
