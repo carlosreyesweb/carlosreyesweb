@@ -1,3 +1,4 @@
+import { ContactMeButton } from "@/components/contact-me-button"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   Css3Original,
@@ -11,7 +12,7 @@ import {
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
-import { ArrowUpRight, FileText, Mail } from "lucide-react"
+import { ArrowUpRight, FileText } from "lucide-react"
 import Link from "next/link"
 import { ReactNode } from "react"
 import { Logo } from "../../components/logo"
@@ -42,7 +43,7 @@ function Navbar() {
   const isDesktop = useMediaQuery("lg")
 
   return (
-    <div className="sticky top-0 border-b bg-background py-4">
+    <div className="sticky top-0 z-50 border-b bg-background py-4">
       <div className="container flex items-center justify-between">
         <nav className="flex items-end gap-x-6">
           <Link href="/">
@@ -101,12 +102,7 @@ function HeadlineAndSupportingText() {
 function CallToActionButtons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
-      <Button asChild className="space-x-2">
-        <Link href="/#contact">
-          <Mail className="w-5" />
-          <span>Contact me</span>
-        </Link>
-      </Button>
+      <ContactMeButton />
       <Button asChild variant="secondary" className="space-x-2">
         <a
           href="https://drive.google.com/file/d/14RmIdmUncGdnTZA2iwQPNquZJSS1kb8g/view?usp=sharing"
@@ -170,11 +166,7 @@ function SkillsShowcase() {
       <Small className="text-center">
         Currently working with <strong>these technologies:</strong>
       </Small>
-      <div className="relative w-full overflow-hidden">
-        <div
-          role="presentation"
-          className="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/2 bg-gradient-to-r from-background to-transparent"
-        />
+      <div className="relative w-full overflow-hidden before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent">
         <ul className="flex animate-slide space-x-10">
           {dupedSkills.map(({ name, icon: Icon }, key) => (
             <li
@@ -187,10 +179,6 @@ function SkillsShowcase() {
             </li>
           ))}
         </ul>
-        <div
-          role="presentation"
-          className="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/2 bg-gradient-to-l from-background to-transparent"
-        />
       </div>
     </div>
   )
