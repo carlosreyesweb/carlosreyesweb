@@ -102,7 +102,7 @@ function CallToActionButtons() {
       </LinkButton>
       <LinkButton
         variant="secondary"
-        href="https://forms.gle/d8ewgp7sd5TJEKdT6"
+        href="https://forms.gle/NTyPaBZaXGofPnCm9"
         target="_blank"
       >
         <MessageCircleHeart className="mr-2 h-5 w-5" />
