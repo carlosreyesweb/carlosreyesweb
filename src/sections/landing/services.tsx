@@ -24,7 +24,7 @@ import Tilt from "react-parallax-tilt"
 export function Services() {
   return (
     <section className="py-20">
-      <div className="container flex flex-col gap-y-6">
+      <div className="container flex flex-col gap-y-8">
         <Header />
         <ServicesGrid />
       </div>
