@@ -1,7 +1,8 @@
-import { ContactMeButton } from "@/components/contact-me-button"
+import { LinkButton } from "@/components/link-button"
 import { SectionSubHeading } from "@/components/section-subheading"
 import { SectionTitle } from "@/components/section-title"
 import { Paragraph } from "@/components/ui/typography"
+import { MessagesSquare } from "lucide-react"
 import Image from "next/image"
 import me from "../../../public/me.png"
 
@@ -33,7 +34,10 @@ function Content() {
         beautiful, accessible web experiences.
       </Paragraph>
       <div className="mt-6">
-        <ContactMeButton />
+        <LinkButton href="/#contact">
+          <MessagesSquare className="mr-2 h-5 w-5" />
+          <span>Let&apos;s chat!</span>
+        </LinkButton>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
+import { LinkButton } from "@/components/link-button"
 import { SectionSubHeading } from "@/components/section-subheading"
 import { SectionTitle } from "@/components/section-title"
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -18,7 +18,6 @@ import {
   LucideIcon,
   Plane,
 } from "lucide-react"
-import Link from "next/link"
 import { ReactNode } from "react"
 import Tilt from "react-parallax-tilt"
 
@@ -123,12 +122,10 @@ function Service({
         </CardHeader>
         <CardContent>{children}</CardContent>
         <CardFooter className="justify-end">
-          <Button asChild className="space-x-1">
-            <Link href="/#contact">
-              <span>Learn more</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </Button>
+          <LinkButton href="/#contact">
+            <span>I want this!</span>
+            <ArrowRight className="ml-1 h-5 w-5" />
+          </LinkButton>
         </CardFooter>
       </Card>
     </Tilt>

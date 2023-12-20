@@ -1,4 +1,4 @@
-import { ContactMeButton } from "@/components/contact-me-button"
+import { LinkButton } from "@/components/link-button"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   Css3Original,
@@ -9,7 +9,7 @@ import {
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
-import { ArrowUpRight, MessageCircleHeart } from "lucide-react"
+import { ArrowUpRight, CalendarPlus, MessageCircleHeart } from "lucide-react"
 import Link from "next/link"
 import { ReactNode } from "react"
 import { Logo } from "../../components/logo"
@@ -96,13 +96,18 @@ function HeadlineAndSupportingText() {
 function CallToActionButtons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
-      <ContactMeButton />
-      <Button asChild variant="secondary" className="space-x-2">
-        <Link href="https://forms.gle/d8ewgp7sd5TJEKdT6" target="_blank">
-          <MessageCircleHeart className="w-5" />
-          <span>Leave Feedback</span>
-        </Link>
-      </Button>
+      <LinkButton href="/#contact">
+        <CalendarPlus className="mr-2 h-5 w-5" />
+        <span>Get a quote</span>
+      </LinkButton>
+      <LinkButton
+        variant="secondary"
+        href="https://forms.gle/d8ewgp7sd5TJEKdT6"
+        target="_blank"
+      >
+        <MessageCircleHeart className="mr-2 h-5 w-5" />
+        <span>Leave feedback</span>
+      </LinkButton>
     </div>
   )
 }
