@@ -4,15 +4,12 @@ import {
   Css3Original,
   Html5Original,
   JavascriptOriginal,
-  MysqlPlain,
-  NestjsPlain,
   NextjsLine,
-  NodejsOriginal,
   ReactOriginal,
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
-import { ArrowUpRight, FileText } from "lucide-react"
+import { ArrowUpRight, MessageCircleHeart } from "lucide-react"
 import Link from "next/link"
 import { ReactNode } from "react"
 import { Logo } from "../../components/logo"
@@ -84,16 +81,13 @@ function HeadlineAndSupportingText() {
   return (
     <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
       <H1 className="xl:text-6xl 2xl:text-7xl">
-        An Expert Frontend Developer for Your Next{" "}
-        <span className="text-primary before:content-['<'] after:content-['_/>']">
-          Project
-        </span>
+        Building Interfaces that <span className="text-primary">Inspire</span>.
       </H1>
       <Paragraph className="lg:text-xl">
-        Hi! I&apos;m <strong>Carlos Reyes</strong>, a Frontend Developer with 3+
-        years of experience building websites and web applications. I specialize
-        in JavaScript and TypeScript, and I have professional experience working
-        with React.
+        Websites shouldn&apos;t be boring. They should be powerful, interactive,
+        and unforgettable. As a Frontend Developer, I bring your vision to life
+        with flawless functionality and user-centric design. Let&apos;s break
+        the mold and build something extraordinary.
       </Paragraph>
     </div>
   )
@@ -104,13 +98,10 @@ function CallToActionButtons() {
     <div className="flex flex-wrap items-center justify-center gap-4">
       <ContactMeButton />
       <Button asChild variant="secondary" className="space-x-2">
-        <a
-          href="https://drive.google.com/file/d/14RmIdmUncGdnTZA2iwQPNquZJSS1kb8g/view?usp=sharing"
-          target="_blank"
-        >
-          <FileText className="w-5" />
-          <span>View resume</span>
-        </a>
+        <Link href="https://forms.gle/d8ewgp7sd5TJEKdT6" target="_blank">
+          <MessageCircleHeart className="w-5" />
+          <span>Leave Feedback</span>
+        </Link>
       </Button>
     </div>
   )
@@ -128,18 +119,6 @@ const skills = [
   {
     name: "Tailwind",
     icon: TailwindcssPlain,
-  },
-  {
-    name: "Nest.js",
-    icon: NestjsPlain,
-  },
-  {
-    name: "MySQL",
-    icon: MysqlPlain,
-  },
-  {
-    name: "Node.js",
-    icon: NodejsOriginal,
   },
   {
     name: "TypeScript",

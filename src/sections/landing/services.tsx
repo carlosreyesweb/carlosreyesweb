@@ -37,7 +37,9 @@ function Header() {
   return (
     <header className="text-center lg:text-left">
       <SectionTitle id="services">Services</SectionTitle>
-      <SectionSubHeading>What Can I Do For You?</SectionSubHeading>
+      <SectionSubHeading>
+        Custom Solutions for Your Unique Challenges.
+      </SectionSubHeading>
     </header>
   )
 }

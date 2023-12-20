@@ -22,15 +22,15 @@ function Content() {
       <header>
         <SectionTitle id="about">About me</SectionTitle>
         <SectionSubHeading>
-          The Full-Fledged Developer You Need
+          Beyond the Code: The Human Behind the Pixels.
         </SectionSubHeading>
       </header>
       <Paragraph>
-        23 years old, born and raised in Venezuela, I have delivered more than
-        8+ products that have helped people in their daily lives. I am a
-        Frontend Developer with 3 years of experience in the field, I have
-        worked with different technologies and I am always looking to learn
-        more.
+        At 23, with roots in Venezuela and a passion for making lives easier,
+        I&apos;ve helped build over 8 products used by people every day. As a
+        3-year frontend developer, I&apos;m always pushing boundaries and
+        embracing new technologies, fueled by curiosity and a love for
+        beautiful, accessible web experiences.
       </Paragraph>
       <div className="mt-6">
         <ContactMeButton />
