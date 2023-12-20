@@ -40,7 +40,7 @@ function Navbar() {
   const isDesktop = useMediaQuery("lg")
 
   return (
-    <div className="sticky top-0 z-50 border-b bg-background py-4">
+    <div className="sticky top-0 z-50 border-b bg-background/50 py-4 backdrop-blur">
       <div className="container flex items-center justify-between">
         <nav className="flex items-end gap-x-6">
           <Link href="/">
