@@ -22,7 +22,7 @@ import { H1, Paragraph, Small } from "../../components/ui/typography"
 
 export function Header() {
   return (
-    <header className="pb-20">
+    <header className="mt-20 pb-20">
       <Navbar />
       <DotGridWrapper>
         <div className="container flex flex-col items-center gap-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 md:py-28">
@@ -40,7 +40,7 @@ function Navbar() {
   const isDesktop = useMediaQuery("lg")
 
   return (
-    <div className="sticky top-0 z-50 border-b bg-background/50 py-4 backdrop-blur">
+    <div className="fixed top-0 z-50 w-full border-b bg-background/50 py-4 backdrop-blur">
       <div className="container flex items-center justify-between">
         <nav className="flex items-end gap-x-6">
           <Link href="/">
