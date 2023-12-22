@@ -1,6 +1,8 @@
+import { LinkButton } from "@/components/link-button"
 import { SectionSubHeading } from "@/components/section-subheading"
 import { SectionTitle } from "@/components/section-title"
-import { ArrowUpRight } from "lucide-react"
+import { H3 } from "@/components/ui/typography"
+import { ArrowUpRight, MessagesSquare } from "lucide-react"
 import Image, { StaticImageData } from "next/image"
 
 export function Portfolio() {
@@ -9,6 +11,7 @@ export function Portfolio() {
       <div className="container flex flex-col gap-y-8">
         <Header />
         <ProjectsShowcase />
+        <CallToAction />
       </div>
     </section>
   )
@@ -82,7 +85,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <li>
-      <figure className="group relative overflow-hidden rounded-lg focus-within:ring focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
+      <figure className="group relative overflow-hidden rounded-lg border focus-within:ring focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
         <Image
           src={coverImage}
           alt={title}
@@ -106,5 +109,19 @@ function ProjectCard({
         </figcaption>
       </figure>
     </li>
+  )
+}
+
+function CallToAction() {
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-6 py-10">
+      <H3 className="text-center">
+        Find out what I can do for you or your business.
+      </H3>
+      <LinkButton href="/#contact" className="scale-110">
+        <MessagesSquare className="mr-2 h-5 w-5" />
+        <span>Let&apos;s talk!</span>
+      </LinkButton>
+    </div>
   )
 }
