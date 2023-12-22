@@ -9,7 +9,7 @@ import me from "../../../public/me.png"
 export function About() {
   return (
     <section id="about" className="scroll-m-20 py-20">
-      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center xl:border-x xl:border-x-secondary">
+      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center">
         <Content />
         <Picture />
       </div>
