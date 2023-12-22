@@ -4,6 +4,8 @@ import { SectionTitle } from "@/components/section-title"
 import { H3 } from "@/components/ui/typography"
 import { ArrowUpRight, MessagesSquare } from "lucide-react"
 import Image, { StaticImageData } from "next/image"
+import laEsquinaDelCodigoCover from "../../../public/projects/la-esquina-del-codigo.png"
+import radarCiudadCaracasCover from "../../../public/projects/radar-ciudad-caracas.png"
 
 export function Portfolio() {
   return (
@@ -32,40 +34,16 @@ function ProjectsShowcase() {
   return (
     <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/fdfsfsdfsd/1920/1080"
-        url="http://localhost:3000"
+        title="Radar Ciudad Caracas"
+        description="Web Application to report incidents in Caracas"
+        coverImage={radarCiudadCaracasCover}
+        url="https://radarciudad.info"
       />
       <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/sdfjhfjdhjsf/1920/1080"
-        url="http://localhost:3000"
-      />
-      <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/fhdjfhdjsf/1920/1080"
-        url="http://localhost:3000"
-      />
-      <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/sdfgfyuwei/1920/1080"
-        url="http://localhost:3000"
-      />
-      <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/dshadjhjkfsd/1920/1080"
-        url="http://localhost:3000"
-      />
-      <ProjectCard
-        title="Project Test"
-        description="Project Test For Layout"
-        coverImage="https://picsum.photos/seed/sdhjshdfjskhf/1920/1080"
-        url="http://localhost:3000"
+        title="La Esquina del Código"
+        description="Personal Blog about Web Development"
+        coverImage={laEsquinaDelCodigoCover}
+        url="https://www.esquinadelcodigo.com"
       />
     </ul>
   )
@@ -89,8 +67,6 @@ function ProjectCard({
         <Image
           src={coverImage}
           alt={title}
-          width={1920}
-          height={1080}
           className="object-cover object-top"
         />
         <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background to-transparent p-6">
@@ -114,7 +90,7 @@ function ProjectCard({
 
 function CallToAction() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6 py-10">
+    <div className="flex flex-wrap items-center justify-center gap-6">
       <H3 className="text-center">
         Find out what I can do for you or your business.
       </H3>
