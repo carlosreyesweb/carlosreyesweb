@@ -9,7 +9,7 @@ import me from "../../../public/me.png"
 export function About() {
   return (
     <section id="about" className="scroll-m-20 py-20">
-      <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center">
+      <div className="container flex flex-col items-center justify-center gap-x-24 gap-y-12 lg:flex-row">
         <Content />
         <Picture />
       </div>
@@ -19,7 +19,7 @@ export function About() {
 
 function Content() {
   return (
-    <div className="relative mx-auto max-w-lg text-center lg:mx-0 lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-background lg:p-8 lg:text-left">
+    <div className="max-w-lg text-center lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-transparent lg:p-8 lg:text-left">
       <header>
         <SectionTitle>About me</SectionTitle>
         <SectionSubHeading>
@@ -45,7 +45,7 @@ function Content() {
 
 function Picture() {
   return (
-    <div className="relative mx-auto flex max-w-lg justify-center before:absolute before:bottom-0 before:top-1/4 before:h-1/2 before:w-1/2 before:rounded-full before:bg-gradient-to-t before:from-transparent before:to-primary before:blur-3xl after:absolute after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-50% after:to-background lg:mx-0">
+    <div className="relative flex max-w-lg justify-center before:absolute before:bottom-0 before:top-1/4 before:h-1/2 before:w-1/2 before:rounded-full before:bg-gradient-to-t before:from-transparent before:to-primary before:blur-3xl after:absolute after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-50% after:to-background lg:mx-0">
       <Image
         src={me}
         alt="Carlos Reyes, Frontend Developer"

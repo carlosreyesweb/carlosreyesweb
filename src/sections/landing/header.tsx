@@ -151,7 +151,7 @@ function SkillsShowcase() {
         Currently working with <strong>these technologies:</strong>
       </Small>
       <div className="relative w-full overflow-hidden before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent">
-        <ul className="flex animate-slide space-x-10">
+        <ul className="flex animate-slide space-x-10 hover:paused">
           {dupedSkills.map(({ name, icon: Icon }, key) => (
             <li
               key={key}
