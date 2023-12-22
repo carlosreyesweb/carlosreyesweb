@@ -23,7 +23,7 @@ import Tilt from "react-parallax-tilt"
 
 export function Services() {
   return (
-    <section className="py-20">
+    <section id="services" className="scroll-m-20 py-20">
       <div className="container flex flex-col gap-y-8">
         <Header />
         <ServicesGrid />
@@ -35,7 +35,7 @@ export function Services() {
 function Header() {
   return (
     <header className="text-center lg:text-left">
-      <SectionTitle id="services">Services</SectionTitle>
+      <SectionTitle>Services</SectionTitle>
       <SectionSubHeading>
         Custom Solutions for Your Unique Challenges.
       </SectionSubHeading>

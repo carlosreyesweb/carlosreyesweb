@@ -8,7 +8,7 @@ import me from "../../../public/me.png"
 
 export function About() {
   return (
-    <section className="py-20">
+    <section id="about" className="scroll-m-20 py-20">
       <div className="container flex flex-col justify-center gap-x-24 gap-y-12 lg:flex-row lg:items-center xl:border-x xl:border-x-secondary">
         <Content />
         <Picture />
@@ -21,7 +21,7 @@ function Content() {
   return (
     <div className="relative mx-auto max-w-lg text-center lg:mx-0 lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-background lg:p-8 lg:text-left">
       <header>
-        <SectionTitle id="about">About me</SectionTitle>
+        <SectionTitle>About me</SectionTitle>
         <SectionSubHeading>
           Beyond the Code: The Human Behind the Pixels.
         </SectionSubHeading>
