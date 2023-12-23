@@ -1,4 +1,9 @@
 import { LinkButton } from "@/components/link-button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   Css3Original,
@@ -9,6 +14,7 @@ import {
   TailwindcssPlain,
   TypescriptOriginal,
 } from "devicons-react"
+import AutoPlay from "embla-carousel-autoplay"
 import { ArrowUpRight, CalendarPlus, MessageCircleHeart } from "lucide-react"
 import Link from "next/link"
 import { ReactNode } from "react"
@@ -150,20 +156,28 @@ function SkillsShowcase() {
       <Small className="text-center">
         Currently working with <strong>these technologies:</strong>
       </Small>
-      <div className="relative w-full overflow-hidden before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent">
-        <ul className="flex animate-slide space-x-10 hover:paused">
-          {dupedSkills.map(({ name, icon: Icon }, key) => (
-            <li
-              key={key}
-              title={name}
-              className="flex flex-col items-center gap-y-2"
+      <Carousel
+        opts={{
+          align: "center",
+          loop: true,
+        }}
+        plugins={[AutoPlay({ delay: 1000, stopOnInteraction: false })]}
+        className="w-full before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent"
+      >
+        <CarouselContent>
+          {dupedSkills.map(({ name, icon: Icon }, index) => (
+            <CarouselItem
+              key={index}
+              className="basis-1/4 md:basis-1/6 lg:basis-1/12"
             >
-              <Icon size="45" color="white" />
-              <span className="text-sm font-medium">{name}</span>
-            </li>
+              <div className="flex flex-col items-center gap-y-2">
+                <Icon size="45" color="white" />
+                <span className="text-sm font-medium">{name}</span>
+              </div>
+            </CarouselItem>
           ))}
-        </ul>
-      </div>
+        </CarouselContent>
+      </Carousel>
     </div>
   )
 }
