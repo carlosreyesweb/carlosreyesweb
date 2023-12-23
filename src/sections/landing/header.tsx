@@ -31,7 +31,7 @@ export function Header() {
     <header className="mt-20 pb-20">
       <Navbar />
       <DotGridWrapper>
-        <div className="container flex flex-col items-center gap-y-8 py-24 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10 md:py-28">
+        <div className="container flex flex-col items-center gap-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
           <NewCallout />
           <HeadlineAndSupportingText />
           <CallToActionButtons />
@@ -90,10 +90,8 @@ function HeadlineAndSupportingText() {
         Building Interfaces that <span className="text-primary">Inspire</span>.
       </H1>
       <Paragraph className="lg:text-xl">
-        Websites shouldn&apos;t be boring. They should be powerful, interactive,
-        and unforgettable. As a Frontend Developer, I bring your vision to life
-        with flawless functionality and user-centric design. Let&apos;s break
-        the mold and build something extraordinary.
+        Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
+        that tell your brand story like no other. Let&apos;s collaborate!
       </Paragraph>
     </div>
   )
