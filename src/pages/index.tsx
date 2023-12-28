@@ -1,6 +1,6 @@
 import { About } from "@/sections/landing/about"
+import { CaseStudies } from "@/sections/landing/case-studies"
 import { Header } from "@/sections/landing/header"
-import { Portfolio } from "@/sections/landing/portfolio"
 import { Services } from "@/sections/landing/services"
 
 export default function LandingPage() {
@@ -10,7 +10,7 @@ export default function LandingPage() {
       <main>
         <About />
         <Services />
-        <Portfolio />
+        <CaseStudies />
       </main>
     </>
   )
