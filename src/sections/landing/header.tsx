@@ -1,5 +1,4 @@
 import { LetsChatButton } from "@/components/lets-chat-button"
-import { LinkButton } from "@/components/link-button"
 import {
   Carousel,
   CarouselContent,
@@ -95,13 +94,6 @@ function CallToActionButtons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
       <LetsChatButton />
-      <LinkButton
-        variant="secondary"
-        href="https://forms.gle/NTyPaBZaXGofPnCm9"
-        target="_blank"
-      >
-        Leave feedback
-      </LinkButton>
     </div>
   )
 }
