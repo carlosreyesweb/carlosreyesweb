@@ -156,7 +156,7 @@ function SkillsShowcase() {
           {dupedSkills.map(({ name, icon: Icon }, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/4 md:basis-1/6 lg:basis-1/12"
+              className="basis-1/3 md:basis-1/5 lg:basis-1/6 xl:basis-1/12"
             >
               <div className="flex flex-col items-center gap-y-2">
                 <Icon size="45" color="white" />
