@@ -8,10 +8,7 @@ export function SectionTitle({
   ...props
 }: ComponentPropsWithoutRef<"h2">) {
   return (
-    <H2
-      className={cn("border-none text-lg uppercase text-primary", className)}
-      {...props}
-    >
+    <H2 {...props} className={cn("", className)}>
       {children}
     </H2>
   )

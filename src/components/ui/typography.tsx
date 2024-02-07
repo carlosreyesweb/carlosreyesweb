@@ -7,7 +7,7 @@ const H1 = forwardRef<HTMLHeadingElement, H1Props>(
     <h1
       ref={ref}
       className={cn(
-        "scroll-m-20 font-mono text-4xl font-bold tracking-tight lg:text-5xl",
+        "scroll-m-20 font-mono text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl",
         className,
       )}
       {...props}
@@ -24,7 +24,7 @@ const H2 = forwardRef<HTMLHeadingElement, H2Props>(
     <h2
       ref={ref}
       className={cn(
-        "scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight first:mt-0",
+        "scroll-m-20 text-3xl font-bold first:mt-0 md:text-4xl",
         className,
       )}
       {...props}
@@ -40,7 +40,7 @@ const H3 = forwardRef<HTMLHeadingElement, H3Props>(
   ({ children, className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn("scroll-m-20 text-2xl font-bold tracking-tight", className)}
+      className={cn("scroll-m-20 text-2xl font-bold md:text-3xl", className)}
       {...props}
     >
       {children}
@@ -54,7 +54,7 @@ const H4 = forwardRef<HTMLHeadingElement, H4Props>(
   ({ children, className, ...props }, ref) => (
     <h4
       ref={ref}
-      className={cn("scroll-m-20 text-xl font-bold tracking-tight", className)}
+      className={cn("scroll-m-20 text-xl font-bold md:text-2xl", className)}
       {...props}
     >
       {children}
@@ -68,7 +68,10 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ children, className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn(
+        "text-lg leading-7 md:text-xl [&:not(:first-child)]:mt-6",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -99,7 +102,10 @@ const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   ({ children, className, ...props }, ref) => (
     <blockquote
       ref={ref}
-      className={cn("mt-6 border-l-2 pl-6 italic", className)}
+      className={cn(
+        "mt-6 border-l-2 pl-6 text-lg italic md:text-xl",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -113,7 +119,10 @@ const Ul = forwardRef<HTMLUListElement, UlProps>(
   ({ children, className, ...props }, ref) => (
     <ul
       ref={ref}
-      className={cn("my-6 ml-6 list-disc [&>li]:mt-2", className)}
+      className={cn(
+        "my-6 ml-6 list-disc text-lg md:text-xl [&>li]:mt-2",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -127,7 +136,10 @@ const Ol = forwardRef<HTMLOListElement, OlProps>(
   ({ children, className, ...props }, ref) => (
     <ol
       ref={ref}
-      className={cn("my-6 ml-6 list-decimal [&>li]:mt-2", className)}
+      className={cn(
+        "my-6 ml-6 list-decimal text-lg md:text-xl [&>li]:mt-2",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -142,7 +154,7 @@ const Code = forwardRef<HTMLElement, CodeProps>(
     <code
       ref={ref}
       className={cn(
-        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold md:text-xl",
         className,
       )}
       {...props}
@@ -158,7 +170,7 @@ const Small = forwardRef<HTMLSpanElement, SmallProps>(
   ({ children, className, ...props }, ref) => (
     <span
       ref={ref}
-      className={cn("text-sm font-medium leading-none", className)}
+      className={cn("font-medium leading-none", className)}
       {...props}
     >
       {children}

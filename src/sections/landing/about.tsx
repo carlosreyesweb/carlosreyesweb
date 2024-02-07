@@ -1,14 +1,12 @@
-import { LinkButton } from "@/components/link-button"
-import { SectionSubHeading } from "@/components/section-subheading"
+import { LetsChatButton } from "@/components/lets-chat-button"
 import { SectionTitle } from "@/components/section-title"
 import { Paragraph } from "@/components/ui/typography"
-import { MessagesSquare } from "lucide-react"
 import Image from "next/image"
 import me from "../../../public/me.png"
 
 export function About() {
   return (
-    <section id="about" className="scroll-m-20 py-20">
+    <section className="py-20">
       <div className="container flex flex-col items-center justify-center gap-x-24 gap-y-12 lg:flex-row">
         <Content />
         <Picture />
@@ -19,13 +17,8 @@ export function About() {
 
 function Content() {
   return (
-    <div className="max-w-lg text-center lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-transparent lg:p-8 lg:text-left">
-      <header>
-        <SectionTitle>About me</SectionTitle>
-        <SectionSubHeading>
-          Beyond the Code: The Human Behind the Pixels.
-        </SectionSubHeading>
-      </header>
+    <div className="max-w-lg space-y-6 text-center lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-transparent lg:p-8 lg:text-left">
+      <SectionTitle id="about">The Human Behind the Pixels</SectionTitle>
       <Paragraph>
         At 23, with roots in Venezuela and a passion for making lives easier,
         I&apos;ve helped build over 8 products used by people every day. As a
@@ -33,12 +26,7 @@ function Content() {
         embracing new technologies, fueled by curiosity and a love for
         beautiful, accessible web experiences.
       </Paragraph>
-      <div className="mt-6">
-        <LinkButton href="/#contact">
-          <MessagesSquare className="mr-2 h-5 w-5" />
-          <span>Let&apos;s chat!</span>
-        </LinkButton>
-      </div>
+      <LetsChatButton />
     </div>
   )
 }

@@ -48,7 +48,8 @@ export function Navigation(props: NavigationProps) {
           <Button
             asChild
             variant="link"
-            className={variant === "menu" ? "p-0" : ""}
+            size="sm"
+            className={variant === "menu" ? "px-0" : ""}
           >
             <Link href={item.href} onClick={onLinkClick}>
               {item.label}

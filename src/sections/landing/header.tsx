@@ -1,10 +1,10 @@
+import { LetsChatButton } from "@/components/lets-chat-button"
 import { LinkButton } from "@/components/link-button"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
-import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   Css3Original,
   Html5Original,
@@ -15,13 +15,12 @@ import {
   TypescriptOriginal,
 } from "devicons-react"
 import AutoPlay from "embla-carousel-autoplay"
-import { ArrowUpRight, CalendarPlus, MessageCircleHeart } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { ReactNode } from "react"
 import { Logo } from "../../components/logo"
 import { Menu } from "../../components/menu"
 import { Navigation } from "../../components/navigation"
-import { SocialLinks } from "../../components/social-links"
 import { Badge } from "../../components/ui/badge"
 import { Button } from "../../components/ui/button"
 import { H1, Paragraph, Small } from "../../components/ui/typography"
@@ -31,7 +30,7 @@ export function Header() {
     <header className="mt-20 pb-20">
       <Navbar />
       <DotGridWrapper>
-        <div className="container flex flex-col items-center gap-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
+        <div className="container flex flex-col items-center space-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
           <NewCallout />
           <HeadlineAndSupportingText />
           <CallToActionButtons />
@@ -43,20 +42,15 @@ export function Header() {
 }
 
 function Navbar() {
-  const isDesktop = useMediaQuery("lg")
-
   return (
     <div className="fixed top-0 z-50 w-full border-b bg-background/50 py-4 backdrop-blur">
-      <div className="container flex items-center justify-between">
-        <nav className="flex items-end gap-x-6">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <Navigation variant="navbar" />
-        </nav>
-        <SocialLinks className="sr-only lg:not-sr-only" />
-        {isDesktop ? null : <Menu />}
-      </div>
+      <nav className="container flex items-center justify-between">
+        <Link href="/">
+          <Logo />
+        </Link>
+        <Navigation variant="navbar" />
+        <Menu />
+      </nav>
     </div>
   )
 }
@@ -73,7 +67,7 @@ function DotGridWrapper({ children }: { children: ReactNode }) {
 
 function NewCallout() {
   return (
-    <Button asChild variant="secondary" className="rounded-full">
+    <Button asChild variant="secondary" className="rounded-full px-4" size="sm">
       <a href="https://www.esquinadelcodigo.com" target="_blank">
         <Badge>New!</Badge>
         <Small className="ml-2 mr-1">My blog is now live!</Small>
@@ -86,10 +80,10 @@ function NewCallout() {
 function HeadlineAndSupportingText() {
   return (
     <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
-      <H1 className="xl:text-6xl 2xl:text-7xl">
+      <H1>
         Building Interfaces that <span className="text-primary">Inspire</span>.
       </H1>
-      <Paragraph className="lg:text-xl">
+      <Paragraph>
         Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
         that tell your brand story like no other. Let&apos;s collaborate!
       </Paragraph>
@@ -100,17 +94,13 @@ function HeadlineAndSupportingText() {
 function CallToActionButtons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
-      <LinkButton href="/#contact">
-        <CalendarPlus className="mr-2 h-5 w-5" />
-        <span>Get a quote</span>
-      </LinkButton>
+      <LetsChatButton />
       <LinkButton
         variant="secondary"
         href="https://forms.gle/NTyPaBZaXGofPnCm9"
         target="_blank"
       >
-        <MessageCircleHeart className="mr-2 h-5 w-5" />
-        <span>Leave feedback</span>
+        Leave feedback
       </LinkButton>
     </div>
   )

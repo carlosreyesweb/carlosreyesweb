@@ -18,7 +18,7 @@ export function Menu() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
+      <SheetTrigger asChild className="lg:hidden">
         <Button variant="outline" size="icon">
           <MenuIcon className="w-5" />
         </Button>
