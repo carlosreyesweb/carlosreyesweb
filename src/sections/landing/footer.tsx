@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t">
       <div className="container flex flex-col items-center space-y-4 py-12">
         <Link href="/">
-          <Logo className="w-36" />
+          <Logo className="w-28" />
         </Link>
         <SocialLinks />
         <p className="text-center text-foreground">

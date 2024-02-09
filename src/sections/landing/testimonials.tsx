@@ -1,18 +1,27 @@
 import { LinkButton } from "@/components/link-button"
 import { SectionTitle } from "@/components/section-title"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Paragraph } from "@/components/ui/typography"
+import { getUserInitials } from "@/lib/get-user-initials"
 import { cn } from "@/lib/utils"
-import Image, { StaticImageData } from "next/image"
 import { useState } from "react"
 
 const testimonials = [
   {
     quote:
+      'Carlos is a very committed and dedicated person in his area of work, he has helped me a lot to learn about the world of programming and web development, thanks both to his blog "La Esquina del Código" and personally, because thanks to his tutoring I have been able to advance a lot in my way to become a web developer and understand much better how the world of development works.',
+    author: {
+      name: "Alexis Clavo",
+      title: "Software Development Student",
+    },
+  },
+  {
+    quote:
       "I highly recommend Carlos. He was a great asset to my professional development. He is an ethical, professional, and detail-oriented individual who takes great care in his work. He has a strong understanding of the industry and is able to communicate effectively with both clients and colleagues. I would give him a 15/10 rating.",
     author: {
       name: "Jose Cortez",
-      title: "Web Developer",
+      title: "Software Developer",
       avatar:
         "https://media.licdn.com/dms/image/D4E03AQHo5YQiojrZdg/profile-displayphoto-shrink_800_800/0/1681485779466?e=1712793600&v=beta&t=0Bbn9mgsFy7jQklzUmLtDP1Fey_qNxQKojcUVnQTF_o",
     },
@@ -124,24 +133,21 @@ interface TestimonialProps {
   author: {
     name: string
     title: string
-    avatar: string | StaticImageData
+    avatar?: string
   }
 }
 function Testimonial(props: TestimonialProps) {
   const { quote, author } = props
+  const initials = getUserInitials(author.name)
 
   return (
     <figure className="mb-4 break-inside-avoid-column space-y-4 rounded-xl border bg-secondary/30 px-8 py-6">
       <blockquote>{quote}</blockquote>
       <figcaption className="flex items-center gap-x-4">
-        <Image
-          src={author.avatar}
-          alt={author.name}
-          className="rounded-full object-cover object-center"
-          width={50}
-          height={50}
-          aria-hidden
-        />
+        <Avatar className="h-[50px] w-[50px]">
+          <AvatarImage src={author.avatar} />
+          <AvatarFallback className="font-medium">{initials}</AvatarFallback>
+        </Avatar>
         <div className="flex flex-col">
           <cite className="text-lg font-semibold not-italic">
             {author.name}

@@ -102,16 +102,14 @@ function CaseStudy({
         </H3>
         <Paragraph>{description}</Paragraph>
         <Separator />
-        <ul className="flex gap-x-10">
+        <dl className="flex gap-x-10">
           {metrics.map((metric, index) => (
-            <li className="flex flex-col" key={index}>
-              <span className="text-3xl font-bold">{metric.value}</span>
-              <span className="text-muted-foreground">
-                {metric.description}
-              </span>
-            </li>
+            <div key={index}>
+              <dt className="text-3xl font-bold">{metric.value}</dt>
+              <dd className="text-muted-foreground">{metric.description}</dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </figcaption>
     </figure>
   )
