@@ -6,11 +6,9 @@ import me from "../../../public/me.png"
 
 export function About() {
   return (
-    <section className="py-20">
-      <div className="container flex flex-col items-center justify-center gap-x-24 gap-y-12 lg:flex-row">
-        <Content />
-        <Picture />
-      </div>
+    <section className="container flex flex-col items-center justify-center gap-x-24 gap-y-12 py-20 lg:flex-row">
+      <Content />
+      <Picture />
     </section>
   )
 }

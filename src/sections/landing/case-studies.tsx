@@ -9,15 +9,13 @@ import rivkaDevelopmentWebsite from "../../../public/projects/rivka-development-
 
 export function CaseStudies() {
   return (
-    <section className="py-20">
-      <div className="container flex flex-col space-y-8">
-        <SectionTitle id="case-studies" className="text-center">
-          How I Solved Real-World Web Challenges
-        </SectionTitle>
-        <div>
-          <RivkaDevelopmentWebsite />
-          <RadarCiudadCaracas />
-        </div>
+    <section className="container flex flex-col space-y-8 py-20">
+      <SectionTitle id="case-studies" className="text-center">
+        How I Solved Real-World Web Challenges
+      </SectionTitle>
+      <div>
+        <RivkaDevelopmentWebsite />
+        <RadarCiudadCaracas />
       </div>
     </section>
   )

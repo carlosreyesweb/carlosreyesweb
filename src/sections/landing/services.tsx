@@ -6,13 +6,11 @@ import { ReactNode } from "react"
 
 export function Services() {
   return (
-    <section className="py-20">
-      <div className="container flex flex-col gap-y-8">
-        <SectionTitle id="services" className="text-center">
-          Custom Solutions for Your Unique Challenges
-        </SectionTitle>
-        <ServicesGrid />
-      </div>
+    <section className="container flex flex-col gap-y-8 py-20">
+      <SectionTitle id="services" className="text-center">
+        Custom Solutions for Your Unique Challenges
+      </SectionTitle>
+      <ServicesGrid />
     </section>
   )
 }
@@ -48,7 +46,7 @@ interface ServiceProps {
 }
 function Service({ className, title, description, icon: Icon }: ServiceProps) {
   return (
-    <div
+    <article
       className={cn(
         "group relative flex flex-col justify-end space-y-2 rounded-2xl border-2 bg-secondary/30 p-8 transition-colors first:min-h-[300px] hover:border-primary first:md:row-span-2 first:md:min-h-[500px]",
         className,
@@ -62,6 +60,6 @@ function Service({ className, title, description, icon: Icon }: ServiceProps) {
       )}
       <H3 className="relative group-first:lg:text-4xl">{title}</H3>
       <Paragraph className="relative">{description}</Paragraph>
-    </div>
+    </article>
   )
 }
