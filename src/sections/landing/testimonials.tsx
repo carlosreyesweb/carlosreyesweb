@@ -9,6 +9,16 @@ import { useState } from "react"
 const testimonials = [
   {
     quote:
+      "I highly recommend Carlos. He was a great asset to my professional development. He is an ethical, professional, and detail-oriented individual who takes great care in his work. He has a strong understanding of the industry and is able to communicate effectively with both clients and colleagues. I would give him a 15/10 rating.",
+    author: {
+      name: "Jose Cortez",
+      title: "Web Developer",
+      avatar:
+        "https://media.licdn.com/dms/image/D4E03AQHo5YQiojrZdg/profile-displayphoto-shrink_800_800/0/1681485779466?e=1712793600&v=beta&t=0Bbn9mgsFy7jQklzUmLtDP1Fey_qNxQKojcUVnQTF_o",
+    },
+  },
+  {
+    quote:
       "Carlos is an exceptional frontend developer. His code is clean and efficient, standing out for his attention to detail and commitment to very good programming practices. In addition to his technical skills, he demonstrates a proactive and collaborative attitude, being a valuable asset to any development team. His ability to translate design concepts into intuitive interfaces has raised the quality of our projects remarkably.",
     author: {
       name: "Kathereen Gonzalez",
