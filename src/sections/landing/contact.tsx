@@ -23,10 +23,12 @@ export function Contact() {
           <SectionTitle className="text-center" id="contact">
             Let&apos;s Work Together!
           </SectionTitle>
-          <Paragraph className="mx-auto max-w-lg text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
-            omnis vitae dignissimos incidunt similique, nobis aliquam enim autem
-            ut.
+          <Paragraph className="mx-auto max-w-4xl text-center">
+            Ready to turn your vision into reality? I&apos;m eager to
+            collaborate! Together, we&apos;ll explore innovative solutions,
+            overcome obstacles, and achieve remarkable results. Don&apos;t
+            hesitate to reach out and discuss your project. Let&apos;s embark on
+            this exciting journey together and unlock your full potential.
           </Paragraph>
           <ContactForm />
         </div>

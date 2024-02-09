@@ -1,6 +1,10 @@
 import { LinkButton } from "@/components/link-button"
 import { SectionTitle } from "@/components/section-title"
+import { Button } from "@/components/ui/button"
+import { Paragraph } from "@/components/ui/typography"
+import { cn } from "@/lib/utils"
 import Image, { StaticImageData } from "next/image"
+import { useState } from "react"
 
 const testimonials = [
   {
@@ -56,12 +60,21 @@ const testimonials = [
 ]
 
 export function Testimonials() {
+  const [showAll, setShowAll] = useState(false)
+
   return (
     <section className="container space-y-8 py-20">
       <SectionTitle id="testimonials" className="text-center">
         Trusted by Coworkers and Clients
       </SectionTitle>
-      <div className="flex items-center justify-center gap-x-2">
+      <Paragraph className="mx-auto max-w-4xl text-center">
+        Trust matters. My dedication and collaborative spirit earn me the
+        unwavering support of both colleagues and clients. They value my
+        transparency, open communication, and commitment to exceeding
+        expectations. Let me bring that same level of trust and reliability to
+        your projects.
+      </Paragraph>
+      <div className="flex justify-center">
         <LinkButton
           href="https://forms.gle/pTskzcMYaG4ew4NX9"
           target="_blank"
@@ -70,10 +83,27 @@ export function Testimonials() {
           Leave a Testimonial
         </LinkButton>
       </div>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
-        {testimonials.map((testimonial, index) => (
-          <Testimonial key={index} {...testimonial} />
-        ))}
+      <div
+        className={cn(
+          "relative max-h-[500px] overflow-y-hidden after:pointer-events-none after:absolute after:inset-0 after:flex after:items-end after:justify-center after:gap-x-2 after:bg-gradient-to-t after:from-background after:to-transparent",
+          showAll && "max-h-full after:hidden",
+        )}
+      >
+        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
+          {testimonials.map((testimonial, index) => (
+            <Testimonial key={index} {...testimonial} />
+          ))}
+        </div>
+        {showAll || (
+          <Button
+            type="button"
+            variant="outline"
+            className="absolute bottom-0 left-1/2 z-10 mx-auto -translate-x-1/2"
+            onClick={() => setShowAll(true)}
+          >
+            Show All Testimonials
+          </Button>
+        )}
       </div>
     </section>
   )

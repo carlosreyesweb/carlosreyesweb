@@ -6,10 +6,16 @@ import { ReactNode } from "react"
 
 export function Services() {
   return (
-    <section className="container flex flex-col gap-y-8 py-20">
+    <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="services" className="text-center">
         Custom Solutions for Your Unique Challenges
       </SectionTitle>
+      <Paragraph className="mx-auto max-w-4xl text-center">
+        No cookie-cutter solutions here. I create custom strategies tailored to
+        your specific challenges, integrating seamlessly into your workflow to
+        unlock your full potential. Let me help you achieve the unique success
+        you deserve.
+      </Paragraph>
       <ServicesGrid />
     </section>
   )
@@ -20,17 +26,22 @@ function ServicesGrid() {
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2">
       <Service
         title="Websites"
-        description="Best overall for most use cases. It's the most common type of website."
+        description="Your digital heartbeat. I craft bespoke websites to 
+        achieve your goals, from branding to sales to community. 
+        Beautiful, optimized, effective."
         icon={Globe2}
       />
       <Service
         title="Web Applications"
-        description="Best suited for complex applications that require a lot of interactivity and real-time updates."
+        description="Ditch the clunky. I build powerful, custom web apps that 
+        simplify tasks, automate workflows, and boost productivity. Smarter, 
+        not harder."
         icon={LayoutGrid}
       />
       <Service
         title="Landing Pages"
-        description="Perfect for marketing campaigns, a landing page is a single page website that is designed to convert visitors into leads."
+        description="Conversion champions. Captivating copy, strategic design, 
+        clear calls to action. Get the clicks, drive results."
         icon={Plane}
       />
     </div>

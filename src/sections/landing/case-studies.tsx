@@ -13,6 +13,12 @@ export function CaseStudies() {
       <SectionTitle id="case-studies" className="text-center">
         How I Solved Real-World Web Challenges
       </SectionTitle>
+      <Paragraph className="mx-auto max-w-4xl text-center">
+        Forget theory, see real-world web challenges solved! From complex
+        e-commerce platforms to high-traffic websites, I share not just
+        successes but the thought processes and strategies behind them,
+        equipping you with valuable insights for your own projects.
+      </Paragraph>
       <div>
         <RivkaDevelopmentWebsite />
         <RadarCiudadCaracas />
