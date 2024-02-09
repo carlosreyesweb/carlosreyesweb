@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { Button } from "./ui/button"
 
@@ -49,7 +50,10 @@ export function Navigation(props: NavigationProps) {
             asChild
             variant="link"
             size="sm"
-            className={variant === "menu" ? "px-0" : ""}
+            className={cn(
+              variant === "menu" && "px-0",
+              variant === "footer" && "text-foreground",
+            )}
           >
             <Link href={item.href} onClick={onLinkClick}>
               {item.label}

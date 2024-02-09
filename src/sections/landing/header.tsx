@@ -30,7 +30,7 @@ export function Header() {
       <Navbar />
       <DotGridWrapper>
         <div className="container flex flex-col items-center space-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
-          <NewCallout />
+          <Banner />
           <HeadlineAndSupportingText />
           <CallToActionButtons />
         </div>
@@ -57,14 +57,14 @@ function Navbar() {
 function DotGridWrapper({ children }: { children: ReactNode }) {
   return (
     <div className="bg-[radial-gradient(circle,_#2B2B2B_3px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
-      <div className="bg-gradient-to-br from-transparent to-background">
+      <div className="bg-gradient-to-br from-transparent to-background backdrop-blur-sm">
         {children}
       </div>
     </div>
   )
 }
 
-function NewCallout() {
+function Banner() {
   return (
     <Button asChild variant="secondary" className="rounded-full px-4" size="sm">
       <a href="https://www.esquinadelcodigo.com" target="_blank">

@@ -15,7 +15,7 @@ export function About() {
 
 function Content() {
   return (
-    <div className="max-w-lg space-y-6 text-center lg:rounded-lg lg:border lg:bg-gradient-to-b lg:from-secondary/50 lg:to-transparent lg:p-8 lg:text-left">
+    <div className="max-w-lg space-y-6 text-center lg:rounded-lg lg:border lg:bg-secondary/30 lg:p-8 lg:text-left">
       <SectionTitle id="about">The Human Behind the Pixels</SectionTitle>
       <Paragraph>
         At 23, with roots in Venezuela and a passion for making lives easier,
