@@ -59,7 +59,7 @@ function Service({ className, title, description, icon: Icon }: ServiceProps) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col justify-end space-y-2 rounded-2xl border-2 bg-secondary/30 p-8 transition-colors first:min-h-[300px] hover:border-primary first:md:row-span-2 first:md:min-h-[500px]",
+        "group relative flex flex-col justify-end space-y-2 border-2 bg-secondary/30 p-8 transition-colors first:min-h-[300px] hover:border-primary first:md:row-span-2 first:md:min-h-[500px]",
         className,
       )}
     >

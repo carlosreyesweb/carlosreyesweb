@@ -1,3 +1,4 @@
+import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { SectionTitle } from "@/components/section-title"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,8 +18,8 @@ import { z } from "zod"
 
 export function Contact() {
   return (
-    <section className="bg-[radial-gradient(circle,_#2B2B2B_3px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
-      <div className="bg-gradient-to-b from-background via-transparent to-background backdrop-blur-sm">
+    <section>
+      <GridBackgroundWrapper>
         <div className="container space-y-8 py-20">
           <SectionTitle className="text-center" id="contact">
             Let&apos;s Work Together!
@@ -32,7 +33,7 @@ export function Contact() {
           </Paragraph>
           <ContactForm />
         </div>
-      </div>
+      </GridBackgroundWrapper>
     </section>
   )
 }

@@ -14,7 +14,6 @@ const socialLinks = [
     link: "https://github.com/carlosreyesweb",
     icon: Github,
   },
-
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/carlosreyesweb",

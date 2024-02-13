@@ -141,7 +141,7 @@ function Testimonial(props: TestimonialProps) {
   const initials = getUserInitials(author.name)
 
   return (
-    <figure className="mb-4 break-inside-avoid-column space-y-4 rounded-xl border bg-secondary/30 px-8 py-6">
+    <figure className="mb-4 break-inside-avoid-column space-y-4 border bg-secondary/30 px-8 py-6">
       <blockquote>{quote}</blockquote>
       <figcaption className="flex items-center gap-x-4">
         <Avatar className="h-[50px] w-[50px]">

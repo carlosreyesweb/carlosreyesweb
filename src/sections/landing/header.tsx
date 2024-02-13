@@ -1,3 +1,4 @@
+import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { LetsChatButton } from "@/components/lets-chat-button"
 import {
   Carousel,
@@ -16,7 +17,6 @@ import {
 import AutoPlay from "embla-carousel-autoplay"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
-import { ReactNode } from "react"
 import { Logo } from "../../components/logo"
 import { Menu } from "../../components/menu"
 import { Navigation } from "../../components/navigation"
@@ -28,14 +28,14 @@ export function Header() {
   return (
     <header className="mt-20 pb-20">
       <Navbar />
-      <DotGridWrapper>
+      <GridBackgroundWrapper>
         <div className="container flex flex-col items-center space-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
           <Banner />
           <HeadlineAndSupportingText />
           <CallToActionButtons />
         </div>
         <SkillsShowcase />
-      </DotGridWrapper>
+      </GridBackgroundWrapper>
     </header>
   )
 }
@@ -54,19 +54,9 @@ function Navbar() {
   )
 }
 
-function DotGridWrapper({ children }: { children: ReactNode }) {
-  return (
-    <div className="bg-[radial-gradient(circle,_#2B2B2B_3px,_rgba(0,_0,_0,_0)_1px)] bg-[size:40px_40px]">
-      <div className="bg-gradient-to-br from-transparent to-background backdrop-blur-sm">
-        {children}
-      </div>
-    </div>
-  )
-}
-
 function Banner() {
   return (
-    <Button asChild variant="secondary" className="rounded-full px-4" size="sm">
+    <Button asChild variant="secondary" className="px-4" size="sm">
       <a href="https://www.esquinadelcodigo.com" target="_blank">
         <Badge>New!</Badge>
         <Small className="ml-2 mr-1">My blog is now live!</Small>
@@ -140,6 +130,7 @@ function SkillsShowcase() {
         opts={{
           align: "center",
           loop: true,
+          dragFree: true,
         }}
         plugins={[AutoPlay({ delay: 1000, stopOnInteraction: false })]}
         className="w-full before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent"
