@@ -37,11 +37,11 @@ function RivkaDevelopmentWebsite() {
       metrics={[
         {
           value: "100%",
-          description: "customer satisfaction",
+          description: "Customer satisfaction",
         },
         {
           value: "3X",
-          description: "increase in leads",
+          description: "Increase in leads",
         },
       ]}
       screenshot={rivkaDevelopmentWebsite}
@@ -60,11 +60,11 @@ function RadarCiudadCaracas() {
       metrics={[
         {
           value: "60K+",
-          description: "reports created",
+          description: "Reports created",
         },
         {
           value: "450K+",
-          description: "users and providers registered",
+          description: "Users and providers registered",
         },
       ]}
       screenshot={radarCiudadCaracas}
@@ -104,9 +104,9 @@ function CaseStudy({
         <Separator />
         <dl className="flex gap-x-10">
           {metrics.map((metric, index) => (
-            <div key={index}>
-              <dt className="text-3xl font-bold">{metric.value}</dt>
-              <dd className="text-muted-foreground">{metric.description}</dd>
+            <div key={index} className="flex flex-col">
+              <dt className="text-muted-foreground">{metric.description}</dt>
+              <dd className="order-first text-3xl font-bold">{metric.value}</dd>
             </div>
           ))}
         </dl>

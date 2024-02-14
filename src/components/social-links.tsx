@@ -36,12 +36,12 @@ interface SocialLinksProps {
 }
 export function SocialLinks({ className }: SocialLinksProps) {
   return (
-    <ul className={cn("inline-flex", className)}>
+    <ul className={cn("inline-flex space-x-1", className)}>
       {socialLinks.map(({ name, link, icon: Icon }) => (
         <li key={name}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button asChild variant="ghost" size="icon">
+              <Button asChild variant="outline" size="icon">
                 <a href={link} target="_blank">
                   <Icon className="w-5" />
                   <span className="sr-only">{name}</span>

@@ -1,5 +1,6 @@
 import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { SectionTitle } from "@/components/section-title"
+import { SocialLinks } from "@/components/social-links"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -25,21 +26,45 @@ export function Contact() {
   return (
     <section>
       <GridBackgroundWrapper>
-        <div className="container space-y-8 py-20">
-          <SectionTitle className="text-center" id="contact">
-            Let&apos;s Work Together!
-          </SectionTitle>
-          <Paragraph className="mx-auto max-w-4xl text-center">
-            Ready to turn your vision into reality? I&apos;m eager to
-            collaborate! Together, we&apos;ll explore innovative solutions,
-            overcome obstacles, and achieve remarkable results. Don&apos;t
-            hesitate to reach out and discuss your project. Let&apos;s embark on
-            this exciting journey together and unlock your full potential.
-          </Paragraph>
+        <div className="container grid grid-cols-1 gap-16 py-20 lg:grid-cols-2">
+          <div className="space-y-8">
+            <SectionTitle id="contact">Let&apos;s Work Together!</SectionTitle>
+            <Paragraph>
+              Ready to turn your vision into reality? I&apos;m eager to
+              collaborate! Together, we&apos;ll explore innovative solutions,
+              overcome obstacles, and achieve remarkable results. Don&apos;t
+              hesitate to reach out and discuss your project. Let&apos;s embark
+              on this exciting journey together and unlock your full potential.
+            </Paragraph>
+            <Address />
+          </div>
           <ContactForm />
         </div>
       </GridBackgroundWrapper>
     </section>
+  )
+}
+
+function Address() {
+  return (
+    <address className="space-y-6 not-italic">
+      <Paragraph>
+        <span className="text-base text-muted-foreground">Email:</span>
+        <br />
+        <span>contact@carlosreyesweb.com</span>
+      </Paragraph>
+      <Paragraph>
+        <span className="text-base text-muted-foreground">Phone:</span>
+        <br />
+        <span>+58 (412) 938-0768</span>
+      </Paragraph>
+      <Paragraph>
+        <span className="text-base text-muted-foreground">Location:</span>
+        <br />
+        <span>Earth, Milky Way Galaxy</span>
+      </Paragraph>
+      <SocialLinks />
+    </address>
   )
 }
 
@@ -90,10 +115,7 @@ function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-auto w-full max-w-lg space-y-4"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <fieldset className="grid gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
@@ -156,7 +178,7 @@ function ContactForm() {
             </FormItem>
           )}
         />
-        <div className="flex flex-col gap-4 md:flex-row-reverse">
+        <div className="flex flex-col gap-x-4 gap-y-2 md:flex-row-reverse">
           <Button
             type="submit"
             size="sm"
