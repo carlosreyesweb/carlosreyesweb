@@ -12,9 +12,14 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Paragraph } from "@/components/ui/typography"
+import { useToast } from "@/hooks/use-toast"
+import { sendMail } from "@/lib/contact"
+import { formSchema } from "@/schemas/form-schema"
+import { FormValues } from "@/types/form-values"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRef } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
 
 export function Contact() {
   return (
@@ -38,16 +43,7 @@ export function Contact() {
   )
 }
 
-const formSchema = z.object({
-  firstName: z.string({ required_error: "First name is required." }),
-  lastName: z.string({ required_error: "Last name is required." }),
-  email: z
-    .string({ required_error: "Email is required." })
-    .email({ message: "Invalid email format." }),
-  message: z.string({ required_error: "Message is required." }),
-})
-type FormValues = z.infer<typeof formSchema>
-
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""
 function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -58,9 +54,38 @@ function ContactForm() {
       message: "",
     },
   })
+  const toaster = useToast()
+  const captchaRef = useRef<ReCAPTCHA>(null)
 
-  function onSubmit(data: FormValues) {
-    console.log(data)
+  async function executeReCAPTCHA() {
+    return captchaRef.current?.executeAsync() ?? null
+  }
+
+  async function onSubmit(data: FormValues) {
+    const token = await executeReCAPTCHA()
+    if (!token) {
+      toaster.toast({
+        title: "Oops!",
+        description: "Please complete the reCAPTCHA challenge.",
+      })
+      return
+    }
+    try {
+      await sendMail(data, token)
+      toaster.toast({
+        title: "Congratulations!",
+        description: "Email sent successfully.",
+      })
+    } catch (error: any) {
+      console.error(error)
+      let msg = "An error occurred while sending the email."
+      if (error instanceof Error) msg = error.message
+      if ("text" in error) msg = error.text
+      toaster.toast({
+        title: "Oops!",
+        description: msg,
+      })
+    }
   }
 
   return (
@@ -131,9 +156,32 @@ function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="sm" className="w-full">
-          Let&apos;s Chat!
-        </Button>
+        <div className="flex flex-col gap-4 md:flex-row-reverse">
+          <Button
+            type="submit"
+            size="sm"
+            className="w-full"
+            disabled={form.formState.isSubmitting}
+          >
+            {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+          </Button>
+          <Button
+            type="reset"
+            size="sm"
+            className="w-full"
+            variant="secondary"
+            disabled={form.formState.isSubmitting}
+            onClick={() => form.reset()}
+          >
+            Clear
+          </Button>
+        </div>
+        <ReCAPTCHA
+          ref={captchaRef}
+          sitekey={RECAPTCHA_SITE_KEY}
+          size="invisible"
+          badge="bottomleft"
+        />
       </form>
     </Form>
   )
