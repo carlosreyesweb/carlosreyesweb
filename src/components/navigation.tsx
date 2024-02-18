@@ -24,8 +24,9 @@ const links = [
     href: "/#testimonials",
   },
   {
-    label: "Contact",
+    label: "Let's Chat!",
     href: "/#contact",
+    asCTA: true,
   },
 ]
 
@@ -48,11 +49,11 @@ export function Navigation(props: NavigationProps) {
         <li key={item.label}>
           <Button
             asChild
-            variant="link"
+            variant={item.asCTA ? "default" : "link"}
             size="sm"
             className={cn(
-              variant === "menu" && "px-0",
-              variant === "footer" && "text-foreground",
+              variant === "menu" && !item.asCTA && "px-0",
+              variant === "footer" && !item.asCTA && "text-foreground",
             )}
           >
             <Link href={item.href} onClick={onLinkClick}>
