@@ -87,11 +87,9 @@ export function Testimonials() {
         Trusted by Coworkers and Clients
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        Trust matters. My dedication and collaborative spirit earn me the
-        unwavering support of both colleagues and clients. They value my
-        transparency, open communication, and commitment to exceeding
-        expectations. Let me bring that same level of trust and reliability to
-        your projects.
+        My commitment to quality and collaboration speaks for itself. Read what
+        happy clients and coworkers have to say about their experiences working
+        with me.
       </Paragraph>
       <div className="flex justify-center">
         <LinkButton

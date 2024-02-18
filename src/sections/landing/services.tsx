@@ -8,13 +8,12 @@ export function Services() {
   return (
     <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="services" className="text-center">
-        Custom Solutions for Your Unique Challenges
+        From Concept to Clicks: Your Frontend Solution Partner
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        No cookie-cutter solutions here. I create custom strategies tailored to
-        your specific challenges, integrating seamlessly into your workflow to
-        unlock your full potential. Let me help you achieve the unique success
-        you deserve.
+        Whether you need a single-page application, a complex e-commerce
+        platform, or a responsive website refresh, I offer tailored frontend
+        development services to meet your unique needs and goals.
       </Paragraph>
       <ServicesGrid />
     </section>

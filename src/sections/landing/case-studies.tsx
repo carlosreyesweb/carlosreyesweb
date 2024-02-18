@@ -11,13 +11,12 @@ export function CaseStudies() {
   return (
     <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="case-studies" className="text-center">
-        How I Solved Real-World Web Challenges
+        Real-World Impact: Witness the Power of Collaboration
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        Forget theory, see real-world web challenges solved! From complex
-        e-commerce platforms to high-traffic websites, I share not just
-        successes but the thought processes and strategies behind them,
-        equipping you with valuable insights for your own projects.
+        See how I&apos;ve partnered with diverse clients to deliver successful
+        frontend projects that drove results. Explore case studies showcasing
+        diverse challenges and solutions.
       </Paragraph>
       <div>
         <RivkaDevelopmentWebsite />
