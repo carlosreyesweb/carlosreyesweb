@@ -1,20 +1,6 @@
 import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
+import { Iso } from "@/components/iso"
 import { LetsChatButton } from "@/components/lets-chat-button"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
-import {
-  Css3Original,
-  Html5Original,
-  JavascriptOriginal,
-  NextjsLine,
-  ReactOriginal,
-  TailwindcssPlain,
-  TypescriptOriginal,
-} from "devicons-react"
-import AutoPlay from "embla-carousel-autoplay"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { Logo } from "../../components/logo"
@@ -26,15 +12,13 @@ import { H1, Paragraph, Small } from "../../components/ui/typography"
 
 export function Header() {
   return (
-    <header className="mt-20 pb-20">
+    <header>
       <Navbar />
       <GridBackgroundWrapper>
-        <div className="container flex flex-col items-center space-y-8 py-28 duration-1000 ease-out animate-in fade-in slide-in-from-bottom-10">
-          <Banner />
-          <HeadlineAndSupportingText />
-          <CallToActionButtons />
+        <div className="container mt-20 flex flex-col items-center justify-center gap-28 py-20 xl:flex-row">
+          <Content />
+          <Iso className="hidden max-w-md animate-draw [stroke-dasharray:1000] [stroke-dashoffset:1000] xl:block" />
         </div>
-        <SkillsShowcase />
       </GridBackgroundWrapper>
     </header>
   )
@@ -54,6 +38,22 @@ function Navbar() {
   )
 }
 
+function Content() {
+  return (
+    <div className="space-y-6 text-center sm:max-w-lg md:max-w-xl xl:text-left">
+      <Banner />
+      <H1>
+        Building Interfaces that <span className="text-primary">Inspire</span>.
+      </H1>
+      <Paragraph>
+        Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
+        that tell your brand story like no other. Let&apos;s collaborate!
+      </Paragraph>
+      <LetsChatButton />
+    </div>
+  )
+}
+
 function Banner() {
   return (
     <Button asChild variant="secondary" className="px-4" size="sm">
@@ -63,92 +63,5 @@ function Banner() {
         <ArrowUpRight className="w-5" />
       </a>
     </Button>
-  )
-}
-
-function HeadlineAndSupportingText() {
-  return (
-    <div className="text-center sm:max-w-lg md:max-w-xl xl:max-w-3xl">
-      <H1>
-        Building Interfaces that <span className="text-primary">Inspire</span>.
-      </H1>
-      <Paragraph>
-        Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
-        that tell your brand story like no other. Let&apos;s collaborate!
-      </Paragraph>
-    </div>
-  )
-}
-
-function CallToActionButtons() {
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-4">
-      <LetsChatButton />
-    </div>
-  )
-}
-
-const skills = [
-  {
-    name: "Next.js",
-    icon: NextjsLine,
-  },
-  {
-    name: "React",
-    icon: ReactOriginal,
-  },
-  {
-    name: "Tailwind",
-    icon: TailwindcssPlain,
-  },
-  {
-    name: "TypeScript",
-    icon: TypescriptOriginal,
-  },
-  {
-    name: "JavaScript",
-    icon: JavascriptOriginal,
-  },
-  {
-    name: "HTML5",
-    icon: Html5Original,
-  },
-  {
-    name: "CSS3",
-    icon: Css3Original,
-  },
-]
-const dupedSkills = skills.concat(skills).concat(skills).concat(skills)
-
-function SkillsShowcase() {
-  return (
-    <div className="container flex w-full flex-col items-center space-y-6">
-      <Small className="text-center">
-        Currently working with <strong>these technologies:</strong>
-      </Small>
-      <Carousel
-        opts={{
-          align: "center",
-          loop: true,
-          dragFree: true,
-        }}
-        plugins={[AutoPlay({ delay: 1000, stopOnInteraction: false })]}
-        className="w-full before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-1/2 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-1/2 after:bg-gradient-to-l after:from-background after:to-transparent"
-      >
-        <CarouselContent>
-          {dupedSkills.map(({ name, icon: Icon }, index) => (
-            <CarouselItem
-              key={index}
-              className="basis-1/3 md:basis-1/5 lg:basis-1/6 xl:basis-1/12"
-            >
-              <div className="flex flex-col items-center gap-y-2">
-                <Icon size="45" color="white" />
-                <span className="text-sm font-medium">{name}</span>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-    </div>
   )
 }
