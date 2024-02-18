@@ -25,7 +25,7 @@ const links = [
   },
   {
     label: "Let's Chat!",
-    href: "/#contact",
+    href: "/contact",
     asCTA: true,
   },
 ]

@@ -2,10 +2,6 @@ import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { Iso } from "@/components/iso"
 import { LetsChatButton } from "@/components/lets-chat-button"
 import { ArrowUpRight } from "lucide-react"
-import Link from "next/link"
-import { Logo } from "../../components/logo"
-import { Menu } from "../../components/menu"
-import { Navigation } from "../../components/navigation"
 import { Badge } from "../../components/ui/badge"
 import { Button } from "../../components/ui/button"
 import { H1, Paragraph, Small } from "../../components/ui/typography"
@@ -13,7 +9,6 @@ import { H1, Paragraph, Small } from "../../components/ui/typography"
 export function Header() {
   return (
     <header>
-      <Navbar />
       <GridBackgroundWrapper>
         <div className="container mt-20 flex flex-col items-center justify-center gap-28 py-20 xl:flex-row">
           <Content />
@@ -21,20 +16,6 @@ export function Header() {
         </div>
       </GridBackgroundWrapper>
     </header>
-  )
-}
-
-function Navbar() {
-  return (
-    <div className="fixed top-0 z-50 w-full border-b bg-background/50 py-4 backdrop-blur">
-      <nav className="container flex items-center justify-between">
-        <Link href="/">
-          <Logo />
-        </Link>
-        <Navigation variant="navbar" />
-        <Menu />
-      </nav>
-    </div>
   )
 }
 

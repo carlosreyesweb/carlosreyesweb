@@ -1,10 +1,9 @@
-import { About } from "@/sections/landing/about"
-import { CaseStudies } from "@/sections/landing/case-studies"
-import { Contact } from "@/sections/landing/contact"
-import { Footer } from "@/sections/landing/footer"
-import { Header } from "@/sections/landing/header"
-import { Services } from "@/sections/landing/services"
-import { Testimonials } from "@/sections/landing/testimonials"
+import { About } from "@/sections/home/about"
+import { CallToAction } from "@/sections/home/call-to-action"
+import { CaseStudies } from "@/sections/home/case-studies"
+import { Header } from "@/sections/home/header"
+import { Services } from "@/sections/home/services"
+import { Testimonials } from "@/sections/home/testimonials"
 
 export default function LandingPage() {
   return (
@@ -15,9 +14,8 @@ export default function LandingPage() {
         <Services />
         <CaseStudies />
         <Testimonials />
-        <Contact />
+        <CallToAction />
       </main>
-      <Footer />
     </>
   )
 }

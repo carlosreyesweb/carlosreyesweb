@@ -1,6 +1,4 @@
 import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
-import { SectionTitle } from "@/components/section-title"
-import { SocialLinks } from "@/components/social-links"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -12,8 +10,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Paragraph } from "@/components/ui/typography"
-import { useToast } from "@/hooks/use-toast"
+import { H1, Paragraph } from "@/components/ui/typography"
 import { sendMail } from "@/lib/contact"
 import { formSchema } from "@/schemas/form-schema"
 import { FormValues } from "@/types/form-values"
@@ -21,50 +18,27 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useRef } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useForm } from "react-hook-form"
+import { toast } from "sonner"
 
-export function Contact() {
+export default function Contact() {
   return (
-    <section>
+    <main>
       <GridBackgroundWrapper>
-        <div className="container grid grid-cols-1 gap-16 py-20 lg:grid-cols-2">
-          <div className="space-y-8">
-            <SectionTitle id="contact">Let&apos;s Work Together!</SectionTitle>
+        <div className="container mt-20 space-y-8 py-20">
+          <hgroup className="mx-auto max-w-xl text-center">
+            <H1 className="font-sans text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
+              Let&apos;s Work <span className="text-primary">Together</span>!
+            </H1>
             <Paragraph>
               Ready to turn your vision into reality? I&apos;m eager to
               collaborate! Together, we&apos;ll explore innovative solutions,
-              overcome obstacles, and achieve remarkable results. Don&apos;t
-              hesitate to reach out and discuss your project. Let&apos;s embark
-              on this exciting journey together and unlock your full potential.
+              overcome obstacles, and achieve remarkable results.
             </Paragraph>
-            <Address />
-          </div>
+          </hgroup>
           <ContactForm />
         </div>
       </GridBackgroundWrapper>
-    </section>
-  )
-}
-
-function Address() {
-  return (
-    <address className="space-y-6 not-italic">
-      <Paragraph>
-        <span className="text-base text-muted-foreground">Email:</span>
-        <br />
-        <span>contact@carlosreyesweb.com</span>
-      </Paragraph>
-      <Paragraph>
-        <span className="text-base text-muted-foreground">Phone:</span>
-        <br />
-        <span>+58 (412) 938-0768</span>
-      </Paragraph>
-      <Paragraph>
-        <span className="text-base text-muted-foreground">Location:</span>
-        <br />
-        <span>Earth, Milky Way Galaxy</span>
-      </Paragraph>
-      <SocialLinks />
-    </address>
+    </main>
   )
 }
 
@@ -79,43 +53,50 @@ function ContactForm() {
       message: "",
     },
   })
-  const toaster = useToast()
   const captchaRef = useRef<ReCAPTCHA>(null)
+
+  async function onSubmit(data: FormValues) {
+    return toast.promise(
+      async () => {
+        const token = await executeReCAPTCHA()
+        if (!token) {
+          toast.error("Please complete the reCAPTCHA challenge.")
+          return
+        }
+        return sendMail(data, token)
+      },
+      {
+        loading: "Sending email. Please wait...",
+        success: () => {
+          form.reset()
+          resetReCAPTCHA()
+          return "Email sent successfully!"
+        },
+        error: (err) => {
+          console.error(err)
+          let msg = "An error occurred while sending the email."
+          if (err instanceof Error) msg = err.message
+          if ("text" in err) msg = err.text
+          return msg
+        },
+      },
+    )
+  }
 
   async function executeReCAPTCHA() {
     return captchaRef.current?.executeAsync() ?? null
   }
 
-  async function onSubmit(data: FormValues) {
-    const token = await executeReCAPTCHA()
-    if (!token) {
-      toaster.toast({
-        title: "Oops!",
-        description: "Please complete the reCAPTCHA challenge.",
-      })
-      return
-    }
-    try {
-      await sendMail(data, token)
-      toaster.toast({
-        title: "Congratulations!",
-        description: "Email sent successfully.",
-      })
-    } catch (error: any) {
-      console.error(error)
-      let msg = "An error occurred while sending the email."
-      if (error instanceof Error) msg = error.message
-      if ("text" in error) msg = error.text
-      toaster.toast({
-        title: "Oops!",
-        description: msg,
-      })
-    }
+  function resetReCAPTCHA() {
+    return captchaRef.current?.reset() ?? null
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="mx-auto max-w-xl space-y-4"
+      >
         <fieldset className="grid gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
@@ -169,7 +150,7 @@ function ContactForm() {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  rows={10}
+                  rows={7}
                   placeholder="Type your message here..."
                   {...field}
                 />
@@ -178,26 +159,14 @@ function ContactForm() {
             </FormItem>
           )}
         />
-        <div className="flex flex-col gap-x-4 gap-y-2 md:flex-row-reverse">
-          <Button
-            type="submit"
-            size="sm"
-            className="w-full"
-            disabled={form.formState.isSubmitting}
-          >
-            {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-          <Button
-            type="reset"
-            size="sm"
-            className="w-full"
-            variant="secondary"
-            disabled={form.formState.isSubmitting}
-            onClick={() => form.reset()}
-          >
-            Clear
-          </Button>
-        </div>
+        <Button
+          type="submit"
+          size="sm"
+          className="w-full"
+          disabled={form.formState.isSubmitting}
+        >
+          {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+        </Button>
         <ReCAPTCHA
           ref={captchaRef}
           sitekey={RECAPTCHA_SITE_KEY}
