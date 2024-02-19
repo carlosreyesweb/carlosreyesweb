@@ -19,33 +19,10 @@ export function CaseStudies() {
         diverse challenges and solutions.
       </Paragraph>
       <div>
-        <RivkaDevelopmentWebsite />
         <RadarCiudadCaracas />
+        <RivkaDevelopmentWebsite />
       </div>
     </section>
-  )
-}
-
-function RivkaDevelopmentWebsite() {
-  return (
-    <CaseStudy
-      title="Rivka Development"
-      description="I was hired to redo their website, and the result was a 
-      modern and professional website that showcases their projects and 
-      services in a way that reflects their brand and professionalism."
-      metrics={[
-        {
-          value: "100%",
-          description: "Customer satisfaction",
-        },
-        {
-          value: "3x",
-          description: "Increase in leads",
-        },
-      ]}
-      screenshot={rivkaDevelopmentWebsite}
-      url="https://rivkadevelopment.com"
-    />
   )
 }
 
@@ -68,6 +45,29 @@ function RadarCiudadCaracas() {
       ]}
       screenshot={radarCiudadCaracas}
       url="https://radarciudad.info"
+    />
+  )
+}
+
+function RivkaDevelopmentWebsite() {
+  return (
+    <CaseStudy
+      title="Rivka Development"
+      description="I was hired to redo their website, and the result was a 
+      modern and professional website that showcases their projects and 
+      services in a way that reflects their brand and professionalism."
+      metrics={[
+        {
+          value: "100%",
+          description: "Customer satisfaction",
+        },
+        {
+          value: "3x",
+          description: "Increase in leads",
+        },
+      ]}
+      screenshot={rivkaDevelopmentWebsite}
+      url="https://rivkadevelopment.com"
     />
   )
 }
