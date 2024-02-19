@@ -30,12 +30,7 @@ function Content() {
         Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
         that tell your brand story like no other. Let&apos;s collaborate!
       </Paragraph>
-      <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center xl:justify-start">
-        <LetsChatButton />
-        <Button asChild variant="secondary">
-          <a href="https://resume.carlosreyesweb.com">View Resume</a>
-        </Button>
-      </div>
+      <LetsChatButton />
     </div>
   )
 }
