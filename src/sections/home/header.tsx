@@ -12,7 +12,7 @@ export function Header() {
       <GridBackgroundWrapper>
         <div className="container mt-20 flex flex-col items-center justify-center gap-28 py-20 xl:flex-row">
           <Content />
-          <Iso className="hidden max-w-md animate-draw [stroke-dasharray:1000] [stroke-dashoffset:1000] xl:block" />
+          <Iso className="hidden max-w-md animate-draw [stroke-dasharray:1000] xl:block" />
         </div>
       </GridBackgroundWrapper>
     </header>
