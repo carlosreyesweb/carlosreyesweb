@@ -39,7 +39,7 @@ function RivkaDevelopmentWebsite() {
           description: "Customer satisfaction",
         },
         {
-          value: "3X",
+          value: "3x",
           description: "Increase in leads",
         },
       ]}
@@ -58,11 +58,11 @@ function RadarCiudadCaracas() {
       intuitive way. The results? See for yourself."
       metrics={[
         {
-          value: "60K+",
+          value: "60,000+",
           description: "Reports created",
         },
         {
-          value: "450K+",
+          value: "450,000+",
           description: "Users and providers registered",
         },
       ]}
