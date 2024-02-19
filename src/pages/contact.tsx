@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { H1, Paragraph } from "@/components/ui/typography"
+import { clientEnvironment } from "@/config/environment"
 import { sendMail } from "@/lib/contact"
 import { formSchema } from "@/schemas/form-schema"
 import { FormValues } from "@/types/form-values"
@@ -42,7 +43,6 @@ export default function Contact() {
   )
 }
 
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""
 function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -169,7 +169,7 @@ function ContactForm() {
         </Button>
         <ReCAPTCHA
           ref={captchaRef}
-          sitekey={RECAPTCHA_SITE_KEY}
+          sitekey={clientEnvironment.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
           size="invisible"
           badge="bottomleft"
         />
