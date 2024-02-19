@@ -16,6 +16,7 @@ import { sendMail } from "@/lib/contact"
 import { formSchema } from "@/schemas/form-schema"
 import { FormValues } from "@/types/form-values"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { NextSeo } from "next-seo"
 import { useRef } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import { useForm } from "react-hook-form"
@@ -23,23 +24,31 @@ import { toast } from "sonner"
 
 export default function Contact() {
   return (
-    <main>
-      <GridBackgroundWrapper>
-        <div className="container mt-20 space-y-8 py-20">
-          <hgroup className="mx-auto max-w-xl text-center">
-            <H1 className="font-sans text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
-              Let&apos;s Work <span className="text-primary">Together</span>!
-            </H1>
-            <Paragraph>
-              Ready to turn your vision into reality? I&apos;m eager to
-              collaborate! Together, we&apos;ll explore innovative solutions,
-              overcome obstacles, and achieve remarkable results.
-            </Paragraph>
-          </hgroup>
-          <ContactForm />
-        </div>
-      </GridBackgroundWrapper>
-    </main>
+    <>
+      <NextSeo
+        title="Contact"
+        description="Ready to turn your vision into reality? I'm eager to 
+        collaborate! Together, we'll explore innovative solutions, overcome 
+        obstacles, and achieve remarkable results."
+      />
+      <main>
+        <GridBackgroundWrapper>
+          <div className="container mt-20 space-y-8 py-20">
+            <hgroup className="mx-auto max-w-xl text-center">
+              <H1 className="font-sans text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
+                Let&apos;s Work <span className="text-primary">Together</span>!
+              </H1>
+              <Paragraph>
+                Ready to turn your vision into reality? I&apos;m eager to
+                collaborate! Together, we&apos;ll explore innovative solutions,
+                overcome obstacles, and achieve remarkable results.
+              </Paragraph>
+            </hgroup>
+            <ContactForm />
+          </div>
+        </GridBackgroundWrapper>
+      </main>
+    </>
   )
 }
 
