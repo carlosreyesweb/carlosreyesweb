@@ -24,7 +24,7 @@ function Content() {
     <div className="space-y-6 text-center sm:max-w-lg md:max-w-xl xl:text-left">
       <Banner />
       <H1>
-        Building Interfaces that <span className="text-primary">Inspire</span>.
+        Building Interfaces that <span className="text-primary">Inspire</span>
       </H1>
       <Paragraph>
         Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
