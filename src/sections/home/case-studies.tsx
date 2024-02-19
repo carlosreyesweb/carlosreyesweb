@@ -40,7 +40,7 @@ function RadarCiudadCaracas() {
         },
         {
           value: "450,000+",
-          description: "Users and providers registered",
+          description: "Users registered",
         },
       ]}
       screenshot={radarCiudadCaracas}
