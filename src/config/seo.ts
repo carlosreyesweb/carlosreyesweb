@@ -12,7 +12,6 @@ export const SEO: DefaultSeoProps = {
   description:
     "Hi! I'm Carlos Reyes, a Frontend Developer with 3+ years of experience building websites and web applications using modern technologies like React and Next.js. I'm passionate about web performance, accessibility, and user experience. Let's work together!",
   themeColor: "#0A0A0A",
-  canonical: host,
   openGraph: {
     type: "website",
     images: [
