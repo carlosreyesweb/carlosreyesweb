@@ -3,11 +3,8 @@ import { clientEnvironment } from "./environment"
 
 const defaultTitle = "Carlos Reyes: Frontend Developer"
 const host = clientEnvironment.NEXT_PUBLIC_HOST
-const disableRobots = process.env.VERCEL_ENV !== "production"
 
 export const SEO: DefaultSeoProps = {
-  dangerouslySetAllPagesToNoIndex: disableRobots,
-  dangerouslySetAllPagesToNoFollow: disableRobots,
   defaultTitle,
   titleTemplate: `%s | ${defaultTitle}`,
   description:
