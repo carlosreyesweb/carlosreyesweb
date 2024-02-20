@@ -30,6 +30,7 @@ export default function Contact() {
         description="Ready to turn your vision into reality? I'm eager to 
         collaborate! Together, we'll explore innovative solutions, overcome 
         obstacles, and achieve remarkable results."
+        canonical={clientEnvironment.NEXT_PUBLIC_HOST + "/contact"}
       />
       <main>
         <GridBackgroundWrapper>
