@@ -17,7 +17,7 @@ export function LaptopMockup(props: LaptopMockupProps) {
         <div className="h-full w-full overflow-hidden bg-neutral-500">
           <Image
             src={screenshot}
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-[top_center]"
             alt={alt}
           />
         </div>

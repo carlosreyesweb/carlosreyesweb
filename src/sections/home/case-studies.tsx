@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { H3, Paragraph } from "@/components/ui/typography"
 import { ArrowUpRight } from "lucide-react"
 import { StaticImageData } from "next/image"
+import esquinaDelCodigo from "../../../public/projects/esquina-del-codigo.png"
 import radarCiudadCaracas from "../../../public/projects/radar-ciudad-caracas.png"
 import rivkaDevelopmentWebsite from "../../../public/projects/rivka-development-website.png"
 
@@ -21,6 +22,7 @@ export function CaseStudies() {
       <div>
         <RadarCiudadCaracas />
         <RivkaDevelopmentWebsite />
+        <LaEsquinaDelCodigo />
       </div>
     </section>
   )
@@ -55,19 +57,26 @@ function RivkaDevelopmentWebsite() {
       title="Rivka Development"
       description="I was hired to redo their website, and the result was a 
       modern and professional website that showcases their projects and 
-      services in a way that reflects their brand and professionalism."
-      metrics={[
-        {
-          value: "100%",
-          description: "Customer satisfaction",
-        },
-        {
-          value: "3x",
-          description: "Increase in leads",
-        },
-      ]}
+      services in a way that reflects their brand and professionalism. The
+      website is also fully responsive and optimized for SEO, which has
+      helped them to attract new clients."
       screenshot={rivkaDevelopmentWebsite}
       url="https://rivkadevelopment.com"
+    />
+  )
+}
+
+function LaEsquinaDelCodigo() {
+  return (
+    <CaseStudy
+      title="La Esquina del Código"
+      description="During my time off, I developed a blog to share my knowledge
+      and experiences in the world of web development. I wanted it to be as 
+      minimal as possible, but also to have a modern and professional look. It 
+      was a great opportunity to learn new technologies and to share my 
+      knowledge with the community."
+      screenshot={esquinaDelCodigo}
+      url="https://www.esquinadelcodigo.com"
     />
   )
 }
@@ -77,7 +86,7 @@ interface CaseStudyProps {
   description: string
   screenshot: string | StaticImageData
   url: string
-  metrics: {
+  metrics?: {
     value: string
     description: string
   }[]
@@ -100,15 +109,19 @@ function CaseStudy({
           </a>
         </H3>
         <Paragraph>{description}</Paragraph>
-        <Separator />
-        <dl className="flex gap-x-10">
-          {metrics.map((metric, index) => (
-            <div key={index} className="flex flex-col">
-              <dt className="text-muted-foreground">{metric.description}</dt>
-              <dd className="order-first text-3xl font-bold">{metric.value}</dd>
-            </div>
-          ))}
-        </dl>
+        {metrics ? <Separator /> : null}
+        {metrics ? (
+          <dl className="flex gap-x-10">
+            {metrics.map((metric, index) => (
+              <div key={index} className="flex flex-col">
+                <dt className="text-muted-foreground">{metric.description}</dt>
+                <dd className="order-first text-3xl font-bold">
+                  {metric.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
       </figcaption>
     </figure>
   )
