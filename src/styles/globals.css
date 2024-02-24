@@ -24,6 +24,9 @@
     --input: 0 0% 17% /* #2b2b2b */;
     --ring: 168 73% 54% /* #33dfbd */;
     --radius: 0.5rem;
+    --sb-track-color: #0a0a0a;
+    --sb-thumb-color: #33dfbd;
+    --sb-size: 8px;
   }
 }
 
@@ -38,5 +41,23 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
   }
 }
