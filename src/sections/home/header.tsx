@@ -1,4 +1,3 @@
-import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { Iso } from "@/components/iso"
 import { LetsChatButton } from "@/components/lets-chat-button"
 import { SocialLinks } from "@/components/social-links"
@@ -9,13 +8,9 @@ import { H1, Paragraph, Small } from "../../components/ui/typography"
 
 export function Header() {
   return (
-    <header>
-      <GridBackgroundWrapper>
-        <div className="container mt-20 flex flex-col items-center justify-center gap-28 py-20 xl:flex-row">
-          <Content />
-          <Iso className="hidden max-w-md animate-draw [stroke-dasharray:1000] xl:block" />
-        </div>
-      </GridBackgroundWrapper>
+    <header className="container mt-20 flex flex-col items-center justify-center gap-28 py-20 xl:flex-row">
+      <Content />
+      <Iso className="hidden max-w-md animate-draw [stroke-dasharray:1000] xl:block" />
     </header>
   )
 }

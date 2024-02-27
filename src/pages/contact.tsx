@@ -1,4 +1,3 @@
-import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { SocialLinks } from "@/components/social-links"
 import { Button } from "@/components/ui/button"
 import {
@@ -33,25 +32,21 @@ export default function Contact() {
         obstacles, and achieve remarkable results."
         canonical={clientEnvironment.NEXT_PUBLIC_HOST + "/contact"}
       />
-      <main>
-        <GridBackgroundWrapper>
-          <div className="container mt-20 space-y-8 py-20">
-            <hgroup className="mx-auto max-w-xl text-center">
-              <H1 className="font-sans text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
-                Let&apos;s Work <span className="text-primary">Together</span>!
-              </H1>
-              <Paragraph>
-                Ready to turn your vision into reality? I&apos;m eager to
-                collaborate! Together, we&apos;ll explore innovative solutions,
-                overcome obstacles, and achieve remarkable results.
-              </Paragraph>
-            </hgroup>
-            <div className="flex justify-center">
-              <SocialLinks />
-            </div>
-            <ContactForm />
-          </div>
-        </GridBackgroundWrapper>
+      <main className="container mt-20 space-y-8 py-20">
+        <hgroup className="mx-auto max-w-xl text-center">
+          <H1 className="font-sans text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
+            Let&apos;s Work <span className="text-primary">Together</span>!
+          </H1>
+          <Paragraph>
+            Ready to turn your vision into reality? I&apos;m eager to
+            collaborate! Together, we&apos;ll explore innovative solutions,
+            overcome obstacles, and achieve remarkable results.
+          </Paragraph>
+        </hgroup>
+        <div className="flex justify-center">
+          <SocialLinks />
+        </div>
+        <ContactForm />
       </main>
     </>
   )
