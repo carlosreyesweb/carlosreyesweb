@@ -84,12 +84,13 @@ export function Testimonials() {
   return (
     <section className="container space-y-8 py-20">
       <SectionTitle id="testimonials" className="text-center">
-        Trusted by Coworkers and Clients
+        Endorsed by Clients and Colleagues
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        My commitment to quality and collaboration speaks for itself. Read what
-        happy clients and coworkers have to say about their experiences working
-        with me.
+        My dedication to creating sleek, user-friendly designs and implementing
+        efficient, robust coding is not just acknowledged but also highly
+        commended by both clients and colleagues. I&apos;m eager to bring my
+        skills and passion to your next project.
       </Paragraph>
       <div className="flex justify-center">
         <LinkButton

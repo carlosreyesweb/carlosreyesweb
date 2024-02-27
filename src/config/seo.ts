@@ -1,14 +1,14 @@
 import { DefaultSeoProps } from "next-seo"
 import { clientEnvironment } from "./environment"
 
-const defaultTitle = "Carlos Reyes: Frontend Developer"
+const defaultTitle = "Carlos Reyes - Frontend Developer"
 const host = clientEnvironment.NEXT_PUBLIC_HOST
 
 export const SEO: DefaultSeoProps = {
   defaultTitle,
   titleTemplate: `%s | ${defaultTitle}`,
   description:
-    "Hi! I'm Carlos Reyes, a Frontend Developer with 3+ years of experience building websites and web applications using modern technologies like React and Next.js. I'm passionate about web performance, accessibility, and user experience. Let's work together!",
+    "Welcome! I'm Carlos Reyes, a passionate frontend developer. I specialize in crafting dynamic, user-friendly websites and web applications. Let's collaborate to bring your digital vision to life.",
   themeColor: "#0A0A0A",
   openGraph: {
     type: "website",

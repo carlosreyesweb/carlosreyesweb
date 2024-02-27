@@ -12,12 +12,12 @@ export function CaseStudies() {
   return (
     <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="case-studies" className="text-center">
-        Real-World Impact: Witness the Power of Collaboration
+        Impactful Digital Experiences - The Power of Collaboration
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        See how I&apos;ve partnered with diverse clients to deliver successful
-        frontend projects that drove results. Explore case studies showcasing
-        diverse challenges and solutions.
+        When we combine our skills and commitment, we can craft a digital
+        platform that not only looks appealing but also operates smoothly,
+        leaving a lasting positive impression on users.
       </Paragraph>
       <div>
         <RadarCiudadCaracas />
@@ -32,9 +32,9 @@ function RadarCiudadCaracas() {
   return (
     <CaseStudy
       title="Radar Ciudad Caracas"
-      description="neuralgeeks hired me to develop a web application that would 
-      allow citizens to report failures in public services in a simple and 
-      intuitive way. The results? See for yourself."
+      description="neuralgeeks engaged me to create a web application enabling 
+      citizens to report public service failures in a straightforward, 
+      intuitive manner. See the results for yourself."
       metrics={[
         {
           value: "60,000+",
@@ -55,11 +55,10 @@ function RivkaDevelopmentWebsite() {
   return (
     <CaseStudy
       title="Rivka Development"
-      description="I was hired to redo their website, and the result was a 
-      modern and professional website that showcases their projects and 
-      services in a way that reflects their brand and professionalism. The
-      website is also fully responsive and optimized for SEO, which has
-      helped them to attract new clients."
+      description="I was engaged to revamp their website, resulting in a 
+      contemporary, professional site that highlights their projects and 
+      services, reflecting their brand and professionalism. The site is fully 
+      responsive, SEO-optimized, and has successfully attracted new clients."
       screenshot={rivkaDevelopmentWebsite}
       url="https://rivkadevelopment.com"
     />
@@ -70,11 +69,10 @@ function LaEsquinaDelCodigo() {
   return (
     <CaseStudy
       title="La Esquina del Código"
-      description="During my time off, I developed a blog to share my knowledge
-      and experiences in the world of web development. I wanted it to be as 
-      minimal as possible, but also to have a modern and professional look. It 
-      was a great opportunity to learn new technologies and to share my 
-      knowledge with the community."
+      description="During my downtime, I created a blog to share my insights 
+      and experiences in web development. I aimed for a minimalist yet modern 
+      and professional look. It was a fantastic opportunity to learn new 
+      technologies and share my expertise with the community."
       screenshot={esquinaDelCodigo}
       url="https://www.esquinadelcodigo.com"
     />

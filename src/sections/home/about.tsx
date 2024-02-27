@@ -16,13 +16,15 @@ export function About() {
 function Content() {
   return (
     <div className="max-w-lg space-y-6 text-center lg:border lg:bg-secondary/30 lg:p-8 lg:text-left">
-      <SectionTitle id="about">The Human Behind the Pixels</SectionTitle>
+      <SectionTitle id="about">
+        The Digital Artisan Behind The Pixels
+      </SectionTitle>
       <Paragraph>
-        At 23, with roots in Venezuela and a passion for making lives easier,
-        I&apos;ve helped build over 8 products used by people every day. As a
-        3-year frontend developer, I&apos;m always pushing boundaries and
-        embracing new technologies, fueled by curiosity and a love for
-        beautiful, accessible web experiences.
+        At age 23, with my roots in Venezuela and a passion for simplifying
+        lives, I&apos;ve contributed to the creation of over 8 daily-use
+        products. As a seasoned frontend developer for 3 years, I consistently
+        break boundaries and adopt new technologies, driven by curiosity and a
+        love for aesthetically pleasing, accessible web experiences.
       </Paragraph>
       <LetsChatButton />
     </div>

@@ -25,11 +25,12 @@ function Content() {
     <div className="space-y-6 text-center sm:max-w-lg md:max-w-xl xl:text-left">
       <Banner />
       <H1>
-        Building Interfaces that <span className="text-primary">Inspire</span>
+        Crafting <span className="text-primary">Inspiring</span> Digital
+        Interfaces
       </H1>
       <Paragraph>
-        Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
-        that tell your brand story like no other. Let&apos;s collaborate!
+        Experience dynamic, powerful websites that narrate your unique brand
+        story. Let&apos;s collaborate and create magic!
       </Paragraph>
       <div className="flex flex-wrap items-center justify-center gap-2 xl:justify-start">
         <LetsChatButton />

@@ -8,12 +8,14 @@ export function Services() {
   return (
     <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="services" className="text-center">
-        From Concept to Clicks: Your Frontend Solution Partner
+        Your One-Stop Solution for Frontend Development
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        Whether you need a single-page application, a complex e-commerce
-        platform, or a responsive website refresh, I offer tailored frontend
-        development services to meet your unique needs and goals.
+        Be it an innovative concept or an existing project requiring a
+        rejuvenated perspective, I work intimately with you to comprehend your
+        objectives and vision. I convert this understanding into a user-friendly
+        interface, utilizing state-of-the-art technology and a sharp eye for
+        design.
       </Paragraph>
       <ServicesGrid />
     </section>
@@ -25,22 +27,25 @@ function ServicesGrid() {
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2">
       <Service
         title="Websites"
-        description="Your digital heartbeat. I craft bespoke websites to 
-        achieve your goals, from branding to sales to community. 
-        Beautiful, optimized, effective."
+        description="From small business websites to large corporate portals, 
+        I work across a wide range of industries and use cases, always 
+        prioritizing a clean design and an intuitive user journey."
         icon={Globe2}
       />
       <Service
         title="Web Applications"
-        description="Ditch the clunky. I build powerful, custom web apps that 
-        simplify tasks, automate workflows, and boost productivity. Smarter, 
-        not harder."
+        description="From sophisticated e-commerce platforms to streamlined 
+        internal tools, I develop web applications that are not only functional 
+        but also engaging and user-friendly, making complex processes feel 
+        simple and intuitive."
         icon={LayoutGrid}
       />
       <Service
         title="Landing Pages"
-        description="Conversion champions. Captivating copy, strategic design, 
-        clear calls to action. Get the clicks, drive results."
+        description="Whether you're launching a new product or promoting a 
+        significant event, a well-designed landing page can make all the 
+        difference. I create responsive, visually compelling landing pages that 
+        drive conversions and enhance your brand's online presence."
         icon={Plane}
       />
     </div>
@@ -58,7 +63,7 @@ function Service({ className, title, description, icon: Icon }: ServiceProps) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col justify-end space-y-2 border-2 bg-secondary/30 p-8 transition-colors first:min-h-[300px] hover:border-primary first:md:row-span-2 first:md:min-h-[500px]",
+        "group relative flex flex-col justify-end space-y-2 border-2 bg-secondary/30 p-8 transition-colors first:min-h-[300px] hover:border-primary first:md:row-span-2 first:md:min-h-[600px]",
         className,
       )}
     >
