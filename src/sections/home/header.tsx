@@ -1,6 +1,7 @@
 import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
 import { Iso } from "@/components/iso"
 import { LetsChatButton } from "@/components/lets-chat-button"
+import { SocialLinks } from "@/components/social-links"
 import { ArrowUpRight } from "lucide-react"
 import { Badge } from "../../components/ui/badge"
 import { Button } from "../../components/ui/button"
@@ -30,7 +31,10 @@ function Content() {
         Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
         that tell your brand story like no other. Let&apos;s collaborate!
       </Paragraph>
-      <LetsChatButton />
+      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 xl:justify-start">
+        <LetsChatButton />
+        <SocialLinks />
+      </div>
     </div>
   )
 }
