@@ -1,14 +1,9 @@
 import { cn } from "@/lib/utils"
-import { Github, Instagram, Linkedin, Rss, Twitter } from "lucide-react"
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react"
 import { Button } from "./ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 
 const socialLinks = [
-  {
-    name: "Blog",
-    link: "https://www.esquinadelcodigo.com",
-    icon: Rss,
-  },
   {
     name: "GitHub",
     link: "https://github.com/carlosreyesweb",

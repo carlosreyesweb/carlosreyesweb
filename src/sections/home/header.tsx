@@ -31,7 +31,7 @@ function Content() {
         Websites shouldn&apos;t snooze. I build powerful, dynamic experiences
         that tell your brand story like no other. Let&apos;s collaborate!
       </Paragraph>
-      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 xl:justify-start">
+      <div className="flex flex-wrap items-center justify-center gap-2 xl:justify-start">
         <LetsChatButton />
         <SocialLinks />
       </div>

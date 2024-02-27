@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
 
@@ -24,6 +25,10 @@ const links = [
     href: "/#testimonials",
   },
   {
+    label: "Blog",
+    href: "https://www.esquinadelcodigo.com",
+  },
+  {
     label: "Let's Chat!",
     href: "/contact",
     asCTA: true,
@@ -32,7 +37,7 @@ const links = [
 
 const variants = {
   navbar: "inline-flex sr-only lg:not-sr-only",
-  menu: "flex flex-col",
+  menu: "flex flex-col space-y-3",
   footer: "flex flex-wrap justify-center",
 }
 
@@ -52,12 +57,19 @@ export function Navigation(props: NavigationProps) {
             variant={item.asCTA ? "default" : "link"}
             size="sm"
             className={cn(
-              variant === "menu" && !item.asCTA && "px-0",
+              variant === "menu" && !item.asCTA && "p-0",
               variant === "footer" && !item.asCTA && "text-foreground",
             )}
           >
-            <Link href={item.href} onClick={onLinkClick}>
-              {item.label}
+            <Link
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : "_self"}
+              onClick={onLinkClick}
+            >
+              <span>{item.label}</span>
+              {item.href.startsWith("http") ? (
+                <ArrowUpRight className="ml-1 inline-block h-4 w-4" />
+              ) : null}
             </Link>
           </Button>
         </li>

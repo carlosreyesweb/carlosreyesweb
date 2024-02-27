@@ -1,4 +1,5 @@
 import { GridBackgroundWrapper } from "@/components/grid-background-wrapper"
+import { SocialLinks } from "@/components/social-links"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -45,6 +46,9 @@ export default function Contact() {
                 overcome obstacles, and achieve remarkable results.
               </Paragraph>
             </hgroup>
+            <div className="flex justify-center">
+              <SocialLinks />
+            </div>
             <ContactForm />
           </div>
         </GridBackgroundWrapper>

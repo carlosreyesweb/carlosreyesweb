@@ -29,11 +29,11 @@ export function Menu() {
           <SheetTitle className="sr-only">Menu</SheetTitle>
         </SheetHeader>
         <div className="space-y-6 py-5">
-          <div className="space-y-2">
+          <div className="space-y-4">
             <H3 className="border-b pb-1">Navigation</H3>
             <Navigation variant="menu" onLinkClick={() => setOpen(false)} />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-4">
             <H3 className="border-b pb-1">Social</H3>
             <SocialLinks />
           </div>
