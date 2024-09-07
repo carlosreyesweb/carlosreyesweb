@@ -38,9 +38,10 @@ export default function Contact() {
             Let&apos;s Work <span className="text-primary">Together</span>!
           </H1>
           <Paragraph>
-            Ready to turn your vision into reality? I&apos;m eager to
-            collaborate! Together, we&apos;ll explore innovative solutions,
-            overcome obstacles, and achieve remarkable results.
+            Whether you&apos;re looking for a dedicated team member or a skilled
+            freelancer to tackle your next project, I&apos;m here to help. Reach
+            out to discuss how we can collaborate and create impactful solutions
+            together.
           </Paragraph>
         </hgroup>
         <div className="flex justify-center">

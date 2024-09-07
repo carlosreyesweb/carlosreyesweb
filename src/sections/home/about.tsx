@@ -16,15 +16,17 @@ export function About() {
 function Content() {
   return (
     <div className="max-w-lg space-y-6 text-center lg:border lg:bg-secondary/30 lg:p-8 lg:text-left">
-      <SectionTitle id="about">
-        The Digital Artisan Behind The Pixels
-      </SectionTitle>
+      <SectionTitle id="about">The Story Behind the Code</SectionTitle>
       <Paragraph>
-        At age 23, with my roots in Venezuela and a passion for simplifying
-        lives, I&apos;ve contributed to the creation of over 8 daily-use
-        products. As a seasoned frontend developer for 3 years, I consistently
-        break boundaries and adopt new technologies, driven by curiosity and a
-        love for aesthetically pleasing, accessible web experiences.
+        My web development journey began in 2020 amidst the challenges of the
+        pandemic. Over the past three years, I&apos;ve honed my skills as a Web
+        Developer with a focus on front-end design, but my curiosity and
+        eagerness to learn have driven me to explore backend development as
+        well. I&apos;ve tackled projects of varying scales, delivering solutions
+        that have made a significant impact on both companies and end users.
+        Each project is a new opportunity to blend creativity with technical
+        expertise, and I&apos;m passionate about crafting experiences that
+        resonate.
       </Paragraph>
       <LetsChatButton />
     </div>
@@ -33,11 +35,12 @@ function Content() {
 
 function Picture() {
   return (
-    <div className="relative flex max-w-lg justify-center before:absolute before:bottom-0 before:top-1/4 before:h-1/2 before:w-1/2 before:rounded-full before:bg-gradient-to-t before:from-transparent before:to-primary before:blur-3xl after:absolute after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-50% after:to-background lg:mx-0">
+    <div className="relative flex max-w-md items-center justify-center lg:mx-0">
+      <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(0,0,0,0)_35%,_#0a0a0a),_linear-gradient(to_right,rgba(0,0,0,0)_80%,_#0a0a0a_100%),_linear-gradient(to_bottom,rgba(0,0,0,0)_80%,_#0a0a0a_100%),_linear-gradient(to_bottom_right,rgba(0,0,0,0)_60%,_#0a0a0a_100%)]"></div>
       <Image
         src={me}
-        alt="Carlos Reyes, Frontend Developer"
-        className="h-full w-full object-cover contrast-125"
+        alt="Carlos Reyes, Web Developer"
+        className="h-full w-full object-cover"
       />
     </div>
   )

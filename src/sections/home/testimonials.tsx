@@ -10,14 +10,6 @@ import { useState } from "react"
 const testimonials = [
   {
     quote:
-      'Carlos is a very committed and dedicated person in his area of work, he has helped me a lot to learn about the world of programming and web development, thanks both to his blog "La Esquina del Código" and personally, because thanks to his tutoring I have been able to advance a lot in my way to become a web developer and understand much better how the world of development works.',
-    author: {
-      name: "Alexis Clavo",
-      title: "Software Development Student",
-    },
-  },
-  {
-    quote:
       "I highly recommend Carlos. He was a great asset to my professional development. He is an ethical, professional, and detail-oriented individual who takes great care in his work. He has a strong understanding of the industry and is able to communicate effectively with both clients and colleagues. I would give him a 15/10 rating.",
     author: {
       name: "Jose Cortez",
@@ -84,13 +76,12 @@ export function Testimonials() {
   return (
     <section className="container space-y-8 py-20">
       <SectionTitle id="testimonials" className="text-center">
-        Endorsed by Clients and Colleagues
+        Voices of Appreciation
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        My dedication to creating sleek, user-friendly designs and implementing
-        efficient, robust coding is not just acknowledged but also highly
-        commended by both clients and colleagues. I&apos;m eager to bring my
-        skills and passion to your next project.
+        See what others have to say about working with me. From successful
+        collaborations to impactful results, these testimonials capture the
+        experiences and satisfaction of those who&apos;ve worked with me.
       </Paragraph>
       <div className="flex justify-center">
         <LinkButton

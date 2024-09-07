@@ -6,14 +6,14 @@ export function CallToAction() {
   return (
     <section className="container space-y-8 pb-40 pt-20 text-center">
       <SectionTitle>
-        Let&apos;s Create Something Remarkable.
-        <br />
-        <span className="text-primary">Connect with Me!</span>
+        Let&apos;s Make Something Great{" "}
+        <span className="text-primary">Together</span>!
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl">
-        Don&apos;t hesitate to get in touch if you&apos;re seeking a website
-        overhaul, a new web application, or simply wish to discuss your project
-        ideas. I&apos;m thrilled to help bring your vision to life.
+        Whether you&apos;re looking for a dedicated team member or a skilled
+        freelancer to tackle your next project, I&apos;m here to help. Reach out
+        to discuss how we can collaborate and create impactful solutions
+        together.
       </Paragraph>
       <LetsChatButton />
     </section>

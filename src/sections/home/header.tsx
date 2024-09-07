@@ -20,12 +20,13 @@ function Content() {
     <div className="space-y-6 text-center sm:max-w-lg md:max-w-xl xl:text-left">
       <Banner />
       <H1>
-        Crafting <span className="text-primary">Inspiring</span> Digital
-        Interfaces
+        Front-End Focused.{" "}
+        <span className="text-primary">Full-Stack Ready.</span>
       </H1>
       <Paragraph>
-        Experience dynamic, powerful websites that narrate your unique brand
-        story. Let&apos;s collaborate and create magic!
+        I&apos;m a Web Developer specializing in sleek, responsive front-end
+        designs, with the versatility to handle the full stack. I bring your
+        vision to life with clean code and seamless user experiences.
       </Paragraph>
       <div className="flex flex-wrap items-center justify-center gap-2 xl:justify-start">
         <LetsChatButton />

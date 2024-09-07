@@ -6,25 +6,59 @@ import { ArrowUpRight } from "lucide-react"
 import { StaticImageData } from "next/image"
 import esquinaDelCodigo from "../../../public/projects/esquina-del-codigo.png"
 import radarCiudadCaracas from "../../../public/projects/radar-ciudad-caracas.png"
+import rateSpotLandingPage from "../../../public/projects/ratespot-landing-page.png"
 import rivkaDevelopmentWebsite from "../../../public/projects/rivka-development-website.png"
+import tours360LandingPage from "../../../public/projects/tours360-landing-page.png"
 
 export function CaseStudies() {
   return (
     <section className="container flex flex-col space-y-8 py-20">
       <SectionTitle id="case-studies" className="text-center">
-        Impactful Digital Experiences - The Power of Collaboration
+        Projects That Speak Volumes
       </SectionTitle>
       <Paragraph className="mx-auto max-w-4xl text-center">
-        When we combine our skills and commitment, we can craft a digital
-        platform that not only looks appealing but also operates smoothly,
-        leaving a lasting positive impression on users.
+        Discover the projects that showcase my journey from front-end finesse to
+        full-stack versatility. Each project is a testament to my ability to
+        turn ideas into impactful solutions, blending creativity with technical
+        expertise to make a real difference.
       </Paragraph>
       <div>
-        <RadarCiudadCaracas />
+        <RateSpotLandingPage />
+        <Tours360LandingPage />
         <RivkaDevelopmentWebsite />
         <LaEsquinaDelCodigo />
+        <RadarCiudadCaracas />
       </div>
     </section>
+  )
+}
+
+function RateSpotLandingPage() {
+  return (
+    <CaseStudy
+      title="RateSpot Landing Page"
+      description="I've been working closely with the RateSpot team to develop a
+      landing page that showcases their product and services. The site is
+      built with Next.js, and it's hosted on Vercel. The design is modern,
+      clean, and user-friendly, making it easy for visitors to learn more
+      about RateSpot and sign up for their services."
+      screenshot={rateSpotLandingPage}
+      url="https://www.ratespot.io"
+    />
+  )
+}
+
+function Tours360LandingPage() {
+  return (
+    <CaseStudy
+      title="TOURS360 Landing Page"
+      description="I was hired to develop an eye-catching landing page to 
+      promote a new Real Estate virtual tour service for anyone who wants 
+      to showcase their properties without having to make an appointment 
+      upfront. The site is built with Next.js, and it's hosted on Vercel."
+      screenshot={tours360LandingPage}
+      url="https://tours360.io"
+    />
   )
 }
 
@@ -32,9 +66,11 @@ function RadarCiudadCaracas() {
   return (
     <CaseStudy
       title="Radar Ciudad Caracas"
-      description="neuralgeeks engaged me to create a web application enabling 
-      citizens to report public service failures in a straightforward, 
-      intuitive manner. See the results for yourself."
+      description="I developed a high-impact public service 
+      failure reporting software for Radar Ciudad Caracas, handling over 
+      74,000 reports and aiding more than 800 users across the Capital 
+      District of Venezuela. This software greatly improved communication 
+      between citizens and service providers."
       metrics={[
         {
           value: "60,000+",
@@ -54,7 +90,7 @@ function RadarCiudadCaracas() {
 function RivkaDevelopmentWebsite() {
   return (
     <CaseStudy
-      title="Rivka Development"
+      title="Rivka Development Website"
       description="I was engaged to revamp their website, resulting in a 
       contemporary, professional site that highlights their projects and 
       services, reflecting their brand and professionalism. The site is fully 

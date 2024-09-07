@@ -13,10 +13,6 @@ const links = [
     href: "/#about",
   },
   {
-    label: "Services",
-    href: "/#services",
-  },
-  {
     label: "Case Studies",
     href: "/#case-studies",
   },

@@ -3,7 +3,6 @@ import { About } from "@/sections/home/about"
 import { CallToAction } from "@/sections/home/call-to-action"
 import { CaseStudies } from "@/sections/home/case-studies"
 import { Header } from "@/sections/home/header"
-import { Services } from "@/sections/home/services"
 import { Testimonials } from "@/sections/home/testimonials"
 import { NextSeo } from "next-seo"
 
@@ -14,7 +13,6 @@ export default function Home() {
       <Header />
       <main>
         <About />
-        <Services />
         <CaseStudies />
         <Testimonials />
         <CallToAction />
