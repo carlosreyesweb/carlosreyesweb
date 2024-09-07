@@ -1,6 +1,6 @@
 # Hi 👋, I'm Carlos Reyes
 
-## A passionate Frontend Developer from Venezuela
+## A passionate Web Developer from Venezuela
 
 - 👨‍💻 All of my projects are available at [carlosreyesweb.com](https://www.carlosreyesweb.com)
 
@@ -10,15 +10,35 @@
 
 - ⚡ Fun fact: **I have better project Ideas when I'm taking a shower.**
 
-## Languages
+## Frameworks, Libraries, Languages and Tools
 
-- JavaScript
-- TypeScript
-- Python
-
-## Frameworks and Libraries
+### Frontend
 
 - Next.js
 - React + Vite
-- NestJS
-- Tailwind CSS
+- Angular
+- Vanilla (plain HTML, CSS and JavaScript)
+
+### Back-end
+
+- Express
+- Nest.js
+- Node.js
+- Prisma ORM
+- MySQL
+- MongoDB
+- Flask
+
+### Languages
+
+- TypeScript
+- JavaScript
+- Python
+
+### DevOps
+
+- Docker
+- DigitalOcean
+- Vercel
+- GitHub Actions for CD
+- Linux
