@@ -1,3 +1,4 @@
+import { ToolsSlider } from "@/components/tools-slider"
 import { clientEnvironment } from "@/config/environment"
 import { About } from "@/sections/home/about"
 import { CallToAction } from "@/sections/home/call-to-action"
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <NextSeo canonical={clientEnvironment.NEXT_PUBLIC_HOST + "/"} />
       <Header />
+      <ToolsSlider />
       <main>
         <About />
         <CaseStudies />
