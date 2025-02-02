@@ -1,10 +1,4 @@
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
-import {
-  AngularOriginal,
   Css3Original,
   DigitaloceanOriginal,
   DockerOriginal,
@@ -23,7 +17,7 @@ import {
   VercelOriginal,
   VitejsOriginal,
 } from "devicons-react"
-import AutoPlay from "embla-carousel-autoplay"
+import { Marquee } from "./ui/marquee"
 
 const TOOLS = [
   {
@@ -38,10 +32,6 @@ const TOOLS = [
   {
     name: "Vite",
     logo: VitejsOriginal,
-  },
-  {
-    name: "Angular",
-    logo: AngularOriginal,
   },
   {
     name: "HTML",
@@ -104,31 +94,20 @@ const TOOLS = [
 
 export function ToolsSlider() {
   return (
-    <Carousel
-      opts={{
-        align: "center",
-        loop: true,
-        dragFree: true,
-      }}
-      plugins={[AutoPlay({ delay: 1000, stopOnInteraction: false })]}
-      className="w-full py-4 after:pointer-events-none after:absolute after:inset-0 after:bg-[radial-gradient(circle,_transparent_40%,_#0a0a0a)]"
+    <Marquee
+      pauseOnHover
+      className="[--duration:20s] after:pointer-events-none after:absolute after:inset-0 after:bg-[radial-gradient(circle,_transparent_40%,_#0a0a0a)]"
     >
-      <CarouselContent>
-        {TOOLS.map(({ name, logo: Logo, color }, index) => (
-          <CarouselItem
-            key={index}
-            className="basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-1/12"
-          >
-            <figure
-              className="flex h-full items-center justify-center"
-              title={name}
-            >
-              <Logo size={48} fill={color} color={color} />
-              <figcaption className="sr-only">{name}</figcaption>
-            </figure>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+      {TOOLS.map(({ name, logo: Logo, color }, index) => (
+        <figure
+          key={index}
+          className="flex h-full w-36 items-center justify-center"
+          title={name}
+        >
+          <Logo size={48} fill={color} color={color} />
+          <figcaption className="sr-only">{name}</figcaption>
+        </figure>
+      ))}
+    </Marquee>
   )
 }
