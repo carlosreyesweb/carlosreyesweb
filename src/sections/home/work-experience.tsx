@@ -63,10 +63,10 @@ function Job(props: (typeof JOBS)[number]) {
   return (
     <AccordionItem
       value={`${props.company}-${props.title}`}
-      className="group relative flex flex-col gap-y-6 overflow-hidden border px-6 py-4"
+      className="group relative flex flex-col gap-y-6 overflow-hidden border px-6 pb-5 pt-4"
     >
-      <AccordionTrigger className="items-start p-0 text-left hover:no-underline sm:items-center">
-        <div className="relative top-1.5 h-12 w-12 overflow-hidden rounded sm:static sm:top-0">
+      <AccordionTrigger className="items-start gap-4 p-0 text-left hover:no-underline">
+        <div className="relative top-2 hidden h-12 w-12 overflow-hidden rounded sm:block">
           {props.company.logo ? (
             <Image
               src={props.company.logo}
@@ -77,21 +77,15 @@ function Job(props: (typeof JOBS)[number]) {
             <Building2 className="h-full w-full text-muted-foreground" />
           )}
         </div>
-        <div className="ml-4 flex flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <div className="space-y-1 whitespace-nowrap">
-            <H3>
-              {props.company.name}
-              <ChevronRight className="relative bottom-0.5 ml-1 inline-block h-6 w-6 transition-transform group-data-[state=open]:rotate-90" />
-            </H3>
+        <div className="flex-1 space-y-1 whitespace-nowrap">
+          <H3>{props.company.name}</H3>
+          <div className="flex flex-col gap-y-2">
             <Small>{props.title}</Small>
-          </div>
-          <div className="flex flex-col gap-2 whitespace-nowrap text-muted-foreground sm:text-right">
-            <Small>{props.remote ? "Remote" : "Onsite"}</Small>
-            <Small>
+            <Small className="text-muted-foreground">
               {format(props.startDate, "MMM yyyy")} -{" "}
               {props.endDate ? format(props.endDate, "MMM yyyy") : "Present"}
             </Small>
-            <Small>
+            <Small className="text-muted-foreground">
               {formatDuration(
                 intervalToDuration({
                   end: props.endDate || new Date(),
@@ -103,7 +97,7 @@ function Job(props: (typeof JOBS)[number]) {
           </div>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="ml-10">
+      <AccordionContent className="sm:ml-10">
         <Ul className="my-0">
           {props.accomplishments.map((accomplishment, index) => (
             <li key={index}>
@@ -113,6 +107,7 @@ function Job(props: (typeof JOBS)[number]) {
         </Ul>
       </AccordionContent>
       <BorderBeam colorFrom="#0a0a0a" colorTo="#33DFBD" />
+      <ChevronRight className="absolute right-4 top-5 h-6 w-6 transition-transform group-data-[state=open]:rotate-90" />
     </AccordionItem>
   )
 }
