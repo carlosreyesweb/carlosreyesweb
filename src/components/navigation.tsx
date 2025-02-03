@@ -5,27 +5,19 @@ import { Button } from "./ui/button"
 
 const links = [
   {
-    label: "Home",
-    href: "/",
+    label: "Showcase",
+    href: "/#showcase",
   },
   {
-    label: "About",
-    href: "/#about",
-  },
-  {
-    label: "Case Studies",
-    href: "/#case-studies",
-  },
-  {
-    label: "Testimonials",
-    href: "/#testimonials",
+    label: "Work Experience",
+    href: "/#work-experience",
   },
   {
     label: "Blog",
     href: "https://www.esquinadelcodigo.com",
   },
   {
-    label: "Let's Chat!",
+    label: "Get in Touch",
     href: "/contact",
     asCTA: true,
   },

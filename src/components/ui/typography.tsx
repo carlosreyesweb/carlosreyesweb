@@ -120,7 +120,7 @@ const Ul = forwardRef<HTMLUListElement, UlProps>(
     <ul
       ref={ref}
       className={cn(
-        "my-6 ml-6 list-disc text-lg md:text-xl [&>li]:mt-2",
+        "my-6 ml-6 list-disc space-y-4 text-lg md:text-xl",
         className,
       )}
       {...props}
@@ -137,7 +137,7 @@ const Ol = forwardRef<HTMLOListElement, OlProps>(
     <ol
       ref={ref}
       className={cn(
-        "my-6 ml-6 list-decimal text-lg md:text-xl [&>li]:mt-2",
+        "my-6 ml-6 list-decimal space-y-4 text-lg md:text-xl",
         className,
       )}
       {...props}

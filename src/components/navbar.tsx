@@ -5,7 +5,7 @@ import { Navigation } from "./navigation"
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b bg-background/50 py-4 backdrop-blur">
+    <nav className="fixed top-0 z-50 w-full border-b bg-background py-4">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <Logo />

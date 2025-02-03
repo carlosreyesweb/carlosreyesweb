@@ -1,10 +1,9 @@
-import { ToolsSlider } from "@/components/tools-slider"
+import { Skills } from "@/components/skills"
 import { clientEnvironment } from "@/config/environment"
-import { About } from "@/sections/home/about"
 import { CallToAction } from "@/sections/home/call-to-action"
-import { CaseStudies } from "@/sections/home/case-studies"
 import { Header } from "@/sections/home/header"
-import { Testimonials } from "@/sections/home/testimonials"
+import { Showcase } from "@/sections/home/showcase"
+import { WorkExperience } from "@/sections/home/work-experience"
 import { NextSeo } from "next-seo"
 
 export default function Home() {
@@ -12,11 +11,10 @@ export default function Home() {
     <>
       <NextSeo canonical={clientEnvironment.NEXT_PUBLIC_HOST + "/"} />
       <Header />
-      <ToolsSlider />
-      <main>
-        <About />
-        <CaseStudies />
-        <Testimonials />
+      <Skills />
+      <main className="my-32 space-y-32">
+        <Showcase />
+        <WorkExperience />
         <CallToAction />
       </main>
     </>

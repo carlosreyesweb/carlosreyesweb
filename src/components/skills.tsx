@@ -19,7 +19,7 @@ import {
 } from "devicons-react"
 import { Marquee } from "./ui/marquee"
 
-const TOOLS = [
+const SKILLS = [
   {
     name: "Next.js",
     logo: NextjsPlain,
@@ -92,22 +92,21 @@ const TOOLS = [
   },
 ]
 
-export function ToolsSlider() {
+export function Skills() {
   return (
-    <Marquee
-      pauseOnHover
-      className="[--duration:20s] after:pointer-events-none after:absolute after:inset-0 after:bg-[radial-gradient(circle,_transparent_40%,_#0a0a0a)]"
-    >
-      {TOOLS.map(({ name, logo: Logo, color }, index) => (
-        <figure
-          key={index}
-          className="flex h-full w-36 items-center justify-center"
-          title={name}
-        >
-          <Logo size={48} fill={color} color={color} />
-          <figcaption className="sr-only">{name}</figcaption>
-        </figure>
-      ))}
-    </Marquee>
+    <div className="container relative after:pointer-events-none after:absolute after:inset-0 after:z-10 after:bg-gradient-to-r after:from-background after:via-transparent after:to-background">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {SKILLS.map(({ name, logo: Logo, color }, index) => (
+          <figure
+            key={index}
+            className="flex h-full w-36 items-center justify-center"
+            title={name}
+          >
+            <Logo size={48} fill={color} color={color} />
+            <figcaption className="sr-only">{name}</figcaption>
+          </figure>
+        ))}
+      </Marquee>
+    </div>
   )
 }
