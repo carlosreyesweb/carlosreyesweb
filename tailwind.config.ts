@@ -103,7 +103,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         slide: "slide infinite 20s linear",
-        draw: "draw 2.5s linear forwards",
+        draw: "draw 2.5s linear infinite alternate",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
