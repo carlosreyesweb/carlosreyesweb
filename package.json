@@ -47,8 +47,6 @@
     "cmdk": "^0.2.1",
     "date-fns": "^2.30.0",
     "devicons-react": "^1.4.1",
-    "embla-carousel-autoplay": "^8.6.0",
-    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.298.0",
     "motion": "^12.6.5",
     "next-seo": "^6.6.0",
