@@ -8,8 +8,9 @@ import { differenceInYears } from "date-fns"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import me from "../../../public/me.png"
+import { JOBS } from "./work-experience"
 
-const START_DATE = new Date("2020-09-01")
+const START_DATE = JOBS.at(-1)?.startDate ?? new Date("2020-03-01")
 
 export function Header() {
   return (

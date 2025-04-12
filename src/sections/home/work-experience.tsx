@@ -13,7 +13,7 @@ import neuralgeeks from "../../../public/companies/neuralgeeks.jpeg"
 import rivkaDevelopment from "../../../public/companies/rivka-development.svg"
 import carlosReyesWeb from "../../../public/favicon.svg"
 
-const JOBS = [
+export const JOBS = [
   {
     id: "rivka-development-full-stack-web-developer",
     company: {
