@@ -11,7 +11,7 @@ import esquinaDelCodigoIcon from "../../../public/projects/esquina-del-codigo-ic
 import esquinaDelCodigo from "../../../public/projects/esquina-del-codigo.png"
 import radarCiudadCaracas from "../../../public/projects/radar-ciudad-caracas.png"
 import rateSpotAppIcon from "../../../public/projects/ratespot-app-icon.png"
-import rateSpotWebsite from "../../../public/projects/ratespot-website.png"
+import rateSpotApp from "../../../public/projects/ratespot-app.png"
 import rivkaDevelopmentIcon from "../../../public/projects/rivka-development-icon.svg"
 import rivkaDevelopmentWebsite from "../../../public/projects/rivka-development-website.png"
 
@@ -31,13 +31,11 @@ const PROJECTS: BentoCardProps[] = [
     Icon: (props) => (
       <Image src={rateSpotAppIcon} alt="RateSpot Icon" {...props} />
     ),
-    background: (
-      <ProjectBackground src={rateSpotWebsite} alt="RateSpot Website" />
-    ),
-    name: "RateSpot (App & Website)",
+    background: <ProjectBackground src={rateSpotApp} alt="RateSpot" />,
+    name: "RateSpot",
     description:
       "A Mortgage Pricing Engine that helps users find listings, compare rates, and run complete mortgage scenarios.",
-    href: "https://ratespot.io",
+    href: "https://www.ratespot.io",
     target: "_blank",
     cta: "Explore RateSpot",
     className: "col-span-3 lg:col-span-2",
