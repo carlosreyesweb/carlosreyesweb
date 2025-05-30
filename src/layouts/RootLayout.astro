@@ -55,6 +55,8 @@ const openGraphImageURL = new URL("/opengraph-image.jpg", Astro.url);
     <meta name="twitter:image:height" content="630" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <!-- JSON-LD -->
+    <slot name="json-ld" />
   </head>
   <body>
     <Navbar />

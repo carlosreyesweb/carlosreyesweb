@@ -30,6 +30,7 @@ const jsonLd: WithContext<Person> = {
     <Contact />
   </main>
   <script
+    slot="json-ld"
     type="application/ld+json"
     is:inline
     set:html={JSON.stringify(jsonLd)}
