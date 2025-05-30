@@ -1,0 +1,19 @@
+---
+import Logo from "@/components/Logo.astro";
+import SocialLinks from "./SocialLinks.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t">
+  <div class="container flex flex-col items-center gap-y-4 py-12">
+    <a href="/">
+      <Logo class="w-28" />
+      <span class="sr-only">Home</span>
+    </a>
+    <p class="text-center text-sm text-foreground">
+      &copy; {currentYear} Carlos Reyes. All rights reserved.
+    </p>
+    <SocialLinks />
+  </div>
+</footer>

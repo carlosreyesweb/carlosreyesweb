@@ -1,0 +1,33 @@
+---
+import me from "@/assets/me.png";
+import Contact from "@/components/home/Contact.astro";
+import Hero from "@/components/home/Hero.astro";
+import Showcase from "@/components/home/Showcase.astro";
+import { socialLinks } from "@/constants/social-links";
+import RootLayout from "@/layouts/RootLayout.astro";
+import type { Person, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<Person> = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Carlos Reyes",
+  jobTitle: "Full Stack Web Developer",
+  description:
+    "A T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences.",
+  image: me.src,
+  url: Astro.site!.toString(),
+  sameAs: socialLinks.map((link) => link.link),
+};
+---
+
+<RootLayout
+  title="Carlos Reyes - Full Stack Web Developer"
+  description="Hi, I'm Carlos Reyes—a T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences."
+>
+  <Hero />
+  <main class="flex flex-col gap-y-20 py-20">
+    <Showcase />
+    <Contact />
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</RootLayout>

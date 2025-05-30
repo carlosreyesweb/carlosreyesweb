@@ -1,0 +1,92 @@
+---
+import esquinaDelCodigo from "@/assets/projects/esquina-del-codigo.png";
+import pokerRankingWebsite from "@/assets/projects/poker-ranking-website.png";
+import preflopAiWebsite from "@/assets/projects/preflopai-website.png";
+import radarCiudadCaracas from "@/assets/projects/radar-ciudad-caracas.png";
+import rateSpotAppIcon from "@/assets/projects/ratespot-app-icon.png";
+import rateSpotApp from "@/assets/projects/ratespot-app.png";
+import { Image, Picture } from "astro:assets";
+import { BentoCard, type BentoCardProps, BentoGrid } from "../ui/bento-grid";
+import { Typography } from "../ui/typography";
+
+const projects: (Omit<BentoCardProps, "icon" | "background"> & {
+  screenshot: ImageMetadata;
+  icon?: ImageMetadata;
+})[] = [
+  {
+    icon: rateSpotAppIcon,
+    screenshot: rateSpotApp,
+    name: "RateSpot (App & Website)",
+    description:
+      "A Mortgage Pricing Engine that helps users find listings, compare rates, and run complete mortgage scenarios.",
+    href: "https://www.ratespot.io",
+    cta: "Explore RateSpot",
+    className: "col-span-3 lg:col-span-2",
+  },
+  {
+    screenshot: preflopAiWebsite,
+    name: "Preflop AI (Website)",
+    description:
+      "A website for Preflop AI, a mobile tool that provides preflop hand analysis and advice for poker players.",
+    href: "https://www.preflopai.com",
+    cta: "Meet Preflop AI",
+    className: "col-span-3 lg:col-span-1",
+  },
+  {
+    screenshot: pokerRankingWebsite,
+    name: "Poker Ranking (Website)",
+    description:
+      "A website for Poker Ranking, a tool for tournament organizers, clubs and casinos to manage player rankings and statistics.",
+    href: "https://www.pokerranking.io",
+    cta: "Discover Poker Ranking",
+    className: "col-span-3 lg:col-span-1",
+  },
+  {
+    screenshot: esquinaDelCodigo,
+    name: "La Esquina del Codigo (Blog)",
+    description:
+      "A personal blog where I share tutorials, tips, and tricks about web development, programming, and technology.",
+    href: "https://esquinadelcodigo.com",
+    cta: "Visit Blog",
+    className: "col-span-3 lg:col-span-1",
+  },
+  {
+    screenshot: radarCiudadCaracas,
+    name: "Radar Ciudad Caracas (App)",
+    description:
+      "A public service failure reporting software that allows citizens to report issues in their community.",
+    href: "https://radarciudad.info",
+    cta: "Play with the Radar",
+    className: "col-span-3 lg:col-span-1",
+  },
+];
+---
+
+<section class="container space-y-8">
+  <hgroup class="text-center max-w-3xl mx-auto space-y-4">
+    <Typography variant="h2" id="showcase">
+      Featured <span class="text-primary">Projects</span>
+    </Typography>
+    <Typography variant="p" className="text-balance">
+      Explore my work as a Full Stack Developer with a frontend focus—modern,
+      responsive, and built for real users.
+    </Typography>
+  </hgroup>
+  <BentoGrid>
+    {
+      projects.map(({ icon, screenshot, ...project }) => (
+        <BentoCard key={project.name} {...project}>
+          {icon ? (
+            <Image slot="icon" src={icon} alt={`${project.name} icon`} />
+          ) : null}
+          <Picture
+            slot="background"
+            src={screenshot}
+            alt={`${project.name} screenshot`}
+            class="absolute inset-0 size-full object-cover object-top transition-opacity group-hover:opacity-25 group-hover:blur-sm"
+          />
+        </BentoCard>
+      ))
+    }
+  </BentoGrid>
+</section>

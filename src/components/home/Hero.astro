@@ -1,0 +1,49 @@
+---
+import me from "@/assets/me.png";
+import { Image } from "astro:assets";
+import ContactButton from "../ContactButton.astro";
+import Iso from "../Iso.astro";
+import SocialLinks from "../SocialLinks.astro";
+import { Typography } from "../ui/typography";
+import Announcement from "./Announcement.astro";
+import Skills from "./Skills.astro";
+---
+
+<header class="mt-20 py-20 overflow-hidden flex flex-col gap-y-20">
+  <figure
+    class="container flex flex-col-reverse items-center justify-center gap-28 xl:flex-row-reverse"
+  >
+    <div class="relative hidden w-full max-w-md xl:block">
+      <Iso
+        class="absolute inset-0 animate-draw stroke-primary [stroke-dasharray:1000]"
+      />
+      <Image
+        src={me}
+        alt="Portrait of Carlos Reyes, Full Stack Web Developer"
+        class="relative h-full w-full object-cover mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-top-left"
+        loading="eager"
+      />
+    </div>
+    <figcaption
+      class="space-y-6 text-center sm:max-w-lg md:max-w-xl xl:text-left"
+    >
+      <Announcement />
+      <Typography variant="h1">
+        Full Stack Developer with a <span class="text-primary"
+          >Frontend Edge</span
+        >
+      </Typography>
+      <Typography variant="p">
+        Hi, I'm Carlos Reyes—a T-shaped web developer specializing in frontend
+        since 2020. I build fast, scalable, and user-focused web experiences.
+      </Typography>
+      <div
+        class="flex flex-wrap items-center justify-center gap-2 xl:justify-start"
+      >
+        <ContactButton />
+        <SocialLinks />
+      </div>
+    </figcaption>
+  </figure>
+  <Skills />
+</header>

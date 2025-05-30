@@ -1,0 +1,45 @@
+---
+import { navigationLinks } from "@/constants/navigation-links";
+import { ArrowUpRight } from "lucide-react";
+import Logo from "./Logo.astro";
+import { Menu } from "./menu";
+import SocialLinks from "./SocialLinks.astro";
+import { Anchor } from "./ui/anchor";
+import { buttonVariants } from "./ui/button";
+---
+
+<nav class="fixed top-0 z-50 w-full border-b bg-background py-4">
+  <div class="container flex items-center justify-between">
+    <a href="/">
+      <Logo />
+      <span class="sr-only">Home</span>
+    </a>
+    <ul
+      role="list"
+      class="container flex items-center gap-x-10 w-full sr-only sm:not-sr-only"
+    >
+      <li class="flex-1"></li>
+      {
+        navigationLinks.map(({ label, href, asCTA }) => (
+          <li>
+            {asCTA ? (
+              <a href={href} class={buttonVariants({ size: "sm" })}>
+                {label}
+              </a>
+            ) : (
+              <Anchor href={href} className="no-underline hover:underline">
+                {label}
+                {href.includes("http") && (
+                  <ArrowUpRight aria-hidden className="inline-block size-4" />
+                )}
+              </Anchor>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    <Menu client:visible>
+      <SocialLinks slot="socialLinks" />
+    </Menu>
+  </div>
+</nav>

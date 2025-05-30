@@ -1,0 +1,50 @@
+---
+import Iso from "../Iso.astro";
+import SocialLinks from "../SocialLinks.astro";
+import { Anchor } from "../ui/anchor";
+import { Separator } from "../ui/separator";
+import { Typography } from "../ui/typography";
+---
+
+<section
+  class="container max-w-screen-xl py-20 grid grid-cols-1 md:grid-cols-2 gap-8"
+>
+  <hgroup
+    class="flex flex-col gap-y-4 text-center md:text-left text-balance max-w-3xl"
+  >
+    <Typography variant="h2" id="contact"
+      >Let's <span class="text-primary">Build Something Great</span></Typography
+    >
+    <Typography variant="p">
+      Ready to level up your web project? Contact me to work with a frontend
+      expert who knows the full stack.
+    </Typography>
+    <SocialLinks class="mx-auto md:mx-0" />
+  </hgroup>
+  <address
+    class="relative not-italic font-mono lg:text-lg border px-4 py-3 sm:px-8 sm:py-6 h-min"
+  >
+    Carlos Reyes <br />
+    Full Stack Web Developer <br />
+    <div class="text-muted-foreground">
+      404 Not Found Lane, <br />
+      CSS Grid City, JS 12345, <br />
+      The Internet <br />
+    </div>
+    <Separator className="my-2" />
+    Email: <Anchor
+      href="mailto:contact@carlosreyesweb.com"
+      className="whitespace-nowrap">contact@carlosreyesweb.com</Anchor
+    >
+    <br />
+    WhatsApp: <Anchor
+      href="https://wa.me/+584129380768"
+      className="whitespace-nowrap">+58 (412) 938-0768</Anchor
+    >
+    <br />
+    Website: <Anchor href={Astro.site?.toString()} className="whitespace-nowrap"
+      >www.carlosreyesweb.com</Anchor
+    >
+    <Iso class="hidden sm:block w-8 absolute top-6 right-6 fill-primary" />
+  </address>
+</section>

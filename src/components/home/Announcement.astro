@@ -1,0 +1,19 @@
+---
+import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
+import { Badge } from "../ui/badge";
+import { buttonVariants } from "../ui/button";
+import { Typography } from "../ui/typography";
+---
+
+<a
+  href="https://www.esquinadelcodigo.com"
+  target="_blank"
+  class={cn(buttonVariants({ variant: "secondary" }), "px-4")}
+>
+  <Badge>New!</Badge>
+  <Typography variant="small" className="ml-2 mr-1">
+    My blog is now live!
+  </Typography>
+  <ArrowUpRight className="size-5" />
+</a>
