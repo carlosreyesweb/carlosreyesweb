@@ -29,5 +29,9 @@ const jsonLd: WithContext<Person> = {
     <Showcase />
     <Contact />
   </main>
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(jsonLd)}
+  />
 </RootLayout>
