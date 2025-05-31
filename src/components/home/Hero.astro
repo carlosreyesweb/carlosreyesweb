@@ -1,26 +1,26 @@
 ---
-import me from "@/assets/me.png";
-import { Image } from "astro:assets";
-import ContactButton from "../ContactButton.astro";
-import Iso from "../Iso.astro";
-import SocialLinks from "../SocialLinks.astro";
-import { Typography } from "../ui/typography";
-import Announcement from "./Announcement.astro";
-import Skills from "./Skills.astro";
+import me from "@/assets/me.png"
+import { Image } from "astro:assets"
+import ContactButton from "../ContactButton.astro"
+import Iso from "../Iso.astro"
+import SocialLinks from "../SocialLinks.astro"
+import { Typography } from "../ui/typography"
+import Announcement from "./Announcement.astro"
+import Skills from "./Skills.astro"
 ---
 
-<header class="mt-20 py-20 overflow-hidden flex flex-col gap-y-20">
+<header class="mt-20 flex flex-col gap-y-20 overflow-hidden py-20">
   <figure
     class="container flex flex-col-reverse items-center justify-center gap-28 xl:flex-row-reverse"
   >
     <div class="relative hidden w-full max-w-md xl:block">
       <Iso
-        class="absolute inset-0 animate-draw stroke-primary [stroke-dasharray:1000]"
+        class="animate-draw stroke-primary absolute inset-0 [stroke-dasharray:1000]"
       />
       <Image
         src={me}
         alt="Portrait of Carlos Reyes, Full Stack Web Developer"
-        class="relative h-full w-full object-cover mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-top-left"
+        class="relative h-full w-full mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-top-left object-cover"
         loading="eager"
       />
     </div>

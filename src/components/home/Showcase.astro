@@ -1,17 +1,17 @@
 ---
-import esquinaDelCodigo from "@/assets/projects/esquina-del-codigo.png";
-import pokerRankingWebsite from "@/assets/projects/poker-ranking-website.png";
-import preflopAiWebsite from "@/assets/projects/preflopai-website.png";
-import radarCiudadCaracas from "@/assets/projects/radar-ciudad-caracas.png";
-import rateSpotAppIcon from "@/assets/projects/ratespot-app-icon.png";
-import rateSpotApp from "@/assets/projects/ratespot-app.png";
-import { Image, Picture } from "astro:assets";
-import { BentoCard, type BentoCardProps, BentoGrid } from "../ui/bento-grid";
-import { Typography } from "../ui/typography";
+import esquinaDelCodigo from "@/assets/projects/esquina-del-codigo.png"
+import pokerRankingWebsite from "@/assets/projects/poker-ranking-website.png"
+import preflopAiWebsite from "@/assets/projects/preflopai-website.png"
+import radarCiudadCaracas from "@/assets/projects/radar-ciudad-caracas.png"
+import rateSpotAppIcon from "@/assets/projects/ratespot-app-icon.png"
+import rateSpotApp from "@/assets/projects/ratespot-app.png"
+import { Image, Picture } from "astro:assets"
+import { BentoCard, type BentoCardProps, BentoGrid } from "../ui/bento-grid"
+import { Typography } from "../ui/typography"
 
 const projects: (Omit<BentoCardProps, "icon" | "background"> & {
-  screenshot: ImageMetadata;
-  icon?: ImageMetadata;
+  screenshot: ImageMetadata
+  icon?: ImageMetadata
 })[] = [
   {
     icon: rateSpotAppIcon,
@@ -59,11 +59,11 @@ const projects: (Omit<BentoCardProps, "icon" | "background"> & {
     cta: "Play with the Radar",
     className: "col-span-3 lg:col-span-1",
   },
-];
+]
 ---
 
 <section class="container space-y-8">
-  <hgroup class="text-center max-w-3xl mx-auto space-y-4">
+  <hgroup class="mx-auto max-w-3xl space-y-4 text-center">
     <Typography variant="h2" id="showcase">
       Featured <span class="text-primary">Projects</span>
     </Typography>

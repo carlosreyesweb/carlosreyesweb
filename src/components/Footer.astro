@@ -1,8 +1,8 @@
 ---
-import Logo from "@/components/Logo.astro";
-import SocialLinks from "./SocialLinks.astro";
+import Logo from "@/components/Logo.astro"
+import SocialLinks from "./SocialLinks.astro"
 
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear()
 ---
 
 <footer class="border-t">
@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear();
       <Logo class="w-28" />
       <span class="sr-only">Home</span>
     </a>
-    <p class="text-center text-sm text-foreground">
+    <p class="text-foreground text-center text-sm">
       &copy; {currentYear} Carlos Reyes. All rights reserved.
     </p>
     <SocialLinks />

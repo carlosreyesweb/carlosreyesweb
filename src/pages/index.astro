@@ -1,11 +1,11 @@
 ---
-import me from "@/assets/me.png";
-import Contact from "@/components/home/Contact.astro";
-import Hero from "@/components/home/Hero.astro";
-import Showcase from "@/components/home/Showcase.astro";
-import { socialLinks } from "@/constants/social-links";
-import RootLayout from "@/layouts/RootLayout.astro";
-import type { Person, WithContext } from "schema-dts";
+import me from "@/assets/me.png"
+import Contact from "@/components/home/Contact.astro"
+import Hero from "@/components/home/Hero.astro"
+import Showcase from "@/components/home/Showcase.astro"
+import { socialLinks } from "@/constants/social-links"
+import RootLayout from "@/layouts/RootLayout.astro"
+import type { Person, WithContext } from "schema-dts"
 
 const jsonLd: WithContext<Person> = {
   "@context": "https://schema.org",
@@ -17,7 +17,7 @@ const jsonLd: WithContext<Person> = {
   image: me.src,
   url: Astro.site!.toString(),
   sameAs: socialLinks.map((link) => link.link),
-};
+}
 ---
 
 <RootLayout

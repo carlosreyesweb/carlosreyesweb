@@ -1,14 +1,14 @@
 ---
-import { navigationLinks } from "@/constants/navigation-links";
-import { ArrowUpRight } from "lucide-react";
-import Logo from "./Logo.astro";
-import { Menu } from "./menu";
-import SocialLinks from "./SocialLinks.astro";
-import { Anchor } from "./ui/anchor";
-import { buttonVariants } from "./ui/button";
+import { navigationLinks } from "@/constants/navigation-links"
+import { ArrowUpRight } from "lucide-react"
+import Logo from "./Logo.astro"
+import { Menu } from "./menu"
+import SocialLinks from "./SocialLinks.astro"
+import { Anchor } from "./ui/anchor"
+import { buttonVariants } from "./ui/button"
 ---
 
-<nav class="fixed top-0 z-50 w-full border-b bg-background py-4">
+<nav class="bg-background fixed top-0 z-50 w-full border-b py-4">
   <div class="container flex items-center justify-between">
     <a href="/">
       <Logo />
@@ -16,7 +16,7 @@ import { buttonVariants } from "./ui/button";
     </a>
     <ul
       role="list"
-      class="container flex items-center gap-x-10 w-full sr-only sm:not-sr-only"
+      class="sr-only container flex w-full items-center gap-x-10 sm:not-sr-only"
     >
       <li class="flex-1"></li>
       {

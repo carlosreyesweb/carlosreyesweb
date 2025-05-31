@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export const socialLinks = [
   {
@@ -21,4 +21,4 @@ export const socialLinks = [
     link: "https://twitter.com/carlosreyesweb",
     icon: Twitter,
   },
-];
+]

@@ -12,4 +12,4 @@ export const navigationLinks = [
     href: "/#contact",
     asCTA: true,
   },
-];
+]

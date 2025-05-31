@@ -5,15 +5,15 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { navigationLinks } from "@/constants/navigation-links";
-import { Menu as MenuIcon } from "lucide-react";
-import type { ReactNode } from "react";
-import { Anchor } from "./ui/anchor";
-import { Button } from "./ui/button";
+} from "@/components/ui/drawer"
+import { navigationLinks } from "@/constants/navigation-links"
+import { Menu as MenuIcon } from "lucide-react"
+import type { ReactNode } from "react"
+import { Anchor } from "./ui/anchor"
+import { Button } from "./ui/button"
 
 interface MenuProps {
-  socialLinks?: ReactNode;
+  socialLinks?: ReactNode
 }
 export function Menu({ socialLinks }: MenuProps) {
   return (
@@ -32,7 +32,7 @@ export function Menu({ socialLinks }: MenuProps) {
             feel free to reach out via the contact page.
           </DrawerDescription>
         </DrawerHeader>
-        <div className="p-12 flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-4 p-12">
           <ul role="list" className="flex flex-col gap-y-4">
             {navigationLinks.map(({ label, href, asCTA }) => (
               <li key={href}>
@@ -43,7 +43,7 @@ export function Menu({ socialLinks }: MenuProps) {
                 ) : (
                   <Anchor
                     href={href}
-                    className="text-foreground no-underline hover:underline text-lg md:text-xl"
+                    className="text-foreground text-lg no-underline hover:underline md:text-xl"
                   >
                     {label}
                   </Anchor>
@@ -55,5 +55,5 @@ export function Menu({ socialLinks }: MenuProps) {
         </div>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

@@ -1,24 +1,24 @@
 ---
-import Footer from "@/components/Footer.astro";
-import Navbar from "@/components/Navbar.astro";
-import "@fontsource/roboto-mono";
-import "@fontsource/roboto/latin-400";
-import "@fontsource/roboto/latin-500";
-import "@fontsource/roboto/latin-700";
-import "@fontsource/roboto/latin-900";
-import "../styles/globals.css";
+import Footer from "@/components/Footer.astro"
+import Navbar from "@/components/Navbar.astro"
+import "@fontsource/roboto-mono"
+import "@fontsource/roboto/latin-400"
+import "@fontsource/roboto/latin-500"
+import "@fontsource/roboto/latin-700"
+import "@fontsource/roboto/latin-900"
+import "../styles/globals.css"
 
 interface Props {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 const {
   title = "Carlos Reyes - Full Stack Web Developer",
   description = "Hi, I'm Carlos Reyes, a Full Stack Web Developer with 5 years of experience specializing in sleek, responsive front-end designs and robust back-end solutions. I bring your vision to life with clean code and seamless user experiences.",
-} = Astro.props;
+} = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const openGraphImageURL = new URL("/opengraph-image.jpg", Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const openGraphImageURL = new URL("/opengraph-image.jpg", Astro.url)
 ---
 
 <!doctype html>

@@ -1,24 +1,24 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react"
 
-import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import { Anchor } from "./anchor";
-import { Typography } from "./typography";
+import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
+import { Anchor } from "./anchor"
+import { Typography } from "./typography"
 
 interface BentoGridProps extends ComponentProps<"div"> {
-  children: ReactNode;
-  className?: string;
+  children: ReactNode
+  className?: string
 }
 
 export interface BentoCardProps extends ComponentProps<"figure"> {
-  name: string;
-  className: string;
-  background?: ReactNode;
-  icon?: ReactNode;
-  description: string;
-  href: string;
-  target?: ComponentProps<"a">["target"];
-  cta: string;
+  name: string
+  className: string
+  background?: ReactNode
+  icon?: ReactNode
+  description: string
+  href: string
+  target?: ComponentProps<"a">["target"]
+  cta: string
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -26,14 +26,14 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
     <div
       className={cn(
         "grid w-full auto-rows-[25rem] grid-cols-3 gap-4",
-        className
+        className,
       )}
       {...props}
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
 const BentoCard = ({
   name,
@@ -50,14 +50,14 @@ const BentoCard = ({
     key={name}
     className={cn(
       "group relative col-span-3 flex flex-col justify-between overflow-hidden",
-      "transform-gpu border bg-background [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
-      className
+      "bg-background transform-gpu border [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+      className,
     )}
     {...props}
   >
     <div>{background}</div>
     <figcaption className="pointer-events-none z-10 translate-y-full transform-gpu space-y-2 px-8 py-7 transition-all duration-300 group-hover:translate-y-0">
-      <div className="size-12 origin-left transform-gpu text-muted-foreground transition-all duration-300 ease-in-out group-hover:scale-75">
+      <div className="text-muted-foreground size-12 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75">
         {icon}
       </div>
       <Typography variant="h3">{name}</Typography>
@@ -67,13 +67,13 @@ const BentoCard = ({
       <Anchor
         href={href}
         target={target}
-        className="pointer-events-auto md:text-xl no-underline hover:underline"
+        className="pointer-events-auto no-underline hover:underline md:text-xl"
       >
         {cta}
-        <ArrowRight className="inline-block ml-1 size-5" />
+        <ArrowRight className="ml-1 inline-block size-5" />
       </Anchor>
     </figcaption>
   </figure>
-);
+)
 
-export { BentoCard, BentoGrid };
+export { BentoCard, BentoGrid }

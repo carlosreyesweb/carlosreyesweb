@@ -1,11 +1,11 @@
 ---
-import { socialLinks } from "@/constants/social-links";
-import { cn } from "@/lib/utils";
-import type { HTMLAttributes } from "astro/types";
-import { buttonVariants } from "./ui/button";
+import { socialLinks } from "@/constants/social-links"
+import { cn } from "@/lib/utils"
+import type { HTMLAttributes } from "astro/types"
+import { buttonVariants } from "./ui/button"
 
-type Props = Omit<HTMLAttributes<"ul">, "role">;
-const { class: className = "", ...props } = Astro.props;
+type Props = Omit<HTMLAttributes<"ul">, "role">
+const { class: className = "", ...props } = Astro.props
 ---
 
 <ul role="list" class={cn("inline-flex space-x-1", className)} {...props}>

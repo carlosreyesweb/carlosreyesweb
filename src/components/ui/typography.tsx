@@ -1,6 +1,6 @@
-import { Slot } from "@radix-ui/react-slot";
-import { type VariantProps, cva } from "class-variance-authority";
-import { cn } from "../../lib/utils";
+import { Slot } from "@radix-ui/react-slot"
+import { type VariantProps, cva } from "class-variance-authority"
+import { cn } from "../../lib/utils"
 
 export const typographyVariants = cva("text-foreground", {
   variants: {
@@ -21,9 +21,9 @@ export const typographyVariants = cva("text-foreground", {
   defaultVariants: {
     variant: "p",
   },
-});
+})
 
-type VariantPropType = VariantProps<typeof typographyVariants>;
+type VariantPropType = VariantProps<typeof typographyVariants>
 
 const variantElementMap: Record<
   NonNullable<VariantPropType["variant"]>,
@@ -39,13 +39,13 @@ const variantElementMap: Record<
   ul: "ul",
   ol: "ol",
   small: "small",
-};
+}
 
 export interface TypographyProps
   extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof typographyVariants> {
-  asChild?: boolean;
-  as?: React.ElementType;
+  asChild?: boolean
+  as?: React.ElementType
 }
 
 export function Typography({
@@ -57,11 +57,11 @@ export function Typography({
 }: TypographyProps) {
   const Comp = asChild
     ? Slot
-    : as ?? (variant ? variantElementMap[variant] : undefined) ?? "div";
+    : (as ?? (variant ? variantElementMap[variant] : undefined) ?? "div")
   return (
     <Comp
       className={cn(typographyVariants({ variant, className }))}
       {...props}
     />
-  );
+  )
 }

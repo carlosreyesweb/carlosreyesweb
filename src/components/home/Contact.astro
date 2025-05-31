@@ -1,16 +1,16 @@
 ---
-import Iso from "../Iso.astro";
-import SocialLinks from "../SocialLinks.astro";
-import { Anchor } from "../ui/anchor";
-import { Separator } from "../ui/separator";
-import { Typography } from "../ui/typography";
+import Iso from "../Iso.astro"
+import SocialLinks from "../SocialLinks.astro"
+import { Anchor } from "../ui/anchor"
+import { Separator } from "../ui/separator"
+import { Typography } from "../ui/typography"
 ---
 
 <section
-  class="container max-w-screen-xl py-20 grid grid-cols-1 md:grid-cols-2 gap-8"
+  class="container grid max-w-screen-xl grid-cols-1 gap-8 py-20 md:grid-cols-2"
 >
   <hgroup
-    class="flex flex-col gap-y-4 text-center md:text-left text-balance max-w-3xl"
+    class="flex max-w-3xl flex-col gap-y-4 text-center text-balance md:text-left"
   >
     <Typography variant="h2" id="contact"
       >Let's <span class="text-primary">Build Something Great</span></Typography
@@ -22,7 +22,7 @@ import { Typography } from "../ui/typography";
     <SocialLinks class="mx-auto md:mx-0" />
   </hgroup>
   <address
-    class="relative not-italic font-mono lg:text-lg sm:border sm:px-8 sm:py-6 h-min"
+    class="relative h-min font-mono not-italic sm:border sm:px-8 sm:py-6 lg:text-lg"
   >
     Carlos Reyes <br />
     Full Stack Web Developer <br />
@@ -32,7 +32,7 @@ import { Typography } from "../ui/typography";
       The Internet <br />
     </div>
     <Separator className="my-2" />
-    Email: <span class="whitespace-nowrap text-primary font-medium"
+    Email: <span class="text-primary font-medium whitespace-nowrap"
       >contact@carlosreyesweb.com</span
     >
     <br />
@@ -44,6 +44,6 @@ import { Typography } from "../ui/typography";
     Website: <Anchor href={Astro.site?.toString()} className="whitespace-nowrap"
       >www.carlosreyesweb.com</Anchor
     >
-    <Iso class="hidden sm:block w-8 absolute top-6 right-6 fill-primary" />
+    <Iso class="fill-primary absolute top-6 right-6 hidden w-8 sm:block" />
   </address>
 </section>

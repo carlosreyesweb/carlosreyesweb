@@ -1,9 +1,9 @@
 ---
-import { cn } from "@/lib/utils";
-import type { HTMLAttributes } from "astro/types";
+import { cn } from "@/lib/utils"
+import type { HTMLAttributes } from "astro/types"
 
-type Props = Omit<HTMLAttributes<"svg">, "viewBox">;
-const { class: className, ...props } = Astro.props;
+type Props = Omit<HTMLAttributes<"svg">, "viewBox">
+const { class: className, ...props } = Astro.props
 ---
 
 <svg viewBox="0 0 427.6 191.96" class={cn("w-24", className)} {...props}>

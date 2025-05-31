@@ -24,8 +24,8 @@ import {
   TypescriptOriginal,
   VercelOriginal,
   VitejsOriginal,
-} from "devicons-react";
-import { Marquee } from "../ui/marquee";
+} from "devicons-react"
+import { Marquee } from "../ui/marquee"
 
 const skills = [
   {
@@ -126,12 +126,12 @@ const skills = [
     name: "Trello",
     logo: TrelloOriginal,
   },
-];
+]
 ---
 
 <Marquee
   pauseOnHover
-  className="[--duration:20s] container mask-x-from-background mask-x-from-50%"
+  className="mask-x-from-background container mask-x-from-50% [--duration:20s]"
 >
   {
     skills.map(({ name, logo: Logo, color }, index) => (
