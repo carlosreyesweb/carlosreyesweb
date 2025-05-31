@@ -38,7 +38,7 @@ export function Menu({ socialLinks }: MenuProps) {
               <li key={href}>
                 {asCTA ? (
                   <Button asChild>
-                    <a href="/contact">Get in Touch</a>
+                    <a href={href}>{label}</a>
                   </Button>
                 ) : (
                   <Anchor
