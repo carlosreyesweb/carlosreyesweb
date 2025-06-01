@@ -134,9 +134,9 @@ const skills = [
   className="mask-x-from-background container mask-x-from-50% [--duration:20s]"
 >
   {
-    skills.map(({ name, logo: Logo, color }, index) => (
+    skills.map(({ name, logo: Logo, color }) => (
       <figure
-        class="flex h-full w-36 flex-col items-center justify-center gap-y-1.5"
+        class="flex h-full min-w-44 flex-col items-center justify-center gap-y-1.5"
         title={name}
       >
         <Logo size={48} fill={color} color={color} />
