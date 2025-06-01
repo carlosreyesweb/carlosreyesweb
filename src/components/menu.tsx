@@ -43,6 +43,7 @@ export function Menu({ socialLinks }: MenuProps) {
                 ) : (
                   <Anchor
                     href={href}
+                    target={href.includes("http") ? "_blank" : "_self"}
                     className="text-foreground text-lg no-underline hover:underline md:text-xl"
                   >
                     {label}

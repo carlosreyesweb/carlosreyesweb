@@ -27,7 +27,11 @@ import { buttonVariants } from "./ui/button"
                 {label}
               </a>
             ) : (
-              <Anchor href={href} className="no-underline hover:underline">
+              <Anchor
+                href={href}
+                target={href.includes("http") ? "_blank" : "_self"}
+                className="no-underline hover:underline"
+              >
                 {label}
                 {href.includes("http") && (
                   <ArrowUpRight aria-hidden className="inline-block size-4" />
