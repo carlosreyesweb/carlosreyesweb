@@ -135,9 +135,12 @@ const skills = [
 >
   {
     skills.map(({ name, logo: Logo, color }, index) => (
-      <figure class="flex h-full w-36 items-center justify-center" title={name}>
+      <figure
+        class="flex h-full w-36 flex-col items-center justify-center gap-y-1.5"
+        title={name}
+      >
         <Logo size={48} fill={color} color={color} />
-        <figcaption class="sr-only">{name}</figcaption>
+        <figcaption class="text-sm">{name}</figcaption>
       </figure>
     ))
   }
