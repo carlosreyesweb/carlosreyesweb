@@ -11,6 +11,8 @@ import type { ProfilePage, WithContext } from "schema-dts"
 const jsonLd: WithContext<ProfilePage> = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  dateCreated: new Date().toISOString(),
+  dateModified: new Date().toISOString(),
   mainEntity: {
     "@type": "Person",
     name: "Carlos Reyes",
