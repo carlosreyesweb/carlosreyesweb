@@ -3,20 +3,32 @@ import me from "@/assets/me.png"
 import Contact from "@/components/home/Contact.astro"
 import Hero from "@/components/home/Hero.astro"
 import Showcase from "@/components/home/Showcase.astro"
+import { skills } from "@/constants/skills"
 import { socialLinks } from "@/constants/social-links"
 import RootLayout from "@/layouts/RootLayout.astro"
-import type { Person, WithContext } from "schema-dts"
+import type { ProfilePage, WithContext } from "schema-dts"
 
-const jsonLd: WithContext<Person> = {
+const jsonLd: WithContext<ProfilePage> = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Carlos Reyes",
-  jobTitle: "Full Stack Web Developer",
-  description:
-    "A T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences.",
-  image: me.src,
-  url: Astro.site!.toString(),
-  sameAs: socialLinks.map((link) => link.link),
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Carlos Reyes",
+    alternateName: "carlosreyesweb",
+    jobTitle: "Full Stack Web Developer",
+    image: me.src,
+    nationality: { "@type": "Country", name: "Venezuela" },
+    description:
+      "A T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences.",
+    email: "contact@carlosreyesweb.com",
+    telephone: "+58 (412) 938-0768",
+    url: Astro.site?.toString(),
+    sameAs: socialLinks.map((link) => link.link),
+    birthDate: "2000-06-17",
+    gender: "Male",
+    knowsLanguage: ["en", "es"],
+    skills: skills.map((skill) => skill.name),
+  },
 }
 ---
 
