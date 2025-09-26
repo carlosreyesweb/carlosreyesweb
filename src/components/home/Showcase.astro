@@ -2,9 +2,10 @@
 import esquinaDelCodigo from "@/assets/projects/esquina-del-codigo.png"
 import pokerRankingWebsite from "@/assets/projects/poker-ranking-website.png"
 import preflopAiWebsite from "@/assets/projects/preflopai-website.png"
-import radarCiudadCaracas from "@/assets/projects/radar-ciudad-caracas.png"
 import rateSpotAppIcon from "@/assets/projects/ratespot-app-icon.png"
 import rateSpotApp from "@/assets/projects/ratespot-app.png"
+import rivkaIcon from "@/assets/projects/rivka-icon.svg"
+import rivkaWebsite from "@/assets/projects/rivka-website.png"
 import { Image, Picture } from "astro:assets"
 import { BentoCard, type BentoCardProps, BentoGrid } from "../ui/bento-grid"
 import { Typography } from "../ui/typography"
@@ -22,6 +23,16 @@ const projects: (Omit<BentoCardProps, "icon" | "background"> & {
     href: "https://www.ratespot.io",
     cta: "Explore RateSpot",
     className: "col-span-3 lg:col-span-2",
+  },
+  {
+    icon: rivkaIcon,
+    screenshot: rivkaWebsite,
+    name: "Rivka.io (Website)",
+    description:
+      "A website for Rivka.io, an enterprise software consulting company specializing in AI.",
+    href: "https://www.rivka.io",
+    cta: "Visit Rivka.io",
+    className: "col-span-3 lg:col-span-1",
   },
   {
     screenshot: preflopAiWebsite,
@@ -50,15 +61,6 @@ const projects: (Omit<BentoCardProps, "icon" | "background"> & {
     cta: "Visit Blog",
     className: "col-span-3 lg:col-span-1",
   },
-  {
-    screenshot: radarCiudadCaracas,
-    name: "Radar Ciudad Caracas (App)",
-    description:
-      "A public service failure reporting software that allows citizens to report issues in their community.",
-    href: "https://radarciudad.info",
-    cta: "Play with the Radar",
-    className: "col-span-3 lg:col-span-1",
-  },
 ]
 ---
 
@@ -83,7 +85,7 @@ const projects: (Omit<BentoCardProps, "icon" | "background"> & {
             slot="background"
             src={screenshot}
             alt={`${project.name} screenshot`}
-            class="absolute inset-0 size-full object-cover object-top transition-opacity group-hover:opacity-25 group-hover:blur-sm"
+            class="absolute inset-0 size-full object-cover object-top [transition:_opacity_0.15s_linear,_object-position_10s_linear] group-hover:object-[center_bottom] group-hover:opacity-25 group-hover:blur-sm"
           />
         </BentoCard>
       ))
