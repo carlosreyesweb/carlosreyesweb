@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+overrides:
+  esbuild: "0.28.1"
+  astro: "6.1.10"
