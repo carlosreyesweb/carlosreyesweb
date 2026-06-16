@@ -1,7 +1,7 @@
 ---
 import ProfileCard from "@/components/links/ProfileCard.astro"
 import ProfileLinksList from "@/components/links/ProfileLinksList.astro"
-import { PROFILE_LINKS, SAME_AS_LINKS } from "@/constants/links"
+import { SAME_AS_LINKS } from "@/constants/links"
 import { PROFILE } from "@/constants/profile"
 import RootLayout from "@/layouts/RootLayout.astro"
 import type { ProfilePage, WithContext } from "schema-dts"
@@ -35,14 +35,9 @@ const jsonLd: WithContext<ProfilePage> = {
 ---
 
 <RootLayout title={pageTitle} description={pageDescription}>
-  <ProfileCard
-    name={PROFILE.name}
-    title={PROFILE.title}
-    image={PROFILE.photo}
-    imageAlt={`Portrait of ${PROFILE.name}`}
-  />
+  <ProfileCard />
   <main class="container max-w-2xl py-4">
-    <ProfileLinksList links={PROFILE_LINKS} />
+    <ProfileLinksList />
   </main>
   <script
     slot="json-ld"
