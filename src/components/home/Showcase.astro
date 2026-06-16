@@ -9,6 +9,7 @@ import rivkaWebsite from "@/assets/projects/rivka-website.png"
 import { Image, Picture } from "astro:assets"
 import { BentoCard, type BentoCardProps, BentoGrid } from "../ui/bento-grid"
 import { Typography } from "../ui/typography"
+import { PROFILE } from "@/constants/profile"
 
 const projects: (Omit<BentoCardProps, "icon" | "background"> & {
   screenshot: ImageMetadata
@@ -70,8 +71,8 @@ const projects: (Omit<BentoCardProps, "icon" | "background"> & {
       Featured <span class="text-primary">Projects</span>
     </Typography>
     <Typography variant="p" className="text-balance">
-      Explore my work as a Full Stack Developer with a frontend focus—modern,
-      responsive, and built for real users.
+      Explore my work as a {PROFILE.title} with a focus on AI-driven and user-focused
+      software experiences.
     </Typography>
   </hgroup>
   <BentoGrid>
