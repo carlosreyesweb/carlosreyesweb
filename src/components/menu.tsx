@@ -6,7 +6,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { navigationLinks } from "@/constants/navigation-links"
+import { NAVIGATION_LINKS } from "@/constants/links"
 import { Menu as MenuIcon } from "lucide-react"
 import type { ReactNode } from "react"
 import { Anchor } from "./ui/anchor"
@@ -34,7 +34,7 @@ export function Menu({ socialLinks }: MenuProps) {
         </DrawerHeader>
         <div className="flex flex-col gap-y-4 p-12">
           <ul role="list" className="flex flex-col gap-y-4">
-            {navigationLinks.map(({ label, href, asCTA }) => (
+            {NAVIGATION_LINKS.map(({ label, href, asCTA }) => (
               <li key={href}>
                 {asCTA ? (
                   <Button asChild>

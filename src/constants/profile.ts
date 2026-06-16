@@ -1,0 +1,25 @@
+import me from "@/assets/me.png"
+
+export const PROFILE = Object.freeze({
+  name: "Carlos Reyes",
+  nickname: "carlosreyesweb",
+  title: "Full Stack Developer",
+  bio: "Hi, I'm Carlos Reyes, a Full Stack Developer specialized in building fast, scalable, and user-focused software experiences.",
+  photo: me,
+  gender: "Male",
+  birthDate: "2000-06-17",
+  country: "Venezuela",
+  email: "contact@carlosreyesweb.com",
+  phone: "+58 (412) 938-0768",
+  handles: {
+    github: "carlosreyesweb",
+    linkedin: "carlosreyesweb",
+    instagram: "carlosreyesweb",
+    twitter: "carlosreyesweb",
+  },
+  website: import.meta.env.SITE,
+  languages: [
+    { code: "en", name: "English" },
+    { code: "es", name: "Spanish" },
+  ],
+})

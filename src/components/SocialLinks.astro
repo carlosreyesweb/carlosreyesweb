@@ -1,5 +1,5 @@
 ---
-import { socialLinks } from "@/constants/social-links"
+import { SOCIAL_LINKS } from "@/constants/links"
 import { cn } from "@/lib/utils"
 import type { HTMLAttributes } from "astro/types"
 import { buttonVariants } from "./ui/button"
@@ -10,7 +10,7 @@ const { class: className = "", ...props } = Astro.props
 
 <ul role="list" class={cn("inline-flex space-x-1", className)} {...props}>
   {
-    socialLinks.map(({ name, link, icon: Icon }) => (
+    SOCIAL_LINKS.map(({ name, link, icon: Icon }) => (
       <li>
         <a
           href={link}

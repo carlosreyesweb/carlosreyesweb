@@ -7,6 +7,7 @@ import SocialLinks from "../SocialLinks.astro"
 import { Typography } from "../ui/typography"
 import Announcement from "./Announcement.astro"
 import Skills from "./Skills.astro"
+import { PROFILE } from "@/constants/profile"
 ---
 
 <header class="mt-20 flex flex-col gap-y-20 overflow-hidden py-20">
@@ -18,8 +19,8 @@ import Skills from "./Skills.astro"
         class="animate-draw stroke-primary absolute inset-0 [stroke-dasharray:1000]"
       />
       <Image
-        src={me}
-        alt="Portrait of Carlos Reyes, Full Stack Web Developer"
+        src={PROFILE.photo}
+        alt={`Photo of ${PROFILE.name}, ${PROFILE.title}`}
         class="relative h-full w-full mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-top-left object-cover"
         loading="eager"
       />
@@ -34,8 +35,7 @@ import Skills from "./Skills.astro"
         >
       </Typography>
       <Typography variant="p">
-        Hi, I'm Carlos Reyes—a T-shaped web developer specializing in frontend
-        since 2020. I build fast, scalable, and user-focused web experiences.
+        {PROFILE.bio}
       </Typography>
       <div
         class="flex flex-wrap items-center justify-center gap-2 xl:justify-start"

@@ -1,4 +1,6 @@
 ---
+import { PROFILE } from "@/constants/profile"
+import { parsePhoneNumber } from "@/lib/utils"
 import Iso from "../Iso.astro"
 import SocialLinks from "../SocialLinks.astro"
 import { Anchor } from "../ui/anchor"
@@ -7,7 +9,7 @@ import { Typography } from "../ui/typography"
 ---
 
 <section
-  class="container grid max-w-screen-xl grid-cols-1 gap-8 py-20 md:grid-cols-2"
+  class="container grid max-w-7xl grid-cols-1 gap-8 py-20 md:grid-cols-2"
 >
   <hgroup
     class="flex max-w-3xl flex-col gap-y-4 text-center text-balance md:text-left"
@@ -16,16 +18,18 @@ import { Typography } from "../ui/typography"
       >Let's <span class="text-primary">Build Something Great</span></Typography
     >
     <Typography variant="p">
-      Ready to level up your web project? Contact me to work with a frontend
-      expert who knows the full stack.
+      Ready to level up your software project? Contact me to work with an expert
+      who knows the full stack.
     </Typography>
     <SocialLinks class="mx-auto md:mx-0" />
   </hgroup>
   <address
     class="relative h-min font-mono not-italic sm:border sm:px-8 sm:py-6 lg:text-lg"
   >
-    Carlos Reyes <br />
-    Full Stack Web Developer <br />
+    {PROFILE.name}
+    <br />
+    {PROFILE.title}
+    <br />
     <div class="text-muted-foreground">
       404 Not Found Lane, <br />
       CSS Grid City, JS 12345, <br />
@@ -33,15 +37,15 @@ import { Typography } from "../ui/typography"
     </div>
     <Separator className="my-2" />
     Email: <span class="text-primary font-medium whitespace-nowrap"
-      >contact@carlosreyesweb.com</span
+      >{PROFILE.email}</span
     >
     <br />
     WhatsApp: <Anchor
-      href="https://wa.me/+584129380768"
-      className="whitespace-nowrap">+58 (412) 938-0768</Anchor
+      href={`https://wa.me/${parsePhoneNumber(PROFILE.phone)}`}
+      className="whitespace-nowrap">{PROFILE.phone}</Anchor
     >
     <br />
-    Website: <Anchor href={Astro.site?.toString()} className="whitespace-nowrap"
+    Website: <Anchor href={PROFILE.website} className="whitespace-nowrap"
       >www.carlosreyesweb.com</Anchor
     >
     <Iso class="fill-primary absolute top-6 right-6 hidden w-8 sm:block" />

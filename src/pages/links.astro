@@ -1,22 +1,53 @@
 ---
-import me from "@/assets/me.png"
 import ProfileCard from "@/components/links/ProfileCard.astro"
 import ProfileLinksList from "@/components/links/ProfileLinksList.astro"
-import { profileLinks } from "@/constants/profile-links"
+import { PROFILE_LINKS, SAME_AS_LINKS } from "@/constants/links"
+import { PROFILE } from "@/constants/profile"
 import RootLayout from "@/layouts/RootLayout.astro"
+import type { ProfilePage, WithContext } from "schema-dts"
+
+const pageTitle = `Links - ${PROFILE.name}`
+const pageDescription =
+  "Find all my social media profiles and contact information in one place."
+
+const jsonLd: WithContext<ProfilePage> = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: pageTitle,
+  description: pageDescription,
+  url: Astro.url.toString(),
+  mainEntity: {
+    "@type": "Person",
+    name: PROFILE.name,
+    alternateName: PROFILE.nickname,
+    jobTitle: PROFILE.title,
+    image: PROFILE.photo.src,
+    nationality: { "@type": "Country", name: PROFILE.country },
+    email: PROFILE.email,
+    telephone: PROFILE.phone,
+    url: PROFILE.website,
+    sameAs: SAME_AS_LINKS,
+    birthDate: PROFILE.birthDate,
+    gender: PROFILE.gender,
+    knowsLanguage: PROFILE.languages.map((language) => language.code),
+  },
+}
 ---
 
-<RootLayout
-  title="Links - Carlos Reyes"
-  description="Find all my social media profiles and contact information in one place."
->
+<RootLayout title={pageTitle} description={pageDescription}>
   <ProfileCard
-    name="Carlos Reyes"
-    title="Full Stack Web Developer"
-    image={me}
-    imageAlt="Portrait of Carlos Reyes"
+    name={PROFILE.name}
+    title={PROFILE.title}
+    image={PROFILE.photo}
+    imageAlt={`Portrait of ${PROFILE.name}`}
   />
   <main class="container max-w-2xl py-4">
-    <ProfileLinksList links={profileLinks} />
+    <ProfileLinksList links={PROFILE_LINKS} />
   </main>
+  <script
+    slot="json-ld"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(jsonLd)}
+  />
 </RootLayout>

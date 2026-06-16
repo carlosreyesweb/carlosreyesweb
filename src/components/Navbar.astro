@@ -1,5 +1,5 @@
 ---
-import { navigationLinks } from "@/constants/navigation-links"
+import { NAVIGATION_LINKS } from "@/constants/links"
 import { ArrowUpRight } from "lucide-react"
 import Logo from "./Logo.astro"
 import { Menu } from "./menu"
@@ -20,7 +20,7 @@ import { buttonVariants } from "./ui/button"
     >
       <li class="flex-1"></li>
       {
-        navigationLinks.map(({ label, href, asCTA }) => (
+        NAVIGATION_LINKS.map(({ label, href, asCTA }) => (
           <li>
             {asCTA ? (
               <a href={href} class={buttonVariants({ size: "sm" })}>

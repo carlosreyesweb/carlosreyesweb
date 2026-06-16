@@ -1,6 +1,7 @@
 ---
 import Logo from "@/components/Logo.astro"
 import SocialLinks from "./SocialLinks.astro"
+import { PROFILE } from "@/constants/profile"
 
 const currentYear = new Date().getFullYear()
 ---
@@ -12,7 +13,8 @@ const currentYear = new Date().getFullYear()
       <span class="sr-only">Home</span>
     </a>
     <p class="text-foreground text-center text-sm">
-      &copy; {currentYear} Carlos Reyes. All rights reserved.
+      &copy; {currentYear}
+      {PROFILE.name}. All rights reserved.
     </p>
     <SocialLinks />
   </div>

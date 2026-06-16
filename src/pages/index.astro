@@ -1,43 +1,40 @@
 ---
-import me from "@/assets/me.png"
 import Contact from "@/components/home/Contact.astro"
 import Hero from "@/components/home/Hero.astro"
 import Showcase from "@/components/home/Showcase.astro"
-import { skills } from "@/constants/skills"
-import { socialLinks } from "@/constants/social-links"
+import { SAME_AS_LINKS } from "@/constants/links"
+import { PROFILE } from "@/constants/profile"
 import RootLayout from "@/layouts/RootLayout.astro"
 import type { ProfilePage, WithContext } from "schema-dts"
+
+const pageTitle = `${PROFILE.name} - ${PROFILE.title}`
+const pageDescription = PROFILE.bio
 
 const jsonLd: WithContext<ProfilePage> = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  dateCreated: new Date().toISOString(),
-  dateModified: new Date().toISOString(),
+  name: pageTitle,
+  description: pageDescription,
+  url: Astro.url.toString(),
   mainEntity: {
     "@type": "Person",
-    name: "Carlos Reyes",
-    alternateName: "carlosreyesweb",
-    jobTitle: "Full Stack Web Developer",
-    image: me.src,
-    nationality: { "@type": "Country", name: "Venezuela" },
-    description:
-      "A T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences.",
-    email: "contact@carlosreyesweb.com",
-    telephone: "+58 (412) 938-0768",
-    url: Astro.site?.toString(),
-    sameAs: socialLinks.map((link) => link.link),
-    birthDate: "2000-06-17",
-    gender: "Male",
-    knowsLanguage: ["en", "es"],
-    skills: skills.map((skill) => skill.name),
+    name: PROFILE.name,
+    alternateName: PROFILE.nickname,
+    jobTitle: PROFILE.title,
+    image: PROFILE.photo.src,
+    nationality: { "@type": "Country", name: PROFILE.country },
+    email: PROFILE.email,
+    telephone: PROFILE.phone,
+    url: PROFILE.website,
+    sameAs: SAME_AS_LINKS,
+    birthDate: PROFILE.birthDate,
+    gender: PROFILE.gender,
+    knowsLanguage: PROFILE.languages.map((language) => language.code),
   },
 }
 ---
 
-<RootLayout
-  title="Carlos Reyes - Full Stack Web Developer"
-  description="Hi, I'm Carlos Reyes—a T-shaped web developer specializing in frontend since 2020. I build fast, scalable, and user-focused web experiences."
->
+<RootLayout title={pageTitle} description={pageDescription}>
   <Hero />
   <main class="flex flex-col gap-y-20 py-20">
     <Showcase />
