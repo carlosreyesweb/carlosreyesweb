@@ -4,6 +4,10 @@ export const navigationLinks = [
     href: "/#showcase",
   },
   {
+    label: "Links",
+    href: "/links",
+  },
+  {
     label: "Blog",
     href: "https://www.esquinadelcodigo.com",
   },

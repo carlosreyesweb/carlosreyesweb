@@ -1,0 +1,22 @@
+---
+import me from "@/assets/me.png"
+import ProfileCard from "@/components/links/ProfileCard.astro"
+import ProfileLinksList from "@/components/links/ProfileLinksList.astro"
+import { profileLinks } from "@/constants/profile-links"
+import RootLayout from "@/layouts/RootLayout.astro"
+---
+
+<RootLayout
+  title="Links - Carlos Reyes"
+  description="Find all my social media profiles and contact information in one place."
+>
+  <ProfileCard
+    name="Carlos Reyes"
+    title="Full Stack Web Developer"
+    image={me}
+    imageAlt="Portrait of Carlos Reyes"
+  />
+  <main class="container max-w-2xl py-4">
+    <ProfileLinksList links={profileLinks} />
+  </main>
+</RootLayout>
