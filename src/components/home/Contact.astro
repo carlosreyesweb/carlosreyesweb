@@ -46,7 +46,7 @@ import { Typography } from "../ui/typography"
     >
     <br />
     Website: <Anchor href={PROFILE.website} className="whitespace-nowrap"
-      >www.carlosreyesweb.com</Anchor
+      >{new URL(PROFILE.website).hostname}</Anchor
     >
     <Iso class="fill-primary absolute top-6 right-6 hidden w-8 sm:block" />
   </address>
